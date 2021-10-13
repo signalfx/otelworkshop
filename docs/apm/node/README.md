@@ -50,4 +50,4 @@ You can see in the `run-client.sh` how the environment has been set up for OpenT
 
 Splunk's autoinstrumentation for node.js is here: https://github.com/signalfx/signalfx-nodejs-tracing
 
-You can now go to the next step of [APM Instrumentation Workshop](../workshop-steps/3-workshop-labs.md)
+[Back to labs](../host)

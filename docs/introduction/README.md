@@ -12,7 +12,7 @@
 
 - Prerequisites: completion of [Splunk Observability Workshop](https://signalfx.github.io/observability-workshop/latest/) which trains on using metrics/APM and charts/dashboards/alerts or equivalent devops/SRE skills
 - Splunk Observability Cloud Account
-- Debian (i.e. Ubuntu) Linux environment with minimum 12G RAM and 22G disk w/ lightweight Kubernetes (Rancher k3s) installed OR your own k8s cluster
+- Debian (i.e. Ubuntu) Linux environment with minimum 12G RAM and 20G disk w/ lightweight Kubernetes (Rancher k3s) installed OR your own k8s cluster
 
 ## Workshop Activities  
 
@@ -21,7 +21,7 @@
     - Linux Host
         - Set up OpenTelemetry Collector Agent on a Linux Host
         - OpenTelemetry APM Instrumentation on Java, Python, and Node apps
-    - Kubernetes (k8s) [Click to start at k8s labs](./apm/k8s)
+    - Kubernetes (k8s) [Click to start at k8s labs](../apm/k8s)
         - Set up OpenTelemetry Collector Agent on a k8s cluster
         - OpenTelemetry APM Instrumentation on k8s on Java, Python k8s pods
         - Manual APM Instrumentation for Java

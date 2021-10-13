@@ -54,4 +54,4 @@ The `otel.` resources set up the service name, environment, and destination to s
 
 Splunk's OpenTelmetry autoinstrumentation for Java is here: https://github.com/signalfx/splunk-otel-java
 
-You can now go to the next step of [APM Instrumentation Workshop](../workshop-steps/3-workshop-labs.md)
+[Back to labs](../host)

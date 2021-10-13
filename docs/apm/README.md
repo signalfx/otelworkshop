@@ -5,7 +5,7 @@
 #### Step 2: [Install Splunk OpenTelemetry Collector Agent on an Ubuntu host](./workshop-steps/2-otelagent.md)  
 
 #### Step 3: [Complete APM Workshop Labs for Hosts / k8s ](./workshop-steps/3-workshop-labs.md)  
-APM for Kubernetes Lab only: [start here](./k8s)  
+APM for Kubernetes Lab only: [start here](./apm/k8s)  
 
 #### Non Kubernetes container examples:  
 [AWS ECS: EC2/Fargate](misc)
