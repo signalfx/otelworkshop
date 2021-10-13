@@ -13,21 +13,21 @@
         <meta name="author" content="Steve Lerner Staff Sales Engineer USA">
       
       
-        <link rel="canonical" href="https://github.com/signalfx/otelworkshop/apm/workshop-steps/4-appendix/">
+        <link rel="canonical" href="https://github.com/signalfx/otelworkshop/apm/host/">
       
-      <link rel="icon" href="../../../images/favicon.ico">
+      <link rel="icon" href="../../images/favicon.ico">
       <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.3.3">
     
     
       
-        <title>4 appendix - Splunk OpenTelemetry Workshop</title>
+        <title>Index - Splunk OpenTelemetry Workshop</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.5143246d.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.5143246d.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.3f5d1f46.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.3f5d1f46.min.css">
         
       
     
@@ -42,7 +42,7 @@
     
     
     
-      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
     
     
       
@@ -55,9 +55,9 @@
       
     
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Splunk OpenTelemetry Workshop - 4 appendix">
+    <meta property="og:title" content="Splunk OpenTelemetry Workshop - Index">
     <meta property="og:description" content="Learn to configure the OpenTelemetry Collector for APM and infrastructure monitoring as well as instrument applications with OpenTelemetry APM instrumentation to send telemetry to Splunk APM.">
-    <meta property="og:url" content="https://github.com/signalfx/otelworkshop/apm/workshop-steps/4-appendix/">
+    <meta property="og:url" content="https://github.com/signalfx/otelworkshop/apm/host/">
     <meta property="og:image" content="">
     <meta property="og:image:type" content="image/png">
     <meta property="og:image:width" content="1080">
@@ -76,7 +76,7 @@
     <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
   
     
-    <script>function __prefix(e){return new URL("../../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
     
       <script>var palette=__get("__palette");if(null!==palette&&"object"==typeof palette.color)for(var key in palette.color)document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
     
@@ -86,7 +86,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#appendix-a-spin-up-ubuntu-vm-on-mac-or-windows" class="md-skip">
+        <a href="#lab-1-set-up-splunk-opentelemetry-collector-agent-on-your-host" class="md-skip">
           Skip to content
         </a>
       
@@ -113,9 +113,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="Splunk OpenTelemetry Workshop" class="md-header__button md-logo" aria-label="Splunk OpenTelemetry Workshop" data-md-component="logo">
+    <a href="../.." title="Splunk OpenTelemetry Workshop" class="md-header__button md-logo" aria-label="Splunk OpenTelemetry Workshop" data-md-component="logo">
       
-  <img src="../../../images/logo.png" alt="logo">
+  <img src="../../images/logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -131,7 +131,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              4 appendix
+              Index
             
           </span>
         </div>
@@ -196,7 +196,7 @@
 
 
   <li class="md-tabs__item">
-    <a href="../../.." class="md-tabs__link">
+    <a href="../.." class="md-tabs__link">
       Home
     </a>
   </li>
@@ -211,7 +211,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../introduction/" class="md-tabs__link">
+      <a href="../../introduction/" class="md-tabs__link">
         Otel Workshop
       </a>
     </li>
@@ -241,9 +241,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="Splunk OpenTelemetry Workshop" class="md-nav__button md-logo" aria-label="Splunk OpenTelemetry Workshop" data-md-component="logo">
+    <a href="../.." title="Splunk OpenTelemetry Workshop" class="md-nav__button md-logo" aria-label="Splunk OpenTelemetry Workshop" data-md-component="logo">
       
-  <img src="../../../images/logo.png" alt="logo">
+  <img src="../../images/logo.png" alt="logo">
 
     </a>
     Splunk OpenTelemetry Workshop
@@ -272,7 +272,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         Home
       </a>
     </li>
@@ -313,8 +313,22 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../introduction/" class="md-nav__link">
+      <a href="../../introduction/" class="md-nav__link">
         Otel Workshop Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../workshop-steps/prep/" class="md-nav__link">
+        Workshop Prep
       </a>
     </li>
   
@@ -332,18 +346,18 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" data-md-state="indeterminate" type="checkbox" id="__nav_2_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" data-md-state="indeterminate" type="checkbox" id="__nav_2_3" checked>
       
       
       
       
-        <label class="md-nav__link" for="__nav_2_2">
+        <label class="md-nav__link" for="__nav_2_3">
           Otel Workshop Labs
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Otel Workshop Labs" data-md-level="2">
-        <label class="md-nav__title" for="__nav_2_2">
+        <label class="md-nav__title" for="__nav_2_3">
           <span class="md-nav__icon md-icon"></span>
           Otel Workshop Labs
         </label>
@@ -355,8 +369,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../1-prep/" class="md-nav__link">
-        Workshop Prep
+      <a href="." class="md-nav__link">
+        APM for a Single Host
       </a>
     </li>
   
@@ -369,22 +383,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../2-otelagent/" class="md-nav__link">
-        Install Otel Collector
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../3-workshop-labs/" class="md-nav__link">
-        Workshop labs
+      <a href="../k8s/" class="md-nav__link">
+        APM for k8s / containerized apps
       </a>
     </li>
   
@@ -417,49 +417,27 @@
               
                 
                 
-                  <h1>4 appendix</h1>
+                  <h1>Index</h1>
                 
-                <h4 id="appendix-a-spin-up-ubuntu-vm-on-mac-or-windows">Appendix A: Spin up Ubuntu VM on Mac or Windows<a class="headerlink" href="#appendix-a-spin-up-ubuntu-vm-on-mac-or-windows" title="Permanent link">&para;</a></h4>
-<p><a href="http://multipass.run">Multipass</a> deploys and runs Ubuntu virtual machines easily on Mac and Windows.  </p>
-<p>Make sure multipass is the CURRENT version: <code>brew upgrade multipass</code></p>
-<p>Workshop examples have been tested on this configuration:</p>
-<p><code>multipass launch -n primary -d 16G -m 6G</code></p>
-<p>Make sure to always run <code>sudo apt-get -y update</code> before executing any step in the workshop.</p>
-<h4 id="appendix-b-kubernetes-cluster-setup-hints">Appendix B: Kubernetes Cluster Setup Hints<a class="headerlink" href="#appendix-b-kubernetes-cluster-setup-hints" title="Permanent link">&para;</a></h4>
-<p>k3s is a lightweight Kubernetes deployment from Rancher: https://k3s.io/  </p>
-<p>To k3s install on Linux:<br />
-<div class="highlight"><pre><span></span><code>curl -sfL https://get.k3s.io | sh -
-sudo chmod 644 /etc/rancher/k3s/k3s.yaml  
-export KUBECONFIG=/etc/rancher/k3s/k3s.yaml  
-</code></pre></div></p>
-<p>Every time you re-enter a shell you'll need to: <br />
-<div class="highlight"><pre><span></span><code>export KUBECONFIG=/etc/rancher/k3s/k3s.yaml
-sudo chmod 644 /etc/rancher/k3s/k3s.yaml  
-</code></pre></div></p>
-<p>The stock configuration of k3s and this workshop's k8s examples have been tested on the following configurations:  </p>
-<ul>
-<li><a href="http://k3s.io">k3s</a> cluster (default settings) on Ubuntu VM:</li>
-<li>Macbook Pro 32GB RAM, Windows 10 Laptop 12GB RAM: <a href="http://multipass.run">Multipass</a> started with <code>multipass launch -n primary -d 8G -m 4G</code>  </li>
-<li>AWS EC2</li>
-</ul>
-<p>The Kubernetes lab has also been tested on:  <br />
-<em> Azure: Kubernetes 1.17.9 Azure Kubernetes Service<br />
-</em> EKS / GKE: Not tested yet but 99.9% chance will have no issues<br />
-* Workshop will NOT work on: Macbook Pro Docker Desktop Kubernetes</p>
-<p>To tear down a Multipass VM:</p>
-<div class="highlight"><pre><span></span><code>multipass stop primary
-multipass delete primary
-multipass purge
-</code></pre></div>
-<h4 id="appendix-c-use-tmux-instead-of-separate-terminal-windowstabs">Appendix C: use tmux instead of separate terminal windows/tabs<a class="headerlink" href="#appendix-c-use-tmux-instead-of-separate-terminal-windowstabs" title="Permanent link">&para;</a></h4>
-<p><code>tmux</code> is recommended to split your terminal into several panes so that you can run an application in each pane without having to containerize applications- and you can keep a separate pane open for checking status of spans, the host, etc.</p>
-<p><strong>Important: each pane runs as its own bash shell so environment variables must be set in each pane. The workshop includes setup shell scripts to make it easy to do this.</strong></p>
-<p>To install tmux: <code>sudo apt-get install tmux</code></p>
-<p>Tmux works by using <code>ctrl-b</code> as a command key followed by:
-<code>"</code> make a new horizontal pane
-<code>%</code> make a new vertical pane
-Arrow keys: move between panes.</p>
-<p><a href="../../">Return to workshop for next step</a></p>
+                <h2 id="lab-1-set-up-splunk-opentelemetry-collector-agent-on-your-host">Lab 1: Set up Splunk OpenTelemetry Collector Agent on your host<a class="headerlink" href="#lab-1-set-up-splunk-opentelemetry-collector-agent-on-your-host" title="Permanent link">&para;</a></h2>
+<h3 id="step-1-install-otel-collector-agent-on-your-ubuntu-host">Step 1: Install Otel Collector Agent on your Ubuntu host<a class="headerlink" href="#step-1-install-otel-collector-agent-on-your-ubuntu-host" title="Permanent link">&para;</a></h3>
+<p><code>Splunk Obervability -&gt; Data Setup -&gt; Linux</code>  </p>
+<p>Choose the following:
+| Key | Value |
+| ----- | ---- |
+| Access Token | Select from list |
+| Mode | Agent |
+| Log Collection | No |  </p>
+<p>Follow Data Setup Wizard for instructions on Linux installation:</p>
+<p><img src="../assets/03-datasetup.png" width="360" />  </p>
+<p><img src="../assets/04-datasetup-linux.png" width="360" />  </p>
+<p><img src="../assets/05-datasetup-linuxinstall.png" width="360" /></p>
+<h3 id="step-2-apm-instrumentation-for-python">Step 2: APM Instrumentation for Python<a class="headerlink" href="#step-2-apm-instrumentation-for-python" title="Permanent link">&para;</a></h3>
+<p><a href="../python">Python: traces from Flask server and Python requests client</a></p>
+<h3 id="step-3-apm-instrumentation-for-java">Step 3: APM Instrumentation for Java<a class="headerlink" href="#step-3-apm-instrumentation-for-java" title="Permanent link">&para;</a></h3>
+<p><a href="../java">Java: traces from OKHTTP client</a></p>
+<h3 id="step-4-apm-instrumentation-for-node">Step 4: APM Instrumentation for Node<a class="headerlink" href="#step-4-apm-instrumentation-for-node" title="Permanent link">&para;</a></h3>
+<p><a href="../node">Node: traces Node HTTP.get client</a></p>
                 
               
               
@@ -537,10 +515,10 @@ Arrow keys: move between panes.</p>
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.instant", "navigation.sections", "navigation.expand", "navigation.top", "toc.integrate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.8397ff9e.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.instant", "navigation.sections", "navigation.expand", "navigation.top", "toc.integrate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.8397ff9e.min.js", "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.f89c2efe.min.js"></script>
+      <script src="../../assets/javascripts/bundle.f89c2efe.min.js"></script>
       
     
   </body>
