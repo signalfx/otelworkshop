@@ -77,8 +77,8 @@ plugins:
 nav:
   - Home: index.md
   - Otel Workshop:
-      - Workshop Introduction: introduction/README.md
-      - Otel Workshop:
+      - Otel Workshop Introduction: introduction/README.md
+      - Otel Workshop Labs:
           - Workshop Prep: apm/workshop-steps/1-prep.md
           - Install Otel Collector: apm/workshop-steps/2-otelagent.md
           - Workshop labs: apm/workshop-steps/3-workshop-labs.md
