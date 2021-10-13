@@ -1,9 +1,9 @@
 site_name: Splunk OpenTelemetry Workshop
-site_url: https://github.com/signalfx/otelworkshop
+site_url: https://github.com/otelworkshop/
 site_author: Steve Lerner Staff Sales Engineer USA
 site_description: >-
   Learn to configure the OpenTelemetry Collector for APM and infrastructure monitoring as well as instrument applications with OpenTelemetry APM instrumentation to send telemetry to Splunk APM.
-repo_url: https://github.com/signalfx/otelworkshop
+repo_url: https://github.com/signalfx/otelworkshop/
 edit_uri: ""
 copyright: Copyright 2021 Splunk Inc. All rights reserved.
 nav:
