@@ -2,7 +2,7 @@ site_name: Splunk OpenTelemetry Workshop
 site_url: https://github.com/signalfx/otelworkshop
 site_author: Steve Lerner Staff Sales Engineer USA
 site_description: >-
-  This workshop is going to take you through how to configure the OpenTelemetry Collector for APM and infrastructure monitoring as well as instrument applications with OpenTelemetry APM instrumentation to send telemetry to Splunk APM.
+  Learn to configure the OpenTelemetry Collector for APM and infrastructure monitoring as well as instrument applications with OpenTelemetry APM instrumentation to send telemetry to Splunk APM.
 repo_url: https://github.com/signalfx/otelworkshop
 edit_uri: ""
 copyright: Copyright 2021 Splunk Inc. All rights reserved.
@@ -10,7 +10,7 @@ nav:
   - Home: README.md
 theme:
   name: material
-  # custom_dir: overrides
+  custom_dir: overrides
   palette:
     # Light mode
     - media: "(prefers-color-scheme: light)"
@@ -75,9 +75,10 @@ plugins:
       minify_html: false
 
 nav:
-  # - Home: README.md
-  - Home: README.md
+  - Home: index.md
   - Otel Workshop:
-    - Workshop Prep: apm/workshop-steps/1-prep.md
-    - Install Otel Collector: apm/workshop-steps/2-otelagent.md
-    - Workshop labs: apm/workshop-steps/3-workshop-labs.md
+      - Workshop Introduction: introduction/README.md
+      - Otel Workshop:
+          - Workshop Prep: apm/workshop-steps/1-prep.md
+          - Install Otel Collector: apm/workshop-steps/2-otelagent.md
+          - Workshop labs: apm/workshop-steps/3-workshop-labs.md
