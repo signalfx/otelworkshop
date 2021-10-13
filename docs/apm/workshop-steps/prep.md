@@ -1,6 +1,4 @@
-# Workshop Preparation
-
-## Step 1: Log in to your Splunk Observability account to identify token/realm  
+## Log in to your Splunk Observability account to identify token/realm  
 
 Check your [Splunk Observability Account](https://app.us1.signalfx.com/o11y/#/home) (your welcome email has this link) and identify your TOKEN and REALM- these are available in the profile menu in your Splunk Observability account. Note that the realm component i.e. `us1` may be different for your account based on how you signed up.
 
@@ -15,7 +13,7 @@ How to find token:
 
 ---
 
-## Step 2: Choose or Create Lab Environment  
+## Choose or Create Lab Environment  
 
 Splunk Observability is for **server environments**.    
 
@@ -97,7 +95,7 @@ bash <(curl -s https://raw.githubusercontent.com/signalfx/apmworkshop/master/set
 
 ---
 
-## Step 3: Review key OpenTelemetry APM concepts
+## Review key OpenTelemetry APM concepts
 -  Moving parts that make APM happen in OpenTelemetry
       - **Application Spans:** OpenTelemetry instrumentation causes spans to be emitted by your applications OpenTelmetry auto-instrumentation (no code changes) for most languages is availabile but you can use any framework/library that emits spans in formats accepted by the Otel Collector i.e zipkin, OpenTracing, or [OpenTelemetry](https://opentelemtry.io). The spans are received by the OpenTelemetry Collector which both doubles as an infrastructure metrics collection agent and a telemetry processor. The Collector then forwards all telemetry (metrics/traces/logs) to Splunk Observability Cloud.  
       - **Instructructure metrics:** Infrastructure metrics are collected by your OpenTelemetry Collector which is observing the application's host or container cluster. The infrastructure agent is lightweight, open source, real-time, and designed for microservices, containers, and cloud as well as on premise servers or cloud virtual machines.

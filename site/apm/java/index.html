@@ -326,36 +326,8 @@
   
   
   
-    
-      
-    
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" data-md-state="indeterminate" type="checkbox" id="__nav_2_2" checked>
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_2_2">
-          Otel Workshop Labs
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Otel Workshop Labs" data-md-level="2">
-        <label class="md-nav__title" for="__nav_2_2">
-          <span class="md-nav__icon md-icon"></span>
-          Otel Workshop Labs
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
     <li class="md-nav__item">
-      <a href="../workshop-steps/1-prep/" class="md-nav__link">
+      <a href="../workshop-steps/prep/" class="md-nav__link">
         Workshop Prep
       </a>
     </li>
@@ -368,9 +340,37 @@
   
   
   
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" data-md-state="indeterminate" type="checkbox" id="__nav_2_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_3">
+          Otel Workshop Labs
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Otel Workshop Labs" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          Otel Workshop Labs
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
     <li class="md-nav__item">
-      <a href="../workshop-steps/2-otelagent/" class="md-nav__link">
-        Install Otel Collector
+      <a href="../host" class="md-nav__link">
+        APM for a Single Host
       </a>
     </li>
   
@@ -383,8 +383,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../workshop-steps/3-workshop-labs/" class="md-nav__link">
-        Workshop labs
+      <a href="../k8s/" class="md-nav__link">
+        APM for k8s / containerized apps
       </a>
     </li>
   
@@ -419,8 +419,8 @@
                 
                   <h1>Index</h1>
                 
-                <h3 id="this-lab-requires-starting-from-the-main-apm-instrumentation-workshop">This lab requires starting from the main <a href="../workshop-steps/3-workshop-labs/">APM Instrumentation Workshop</a><a class="headerlink" href="#this-lab-requires-starting-from-the-main-apm-instrumentation-workshop" title="Permanent link">&para;</a></h3>
-<p>Please see <a href="../workshop-steps/1-prep/">Step 1</a> to prep your environment with Java, maven etc.  </p>
+                <h3 id="this-lab-requires-starting-from-the-main-apm-instrumentation-workshop">This lab requires starting from the main <a href="../workshop-steps/3-workshop-labs.md">APM Instrumentation Workshop</a><a class="headerlink" href="#this-lab-requires-starting-from-the-main-apm-instrumentation-workshop" title="Permanent link">&para;</a></h3>
+<p>Please see <a href="../workshop-steps/1-prep.md">Step 1</a> to prep your environment with Java, maven etc.  </p>
 <p>It is recommended to do each step in a separate terminal.</p>
 <hr />
 <h2 id="step-1-open-new-terminal">Step #1 Open new terminal<a class="headerlink" href="#step-1-open-new-terminal" title="Permanent link">&para;</a></h2>
@@ -457,7 +457,7 @@ You can use <code>ctrl-c</code> to stop the requests and server any time.</p>
 <p>The <code>splunk-otel-javaagent.jar</code> file is the automatic OpenTelemetry instrumentation that will emit spans from the app. No code changes are necessary.</p>
 <p>The <code>otel.</code> resources set up the service name, environment, and destination to send the JVM metrics and spans.  </p>
 <p>Splunk's OpenTelmetry autoinstrumentation for Java is here: https://github.com/signalfx/splunk-otel-java</p>
-<p>You can now go to the next step of <a href="../workshop-steps/3-workshop-labs/">APM Instrumentation Workshop</a></p>
+<p><a href="../host">Back to labs</a></p>
                 
               
               

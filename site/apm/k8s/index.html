@@ -20,7 +20,7 @@
     
     
       
-        <title>Index - Splunk OpenTelemetry Workshop</title>
+        <title>APM for k8s / containerized apps - Splunk OpenTelemetry Workshop</title>
       
     
     
@@ -55,7 +55,7 @@
       
     
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Splunk OpenTelemetry Workshop - Index">
+    <meta property="og:title" content="Splunk OpenTelemetry Workshop - APM for k8s / containerized apps">
     <meta property="og:description" content="Learn to configure the OpenTelemetry Collector for APM and infrastructure monitoring as well as instrument applications with OpenTelemetry APM instrumentation to send telemetry to Splunk APM.">
     <meta property="og:url" content="https://github.com/signalfx/otelworkshop/apm/k8s/">
     <meta property="og:image" content="">
@@ -131,7 +131,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Index
+              APM for k8s / containerized apps
             
           </span>
         </div>
@@ -205,13 +205,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../../introduction/" class="md-tabs__link">
+      <a href="../../introduction/" class="md-tabs__link md-tabs__link--active">
         Otel Workshop
       </a>
     </li>
@@ -285,12 +287,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" data-md-state="indeterminate" type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
       
       
       
@@ -326,36 +330,8 @@
   
   
   
-    
-      
-    
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" data-md-state="indeterminate" type="checkbox" id="__nav_2_2" checked>
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_2_2">
-          Otel Workshop Labs
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Otel Workshop Labs" data-md-level="2">
-        <label class="md-nav__title" for="__nav_2_2">
-          <span class="md-nav__icon md-icon"></span>
-          Otel Workshop Labs
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
     <li class="md-nav__item">
-      <a href="../workshop-steps/1-prep/" class="md-nav__link">
+      <a href="../workshop-steps/prep/" class="md-nav__link">
         Workshop Prep
       </a>
     </li>
@@ -367,10 +343,40 @@
               
   
   
+    
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_3">
+          Otel Workshop Labs
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Otel Workshop Labs" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          Otel Workshop Labs
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
   
     <li class="md-nav__item">
-      <a href="../workshop-steps/2-otelagent/" class="md-nav__link">
-        Install Otel Collector
+      <a href="../host" class="md-nav__link">
+        APM for a Single Host
       </a>
     </li>
   
@@ -381,11 +387,150 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../workshop-steps/3-workshop-labs/" class="md-nav__link">
-        Workshop labs
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          APM for k8s / containerized apps
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        APM for k8s / containerized apps
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#apm-for-kubernetes-and-advanced-java-examples" class="md-nav__link">
+    APM For Kubernetes and Advanced Java Examples
+  </a>
+  
+    <nav class="md-nav" aria-label="APM For Kubernetes and Advanced Java Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#k8s-prep" class="md-nav__link">
+    k8s Prep
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise-1-use-data-setup-wizard-for-splunk-otel-collector-pod-on-k3s" class="md-nav__link">
+    Exercise 1: Use Data Setup Wizard for Splunk Otel Collector Pod on k3s
+  </a>
+  
+    <nav class="md-nav" aria-label="Exercise 1: Use Data Setup Wizard for Splunk Otel Collector Pod on k3s">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-splunk-observability-cloud-portal" class="md-nav__link">
+    Step 1: Splunk Observability Cloud Portal
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-update-k3s-for-splunk-log-observer" class="md-nav__link">
+    Step 2: Update k3s For Splunk Log Observer
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise-2-deploy-apm-for-containerized-apps-python-and-java" class="md-nav__link">
+    Exercise 2: Deploy APM For Containerized Apps: Python and Java
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise-3-monitor-jvm-metrics-for-a-java-container" class="md-nav__link">
+    Exercise 3: Monitor JVM Metrics For a Java Container
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise-4-manually-instrument-a-java-app-and-add-custom-tags" class="md-nav__link">
+    Exercise 4:  Manually instrument a Java App And Add Custom Tags
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise-5-process-spans-with-the-otel-collector" class="md-nav__link">
+    Exercise 5: Process Spans with the Otel Collector
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise-6-receive-prometheus-metrics-at-the-otel-collector" class="md-nav__link">
+    Exercise 6: Receive Prometheus Metrics at the Otel Collector
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise-7-configure-otel-collector-to-transform-a-metric-name" class="md-nav__link">
+    Exercise 7: Configure Otel Collector to Transform a Metric Name
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#monitoring-and-troubleshooting" class="md-nav__link">
+    Monitoring and Troubleshooting
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bonus-instrumentation-examples" class="md-nav__link">
+    Bonus Instrumentation Examples
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#clean-up-deployments-and-services" class="md-nav__link">
+    Clean up deployments and services
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -417,7 +562,7 @@
               
                 
                 
-                  <h1>Index</h1>
+                  <h1>APM for k8s / containerized apps</h1>
                 
                 <h2 id="apm-for-kubernetes-and-advanced-java-examples">APM For Kubernetes and Advanced Java Examples<a class="headerlink" href="#apm-for-kubernetes-and-advanced-java-examples" title="Permanent link">&para;</a></h2>
 <h3 id="k8s-prep">k8s Prep<a class="headerlink" href="#k8s-prep" title="Permanent link">&para;</a></h3>
@@ -679,7 +824,7 @@ i.e.
 <div class="highlight"><pre><span></span><code>/usr/local/bin/k3s-uninstall.sh
 </code></pre></div></p>
 <hr />
-<p>This is the last lab of the <a href="../workshop-steps/3-workshop-labs/">APM Instrumentation Workshop</a></p>
+<p>This is the last lab of the <a href="../workshop-steps/3-workshop-labs.md">APM Instrumentation Workshop</a></p>
 <p>After working through the labs, try a nice relaxing game of <a href="https://github.com/signalfx/apmworkshop/tree/master/apm/python/traceinvaders">Python Trace Invaders</a></p>
                 
               
@@ -701,6 +846,26 @@ i.e.
       
         
 <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../workshop-steps/prep/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Workshop Prep" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Workshop Prep
+            </div>
+          </div>
+        </a>
+      
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">

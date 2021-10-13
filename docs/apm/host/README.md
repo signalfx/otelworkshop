@@ -1,5 +1,3 @@
-##  Lab 1: Set up Splunk OpenTelemetry Collector Agent on your host
-
 ### Step 1: Install Otel Collector Agent on your Ubuntu host
 
 `Splunk Obervability -> Data Setup -> Linux`  

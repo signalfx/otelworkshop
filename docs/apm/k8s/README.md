@@ -1,21 +1,20 @@
-## APM For Kubernetes and Advanced Java Examples
-
-### k8s Prep
+0: k8s Prep
 
 Identify your token and realm from the Splunk Observability Cloud Portal:   
 `Organization Settings->Access Tokens` and `Your Name->Account Settings`  
 
-> <ins>If using your own k8s cluster on an Ubuntu host</ins>
-> * Use this setup script to bootstrap your Debian based k8s environment with everything needed for the k8s workshop:  
-`bash <(curl -s https://raw.githubusercontent.com/signalfx/apmworkshop/master/setup-tools/k8s-env-only.sh)`
-> * Ensure you have `helm` and `lynx` installed.
-> * Skip to: Exercise 2: Deploy APM for containerized apps: Python and Java
-> * If you are using k8s anywhere else you can still do this workshop but will need to ensure `helm`, `lynx` and the other commands encountered in the workshop are available. It is recommended to run this workshop in a debian environment.
- 
+> <ins>If using your own k8s cluster on an Ubuntu host</ins>  
+> Use this setup script to bootstrap your Debian based k8s environment with everything needed for the k8s workshop:  
+```
+bash <(curl -s https://raw.githubusercontent.com/signalfx/apmworkshop/master/setup-tools/k8s-env-only.sh)
+```
+> Ensure you have `helm` and `lynx` installed.  
+> Skip to: 2: Deploy APM for containerized apps: Python and Java  
+> If you are using k8s anywhere else you can still do this workshop but will need to ensure `helm`, `lynx` and the other commands encountered in the workshop are available. It is recommended to run this workshop in a debian environment.
 
-***
+---
 
-## Exercise 1: Use Data Setup Wizard for Splunk Otel Collector Pod on k3s
+## 1: Use Data Setup Wizard for Splunk Otel Collector Pod on k3s
 
 If you have the Otel Collector running on a host, remove it at this time:  
 `sudo sh /tmp/splunk-otel-collector.sh --uninstall`
@@ -39,9 +38,9 @@ Choose the following:
 
 And then select `Next`  
 
-`Install Integration` page:
-* Copy and paste each step to your shell
-* The final step will install the Otel Collector pod  
+`Install Integration` page:  
+Copy and paste each step to your shell  
+The final step will install the Otel Collector pod  
 
 <img src="../assets/18-datasetup-k8sinstall.png" width="360"> 
 
@@ -116,9 +115,9 @@ splunk-otel-collector-1620609739 \
 splunk-otel-collector-chart/splunk-otel-collector
 ```
 
-***
+---
 
-## Exercise 2: Deploy APM For Containerized Apps: Python and Java
+## 2: Deploy APM For Containerized Apps: Python and Java
 
 Deploy the Flask server deployment/service and the python-requests (makes requests of Flask server) pod:  
 ```
@@ -159,8 +158,8 @@ The Collector pod is running with <ins>node wide visibility</ins>, so to tell ea
   value: http://$(SPLUNK_OTEL_AGENT):9080/v1/trace
 ```
 
-***
-## Exercise 3: Monitor JVM Metrics For a Java Container
+---
+## 3: Monitor JVM Metrics For a Java Container
 
 JVM Metrics are emitted by the Splunk OpenTelemetry Java instrumentation and send to the Collector.  
 
@@ -188,8 +187,8 @@ Filter by Application by adding `service:SERVICENAMEHERE`
 Complete JVM metrics available
 * [at this link](https://github.com/signalfx/splunk-otel-java/blob/main/docs/metrics.md#jvm)
 
-***
-## Exercise 4:  Manually instrument a Java App And Add Custom Tags
+---
+## 4:  Manually instrument a Java App And Add Custom Tags
 
 Let's say you have an app that has your own functions and doesn't only use auto-instrumented frameworks- or doesn't have any of them!  
 
@@ -224,13 +223,13 @@ There are two methods shown- the decorator @WithSpan method (easiest), and using
 
 Note that this is the most minimal example of manual instrumentation- there is a vast amount of power available in OpenTelemetry- please see [the documentation](https://github.com/open-telemetry/opentelemetry-java-instrumentation) and [in depth details](https://github.com/open-telemetry/opentelemetry-java/blob/master/QUICKSTART.md#tracing)
 
-***
-## Exercise 5: Process Spans with the Otel Collector
+---
+## 5: Process Spans with the Otel Collector
 
 See [Processing Spans](./collectorconfig/README.md)  
 
-***
-## Exercise 6: Receive Prometheus Metrics at the Otel Collector
+---
+## 6: Receive Prometheus Metrics at the Otel Collector
 
 **Add a Prometheus endpoint pod**  
 
@@ -272,9 +271,9 @@ Chart appears with value `17`
 
 Examine the collector update `otel-prometheus.yaml` to see how this works.
 
-***
+---
 
-## Exercise 7: Configure Otel Collector to Transform a Metric Name
+## 7: Configure Otel Collector to Transform a Metric Name
 
 This example uses the [Metrics Transform Processor](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/processor/metricstransformprocessor)  
 
@@ -302,7 +301,7 @@ You'll now see the new chart for the metric formerly known as CustomGauge that h
 
 Examine the collector update `metricstransform.yaml` to see how this works.
 
-***
+---
 ## Monitoring and Troubleshooting  
 
 **View Otel Collector POD stats** 
@@ -346,13 +345,13 @@ Show initial Collector config:
 kubectl exec -it YOURAGENTPODHERE -- curl localhost:55554/debug/configz/initial
 ```
 
-***
+---
 
 ## Bonus Instrumentation Examples
 
 * .NET containerized example is [located here](dotnet)  
 * Istio service mesh [lab here](./istio/README.md)
-***
+---
 
 ## Clean up deployments and services
 
@@ -376,10 +375,4 @@ helm delete splunk-otel-collector-1620505665
 k3s:
 ```
 /usr/local/bin/k3s-uninstall.sh
-```  
-
-***
-
-This is the last lab of the [APM Instrumentation Workshop](../workshop-steps/3-workshop-labs.md)
-
-After working through the labs, try a nice relaxing game of [Python Trace Invaders](https://github.com/signalfx/apmworkshop/tree/master/apm/python/traceinvaders)
+```

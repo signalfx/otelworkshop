@@ -16,6 +16,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://github.com/signalfx/otelworkshop/apm/host/</loc>
+         <lastmod>2021-10-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://github.com/signalfx/otelworkshop/apm/java/</loc>
          <lastmod>2021-10-13</lastmod>
          <changefreq>daily</changefreq>
@@ -96,22 +101,17 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.com/signalfx/otelworkshop/apm/workshop-steps/1-prep/</loc>
+         <loc>https://github.com/signalfx/otelworkshop/apm/workshop-steps/appendix/</loc>
          <lastmod>2021-10-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.com/signalfx/otelworkshop/apm/workshop-steps/2-otelagent/</loc>
+         <loc>https://github.com/signalfx/otelworkshop/apm/workshop-steps/prep/</loc>
          <lastmod>2021-10-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.com/signalfx/otelworkshop/apm/workshop-steps/3-workshop-labs/</loc>
-         <lastmod>2021-10-13</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://github.com/signalfx/otelworkshop/apm/workshop-steps/4-appendix/</loc>
+         <loc>https://github.com/signalfx/otelworkshop/apm/workshop-steps/workshop-labs/</loc>
          <lastmod>2021-10-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
