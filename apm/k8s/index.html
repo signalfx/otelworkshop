@@ -86,7 +86,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#apm-for-kubernetes-and-advanced-java-examples" class="md-skip">
+        <a href="#1-use-data-setup-wizard-for-splunk-otel-collector-pod-on-k3s" class="md-skip">
           Skip to content
         </a>
       
@@ -375,7 +375,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../host" class="md-nav__link">
+      <a href="../host/" class="md-nav__link">
         APM for a Single Host
       </a>
     </li>
@@ -418,31 +418,11 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#apm-for-kubernetes-and-advanced-java-examples" class="md-nav__link">
-    APM For Kubernetes and Advanced Java Examples
+  <a href="#1-use-data-setup-wizard-for-splunk-otel-collector-pod-on-k3s" class="md-nav__link">
+    1: Use Data Setup Wizard for Splunk Otel Collector Pod on k3s
   </a>
   
-    <nav class="md-nav" aria-label="APM For Kubernetes and Advanced Java Examples">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#k8s-prep" class="md-nav__link">
-    k8s Prep
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#exercise-1-use-data-setup-wizard-for-splunk-otel-collector-pod-on-k3s" class="md-nav__link">
-    Exercise 1: Use Data Setup Wizard for Splunk Otel Collector Pod on k3s
-  </a>
-  
-    <nav class="md-nav" aria-label="Exercise 1: Use Data Setup Wizard for Splunk Otel Collector Pod on k3s">
+    <nav class="md-nav" aria-label="1: Use Data Setup Wizard for Splunk Otel Collector Pod on k3s">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -465,43 +445,43 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#exercise-2-deploy-apm-for-containerized-apps-python-and-java" class="md-nav__link">
-    Exercise 2: Deploy APM For Containerized Apps: Python and Java
+  <a href="#2-deploy-apm-for-containerized-apps-python-and-java" class="md-nav__link">
+    2: Deploy APM For Containerized Apps: Python and Java
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#exercise-3-monitor-jvm-metrics-for-a-java-container" class="md-nav__link">
-    Exercise 3: Monitor JVM Metrics For a Java Container
+  <a href="#3-monitor-jvm-metrics-for-a-java-container" class="md-nav__link">
+    3: Monitor JVM Metrics For a Java Container
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#exercise-4-manually-instrument-a-java-app-and-add-custom-tags" class="md-nav__link">
-    Exercise 4:  Manually instrument a Java App And Add Custom Tags
+  <a href="#4-manually-instrument-a-java-app-and-add-custom-tags" class="md-nav__link">
+    4:  Manually instrument a Java App And Add Custom Tags
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#exercise-5-process-spans-with-the-otel-collector" class="md-nav__link">
-    Exercise 5: Process Spans with the Otel Collector
+  <a href="#5-process-spans-with-the-otel-collector" class="md-nav__link">
+    5: Process Spans with the Otel Collector
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#exercise-6-receive-prometheus-metrics-at-the-otel-collector" class="md-nav__link">
-    Exercise 6: Receive Prometheus Metrics at the Otel Collector
+  <a href="#6-receive-prometheus-metrics-at-the-otel-collector" class="md-nav__link">
+    6: Receive Prometheus Metrics at the Otel Collector
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#exercise-7-configure-otel-collector-to-transform-a-metric-name" class="md-nav__link">
-    Exercise 7: Configure Otel Collector to Transform a Metric Name
+  <a href="#7-configure-otel-collector-to-transform-a-metric-name" class="md-nav__link">
+    7: Configure Otel Collector to Transform a Metric Name
   </a>
   
 </li>
@@ -564,20 +544,19 @@
                 
                   <h1>APM for k8s / containerized apps</h1>
                 
-                <h2 id="apm-for-kubernetes-and-advanced-java-examples">APM For Kubernetes and Advanced Java Examples<a class="headerlink" href="#apm-for-kubernetes-and-advanced-java-examples" title="Permanent link">&para;</a></h2>
-<h3 id="k8s-prep">k8s Prep<a class="headerlink" href="#k8s-prep" title="Permanent link">&para;</a></h3>
-<p>Identify your token and realm from the Splunk Observability Cloud Portal: <br />
+                <p>Identify your token and realm from the Splunk Observability Cloud Portal: <br />
 <code>Organization Settings-&gt;Access Tokens</code> and <code>Your Name-&gt;Account Settings</code>  </p>
 <blockquote>
-<p><ins>If using your own k8s cluster on an Ubuntu host</ins>
-* Use this setup script to bootstrap your Debian based k8s environment with everything needed for the k8s workshop:<br />
-<code>bash &lt;(curl -s https://raw.githubusercontent.com/signalfx/apmworkshop/master/setup-tools/k8s-env-only.sh)</code>
-* Ensure you have <code>helm</code> and <code>lynx</code> installed.
-* Skip to: Exercise 2: Deploy APM for containerized apps: Python and Java
-* If you are using k8s anywhere else you can still do this workshop but will need to ensure <code>helm</code>, <code>lynx</code> and the other commands encountered in the workshop are available. It is recommended to run this workshop in a debian environment.</p>
+<p><ins>If using your own k8s cluster on an Ubuntu host</ins><br />
+Use this setup script to bootstrap your Debian based k8s environment with everything needed for the k8s workshop:<br />
+<div class="highlight"><pre><span></span><code>bash &lt;(curl -s https://raw.githubusercontent.com/signalfx/apmworkshop/master/setup-tools/k8s-env-only.sh)
+</code></pre></div>
+Ensure you have <code>helm</code> and <code>lynx</code> installed.<br />
+Skip to: 2: Deploy APM for containerized apps: Python and Java<br />
+If you are using k8s anywhere else you can still do this workshop but will need to ensure <code>helm</code>, <code>lynx</code> and the other commands encountered in the workshop are available. It is recommended to run this workshop in a debian environment.</p>
 </blockquote>
 <hr />
-<h2 id="exercise-1-use-data-setup-wizard-for-splunk-otel-collector-pod-on-k3s">Exercise 1: Use Data Setup Wizard for Splunk Otel Collector Pod on k3s<a class="headerlink" href="#exercise-1-use-data-setup-wizard-for-splunk-otel-collector-pod-on-k3s" title="Permanent link">&para;</a></h2>
+<h2 id="1-use-data-setup-wizard-for-splunk-otel-collector-pod-on-k3s">1: Use Data Setup Wizard for Splunk Otel Collector Pod on k3s<a class="headerlink" href="#1-use-data-setup-wizard-for-splunk-otel-collector-pod-on-k3s" title="Permanent link">&para;</a></h2>
 <p>If you have the Otel Collector running on a host, remove it at this time:<br />
 <code>sudo sh /tmp/splunk-otel-collector.sh --uninstall</code></p>
 <h3 id="step-1-splunk-observability-cloud-portal">Step 1: Splunk Observability Cloud Portal<a class="headerlink" href="#step-1-splunk-observability-cloud-portal" title="Permanent link">&para;</a></h3>
@@ -619,9 +598,9 @@
 </tbody>
 </table>
 <p>And then select <code>Next</code>  </p>
-<p><code>Install Integration</code> page:
-* Copy and paste each step to your shell
-* The final step will install the Otel Collector pod  </p>
+<p><code>Install Integration</code> page:<br />
+Copy and paste each step to your shell<br />
+The final step will install the Otel Collector pod  </p>
 <p><img src="../assets/18-datasetup-k8sinstall.png" width="360"> </p>
 <p>A result will look like this:<br />
 <div class="highlight"><pre><span></span><code>NAME: splunk-otel-collector-1620505665
@@ -670,7 +649,7 @@ splunk-otel-collector-1620609739 \
 splunk-otel-collector-chart/splunk-otel-collector
 </code></pre></div>
 <hr />
-<h2 id="exercise-2-deploy-apm-for-containerized-apps-python-and-java">Exercise 2: Deploy APM For Containerized Apps: Python and Java<a class="headerlink" href="#exercise-2-deploy-apm-for-containerized-apps-python-and-java" title="Permanent link">&para;</a></h2>
+<h2 id="2-deploy-apm-for-containerized-apps-python-and-java">2: Deploy APM For Containerized Apps: Python and Java<a class="headerlink" href="#2-deploy-apm-for-containerized-apps-python-and-java" title="Permanent link">&para;</a></h2>
 <p>Deploy the Flask server deployment/service and the python-requests (makes requests of Flask server) pod:<br />
 <div class="highlight"><pre><span></span><code>cd ~/apmworkshop/apm/k8s
 kubectl apply -f py-deployment.yaml
@@ -698,7 +677,7 @@ The .yaml files show the environment variables telling the instrumentation to se
   value: http://$(SPLUNK_OTEL_AGENT):9080/v1/trace
 </code></pre></div>
 <hr />
-<h2 id="exercise-3-monitor-jvm-metrics-for-a-java-container">Exercise 3: Monitor JVM Metrics For a Java Container<a class="headerlink" href="#exercise-3-monitor-jvm-metrics-for-a-java-container" title="Permanent link">&para;</a></h2>
+<h2 id="3-monitor-jvm-metrics-for-a-java-container">3: Monitor JVM Metrics For a Java Container<a class="headerlink" href="#3-monitor-jvm-metrics-for-a-java-container" title="Permanent link">&para;</a></h2>
 <p>JVM Metrics are emitted by the Splunk OpenTelemetry Java instrumentation and send to the Collector.  </p>
 <p>A dashboard template for JVM metrics works as follows:  </p>
 <p>Load the JVM Metrics Template:  </p>
@@ -714,7 +693,7 @@ https://raw.githubusercontent.com/signalfx/apmworkshop/master/apm/k8s/dashboard_
 <p>Complete JVM metrics available
 * <a href="https://github.com/signalfx/splunk-otel-java/blob/main/docs/metrics.md#jvm">at this link</a></p>
 <hr />
-<h2 id="exercise-4-manually-instrument-a-java-app-and-add-custom-tags">Exercise 4:  Manually instrument a Java App And Add Custom Tags<a class="headerlink" href="#exercise-4-manually-instrument-a-java-app-and-add-custom-tags" title="Permanent link">&para;</a></h2>
+<h2 id="4-manually-instrument-a-java-app-and-add-custom-tags">4:  Manually instrument a Java App And Add Custom Tags<a class="headerlink" href="#4-manually-instrument-a-java-app-and-add-custom-tags" title="Permanent link">&para;</a></h2>
 <p>Let's say you have an app that has your own functions and doesn't only use auto-instrumented frameworks- or doesn't have any of them!  </p>
 <p>You can easily manually instrument your functions and have them appear as part of a service, or as an entire service.</p>
 <p>Example is here:</p>
@@ -733,10 +712,10 @@ https://raw.githubusercontent.com/signalfx/apmworkshop/master/apm/k8s/dashboard_
 <p>There are two methods shown- the decorator @WithSpan method (easiest), and using the GlobalTracer method (more complicated/powerful)...</p>
 <p>Note that this is the most minimal example of manual instrumentation- there is a vast amount of power available in OpenTelemetry- please see <a href="https://github.com/open-telemetry/opentelemetry-java-instrumentation">the documentation</a> and <a href="https://github.com/open-telemetry/opentelemetry-java/blob/master/QUICKSTART.md#tracing">in depth details</a></p>
 <hr />
-<h2 id="exercise-5-process-spans-with-the-otel-collector">Exercise 5: Process Spans with the Otel Collector<a class="headerlink" href="#exercise-5-process-spans-with-the-otel-collector" title="Permanent link">&para;</a></h2>
+<h2 id="5-process-spans-with-the-otel-collector">5: Process Spans with the Otel Collector<a class="headerlink" href="#5-process-spans-with-the-otel-collector" title="Permanent link">&para;</a></h2>
 <p>See <a href="collectorconfig/">Processing Spans</a>  </p>
 <hr />
-<h2 id="exercise-6-receive-prometheus-metrics-at-the-otel-collector">Exercise 6: Receive Prometheus Metrics at the Otel Collector<a class="headerlink" href="#exercise-6-receive-prometheus-metrics-at-the-otel-collector" title="Permanent link">&para;</a></h2>
+<h2 id="6-receive-prometheus-metrics-at-the-otel-collector">6: Receive Prometheus Metrics at the Otel Collector<a class="headerlink" href="#6-receive-prometheus-metrics-at-the-otel-collector" title="Permanent link">&para;</a></h2>
 <p><strong>Add a Prometheus endpoint pod</strong>  </p>
 <p>Change to the k8s Collector Config directory:<br />
 <div class="highlight"><pre><span></span><code>cd ~/apmworkshop/apm/k8s/collectorconfig
@@ -759,7 +738,7 @@ https://raw.githubusercontent.com/signalfx/apmworkshop/master/apm/k8s/dashboard_
 <p>Chart appears with value <code>17</code></p>
 <p>Examine the collector update <code>otel-prometheus.yaml</code> to see how this works.</p>
 <hr />
-<h2 id="exercise-7-configure-otel-collector-to-transform-a-metric-name">Exercise 7: Configure Otel Collector to Transform a Metric Name<a class="headerlink" href="#exercise-7-configure-otel-collector-to-transform-a-metric-name" title="Permanent link">&para;</a></h2>
+<h2 id="7-configure-otel-collector-to-transform-a-metric-name">7: Configure Otel Collector to Transform a Metric Name<a class="headerlink" href="#7-configure-otel-collector-to-transform-a-metric-name" title="Permanent link">&para;</a></h2>
 <p>This example uses the <a href="https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/processor/metricstransformprocessor">Metrics Transform Processor</a>  </p>
 <p>Change to the k8s Collector Config directory:<br />
 <div class="highlight"><pre><span></span><code>cd ~/apmworkshop/apm/k8s/collectorconfig
@@ -823,9 +802,8 @@ i.e.
 <p>k3s:
 <div class="highlight"><pre><span></span><code>/usr/local/bin/k3s-uninstall.sh
 </code></pre></div></p>
-<hr />
-<p>This is the last lab of the <a href="../workshop-steps/3-workshop-labs.md">APM Instrumentation Workshop</a></p>
-<p>After working through the labs, try a nice relaxing game of <a href="https://github.com/signalfx/apmworkshop/tree/master/apm/python/traceinvaders">Python Trace Invaders</a></p>
+                
+                  
                 
               
               
@@ -850,7 +828,7 @@ i.e.
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../workshop-steps/prep/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Workshop Prep" rel="prev">
+        <a href="../host/" class="md-footer__link md-footer__link--prev" aria-label="Previous: APM for a Single Host" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -859,7 +837,7 @@ i.e.
               <span class="md-footer__direction">
                 Previous
               </span>
-              Workshop Prep
+              APM for a Single Host
             </div>
           </div>
         </a>
