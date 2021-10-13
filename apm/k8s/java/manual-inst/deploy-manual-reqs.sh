@@ -1,0 +1,1 @@
+sudo kubectl apply -f java-reqs-manual-inst.yaml
