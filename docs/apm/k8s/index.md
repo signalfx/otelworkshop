@@ -9,7 +9,7 @@ Identify your token and realm from the Splunk Observability Cloud Portal:
 bash <(curl -s https://raw.githubusercontent.com/signalfx/apmworkshop/master/setup-tools/k8s-env-only.sh)
 ```
 > Ensure you have `helm` and `lynx` installed.  
-> Skip to: 2: Deploy APM for containerized apps: Python and Java  
+> Skip to: **2: Deploy APM for containerized apps: Python and Java**  
 > If you are using k8s anywhere else you can still do this workshop but will need to ensure `helm`, `lynx` and the other commands encountered in the workshop are available. It is recommended to run this workshop in a debian environment.
 
 ---
@@ -56,9 +56,7 @@ TEST SUITE: None
 
 Note the name of the deployment when the install completes i.e.:   `splunk-otel-collector-1620505665`  
 
-### Step 2: Update k3s For Splunk Log Observer
-
-**SKIP IF YOU ARE USING YOUR OWN k8s CLUSTER- THIS STEP IS FOR k3s ONLY**
+### Step 2: Update k3s For Splunk Log Observer (Ignore if you are using k8s)
 
 k3s has a different format that standard k8s for logging and we need to update our deployment for this.  
 
@@ -121,7 +119,7 @@ splunk-otel-collector-chart/splunk-otel-collector
 
 Deploy the Flask server deployment/service and the python-requests (makes requests of Flask server) pod:  
 ```
-cd ~/apmworkshop/apm/k8s
+cd ~/otelworkshop/k8s
 kubectl apply -f py-deployment.yaml
 ```
 
@@ -140,8 +138,8 @@ Make sure you select the `apm-workshop` ENVIRONMENT to monitor.
 
 Example in Github or:  
 ```
-~/apmworkshop/apm/k8s/py-deployment.yaml   
-~/apmworkshop/apm/k8s/java-deployment.yaml   
+~/otelworkshop/k8s/py-deployment.yaml   
+~/otelworkshop/k8s/java-deployment.yaml   
 ```
 The .yaml files show the environment variables telling the instrumentation to send spans to the OpenTelemetry Collector.
 
@@ -196,7 +194,7 @@ You can easily manually instrument your functions and have them appear as part o
 
 Example is here:
 
-`cd ~/apmworkshop/apm/k8s/java/manual-inst`  
+`cd ~/otelworkshop/k8s/java/manual-inst`  
 
 Deploy an app with ONLY manual instrumentation:
 ```
@@ -235,7 +233,7 @@ See [Processing Spans](./collectorconfig/README.md)
 
 Change to the k8s Collector Config directory:  
 ```
-cd ~/apmworkshop/apm/k8s/collectorconfig
+cd ~/otelworkshop/k8s/collectorconfig
 ```
 
 Add the Prometheus pod (source code is in the `k8s/python` directory):
@@ -279,7 +277,7 @@ This example uses the [Metrics Transform Processor](https://github.com/open-tele
 
 Change to the k8s Collector Config directory:  
 ```
-cd ~/apmworkshop/apm/k8s/collectorconfig
+cd ~/otelworkshop/k8s/collectorconfig
 ```
 Update realm/token/cluster in the `metricstransform.yaml` with your token/realm/cluster  
 
@@ -302,6 +300,7 @@ You'll now see the new chart for the metric formerly known as CustomGauge that h
 Examine the collector update `metricstransform.yaml` to see how this works.
 
 ---
+
 ## Monitoring and Troubleshooting  
 
 **View Otel Collector POD stats** 
@@ -356,7 +355,7 @@ kubectl exec -it YOURAGENTPODHERE -- curl localhost:55554/debug/configz/initial
 ## Clean up deployments and services
 
 To delete all k8s lab work:  
-in `~/apmworkshop/apm/k8s/`  
+in `~/otelworkshop/k8s/`  
 ```
 source delete-all-k8s.sh
 source delete-prometheus.sh

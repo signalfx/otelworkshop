@@ -1,5 +1,9 @@
 ## Log in to your Splunk Observability account to identify token/realm  
 
+For individuals and groups- allow 30-45 minutes of prep time to identify account credentials and prepare a lab environment. When running as a group we recommend doing a separate prep meeting before running the workshop together.
+
+## Log in to your Splunk Observability account to identify token/realm  
+
 Check your [Splunk Observability Account](https://app.us1.signalfx.com/o11y/#/home) (your welcome email has this link) and identify your TOKEN and REALM- these are available in the profile menu in your Splunk Observability account. Note that the realm component i.e. `us1` may be different for your account based on how you signed up.
 
 How to find realm:

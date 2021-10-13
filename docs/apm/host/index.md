@@ -1,4 +1,4 @@
-### Step 1: Install Otel Collector Agent on your Ubuntu host
+### 1: Install Otel Collector Agent on your Ubuntu host
 
 `Splunk Obervability -> Data Setup -> Linux`  
 
@@ -17,12 +17,12 @@ Follow Data Setup Wizard for instructions on Linux installation:
 
 <img src="../assets/05-datasetup-linuxinstall.png" width="360" />
 
-### Step 2: APM Instrumentation for Python
+### 2: Python
 
-[Python: traces from Flask server and Python requests client](../python)
+[Python: traces from Flask server and Python requests client](python.md)
 
-### Step 3: APM Instrumentation for Java
-[Java: traces from OKHTTP client](../java)
+### 3: Java
+[Java: traces from OKHTTP client](java.md)
 
-### Step 4: APM Instrumentation for Node
-[Node: traces Node HTTP.get client](../node)
+### 4: Node
+[Node: traces Node HTTP.get client](node.md)

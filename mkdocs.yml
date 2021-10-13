@@ -77,8 +77,8 @@ plugins:
 nav:
   - Home: index.md
   - Otel Workshop:
-    - Otel Workshop Introduction: introduction/README.md
+    - Otel Workshop Introduction: introduction/index.md
     - Workshop Prep: apm/workshop-steps/prep.md
     - Otel Workshop Labs:
-      - APM for a Single Host: apm/host/README.md
-      - APM for k8s / containerized apps: apm/k8s/README.md
+      - APM for a Single Host: apm/host/index.md
+      - APM for k8s / containerized apps: apm/k8s/index.md

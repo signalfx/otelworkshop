@@ -1,6 +1,8 @@
 # Otel Workshop Introduction  
 
 - The Splunk OpenTelemetry Workshop will teach you how to level up your Observability practice by using the OpenTelemetry Collector and APM Instrumentation to emit industry standard telemetry from your infrastructure and applications.
+- This workshop is designed to run as a single user, or be run in a small group (upwards of 6) along with a leader guiding the group.
+    - If running as a group, a pre-workshop prep call is necessary to ensure that all group members can spin up and/or access an Ubuntu Linux lab environment. Details are below.
 
 ## Details  
 
@@ -12,11 +14,12 @@
 
 - Prerequisites: completion of [Splunk Observability Workshop](https://signalfx.github.io/observability-workshop/latest/) which trains on using metrics/APM and charts/dashboards/alerts or equivalent devops/SRE skills
 - Splunk Observability Cloud Account
-- Debian (i.e. Ubuntu) Linux environment with minimum 12G RAM and 20G disk w/ lightweight Kubernetes (Rancher k3s) installed OR your own k8s cluster
+- Ability to spin up a VM or access a host with a Debian Linux environment with the following specs:
+    - Debian (i.e. Ubuntu) Linux environment with minimum 12G RAM and 20G disk w/ lightweight Kubernetes (Rancher k3s) installed OR your own k8s cluster
 
-## Workshop Activities  
+## Workshop Agenda  
 
-- Build a local Ubuntu VM Sandbox on Mac or Windows
+- (Optional) Build a local Lab Environment Ubuntu Sandbox on Mac or Windows
 - OpenTelemetry Collector and APM Labs
     - Linux Host
         - Set up OpenTelemetry Collector Agent on a Linux Host
@@ -36,4 +39,4 @@
 ## Disclaimers
 
 - This is not product documentation. Official documentation: https://docs.splunk.com/Observability
-- These examples are unsupported and are for experimentation and educational purposes only.
+- These examples are unsupported and are for experimentation and educational purposes only
