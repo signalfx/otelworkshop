@@ -13,7 +13,7 @@
         <meta name="author" content="Steve Lerner Staff Sales Engineer USA">
       
       
-        <link rel="canonical" href="https://github.com/signalfx/otelworkshop/apm/k8s/">
+        <link rel="canonical" href="https://github.com/otelworkshop/apm/k8s/">
       
       <link rel="icon" href="../../images/favicon.ico">
       <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.3.3">
@@ -57,7 +57,7 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="Splunk OpenTelemetry Workshop - APM for k8s / containerized apps">
     <meta property="og:description" content="Learn to configure the OpenTelemetry Collector for APM and infrastructure monitoring as well as instrument applications with OpenTelemetry APM instrumentation to send telemetry to Splunk APM.">
-    <meta property="og:url" content="https://github.com/signalfx/otelworkshop/apm/k8s/">
+    <meta property="og:url" content="https://github.com/otelworkshop/apm/k8s/">
     <meta property="og:image" content="">
     <meta property="og:image:type" content="image/png">
     <meta property="og:image:width" content="1080">
@@ -165,7 +165,7 @@
     
       <div class="md-header__source">
         
-<a href="https://github.com/signalfx/otelworkshop" title="Go to repository" class="md-source" data-md-component="source">
+<a href="https://github.com/signalfx/otelworkshop/" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
@@ -253,7 +253,7 @@
   
     <div class="md-nav__source">
       
-<a href="https://github.com/signalfx/otelworkshop" title="Go to repository" class="md-source" data-md-component="source">
+<a href="https://github.com/signalfx/otelworkshop/" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
@@ -433,8 +433,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-2-update-k3s-for-splunk-log-observer" class="md-nav__link">
-    Step 2: Update k3s For Splunk Log Observer
+  <a href="#step-2-update-k3s-for-splunk-log-observer-ignore-if-you-are-using-k8s" class="md-nav__link">
+    Step 2: Update k3s For Splunk Log Observer (Ignore if you are using k8s)
   </a>
   
 </li>
@@ -552,7 +552,7 @@ Use this setup script to bootstrap your Debian based k8s environment with everyt
 <div class="highlight"><pre><span></span><code>bash &lt;(curl -s https://raw.githubusercontent.com/signalfx/apmworkshop/master/setup-tools/k8s-env-only.sh)
 </code></pre></div>
 Ensure you have <code>helm</code> and <code>lynx</code> installed.<br />
-Skip to: 2: Deploy APM for containerized apps: Python and Java<br />
+Skip to: <strong>2: Deploy APM for containerized apps: Python and Java</strong><br />
 If you are using k8s anywhere else you can still do this workshop but will need to ensure <code>helm</code>, <code>lynx</code> and the other commands encountered in the workshop are available. It is recommended to run this workshop in a debian environment.</p>
 </blockquote>
 <hr />
@@ -611,8 +611,7 @@ REVISION: 1
 TEST SUITE: None
 </code></pre></div></p>
 <p>Note the name of the deployment when the install completes i.e.:   <code>splunk-otel-collector-1620505665</code>  </p>
-<h3 id="step-2-update-k3s-for-splunk-log-observer">Step 2: Update k3s For Splunk Log Observer<a class="headerlink" href="#step-2-update-k3s-for-splunk-log-observer" title="Permanent link">&para;</a></h3>
-<p><strong>SKIP IF YOU ARE USING YOUR OWN k8s CLUSTER- THIS STEP IS FOR k3s ONLY</strong></p>
+<h3 id="step-2-update-k3s-for-splunk-log-observer-ignore-if-you-are-using-k8s">Step 2: Update k3s For Splunk Log Observer (Ignore if you are using k8s)<a class="headerlink" href="#step-2-update-k3s-for-splunk-log-observer-ignore-if-you-are-using-k8s" title="Permanent link">&para;</a></h3>
 <p>k3s has a different format that standard k8s for logging and we need to update our deployment for this.  </p>
 <p>You'll need the Collector deployment from the Data Setup Wizard install.  </p>
 <p>You can also dervice this from using <code>helm list</code> i.e.:<br />
@@ -651,7 +650,7 @@ splunk-otel-collector-chart/splunk-otel-collector
 <hr />
 <h2 id="2-deploy-apm-for-containerized-apps-python-and-java">2: Deploy APM For Containerized Apps: Python and Java<a class="headerlink" href="#2-deploy-apm-for-containerized-apps-python-and-java" title="Permanent link">&para;</a></h2>
 <p>Deploy the Flask server deployment/service and the python-requests (makes requests of Flask server) pod:<br />
-<div class="highlight"><pre><span></span><code>cd ~/apmworkshop/apm/k8s
+<div class="highlight"><pre><span></span><code>cd ~/otelworkshop/k8s
 kubectl apply -f py-deployment.yaml
 </code></pre></div></p>
 <p>Deploy the Java OKHTTP requests pod (makes requests of Flask server):<br />
@@ -663,8 +662,8 @@ Make sure you select the <code>apm-workshop</code> ENVIRONMENT to monitor.</p>
 <p><img src="../assets/19-k8s-apm.png" width="360">  </p>
 <p><strong>Study the <code>deployment.yaml</code> files</strong></p>
 <p>Example in Github or:<br />
-<div class="highlight"><pre><span></span><code>~/apmworkshop/apm/k8s/py-deployment.yaml   
-~/apmworkshop/apm/k8s/java-deployment.yaml   
+<div class="highlight"><pre><span></span><code>~/otelworkshop/k8s/py-deployment.yaml   
+~/otelworkshop/k8s/java-deployment.yaml   
 </code></pre></div>
 The .yaml files show the environment variables telling the instrumentation to send spans to the OpenTelemetry Collector.</p>
 <p>Normally we use an environment variable pointing to <code>localhost</code> on a single host application where the SmartAgent is running. In k8s we have separate pods in a cluster for apps and the Collector.   </p>
@@ -697,7 +696,7 @@ https://raw.githubusercontent.com/signalfx/apmworkshop/master/apm/k8s/dashboard_
 <p>Let's say you have an app that has your own functions and doesn't only use auto-instrumented frameworks- or doesn't have any of them!  </p>
 <p>You can easily manually instrument your functions and have them appear as part of a service, or as an entire service.</p>
 <p>Example is here:</p>
-<p><code>cd ~/apmworkshop/apm/k8s/java/manual-inst</code>  </p>
+<p><code>cd ~/otelworkshop/k8s/java/manual-inst</code>  </p>
 <p>Deploy an app with ONLY manual instrumentation:
 <div class="highlight"><pre><span></span><code>kubectl apply -f java-reqs-manual-inst.yaml
 </code></pre></div></p>
@@ -713,12 +712,12 @@ https://raw.githubusercontent.com/signalfx/apmworkshop/master/apm/k8s/dashboard_
 <p>Note that this is the most minimal example of manual instrumentation- there is a vast amount of power available in OpenTelemetry- please see <a href="https://github.com/open-telemetry/opentelemetry-java-instrumentation">the documentation</a> and <a href="https://github.com/open-telemetry/opentelemetry-java/blob/master/QUICKSTART.md#tracing">in depth details</a></p>
 <hr />
 <h2 id="5-process-spans-with-the-otel-collector">5: Process Spans with the Otel Collector<a class="headerlink" href="#5-process-spans-with-the-otel-collector" title="Permanent link">&para;</a></h2>
-<p>See <a href="collectorconfig/">Processing Spans</a>  </p>
+<p>See <a href="./collectorconfig/README.md">Processing Spans</a>  </p>
 <hr />
 <h2 id="6-receive-prometheus-metrics-at-the-otel-collector">6: Receive Prometheus Metrics at the Otel Collector<a class="headerlink" href="#6-receive-prometheus-metrics-at-the-otel-collector" title="Permanent link">&para;</a></h2>
 <p><strong>Add a Prometheus endpoint pod</strong>  </p>
 <p>Change to the k8s Collector Config directory:<br />
-<div class="highlight"><pre><span></span><code>cd ~/apmworkshop/apm/k8s/collectorconfig
+<div class="highlight"><pre><span></span><code>cd ~/otelworkshop/k8s/collectorconfig
 </code></pre></div></p>
 <p>Add the Prometheus pod (source code is in the <code>k8s/python</code> directory):
 <div class="highlight"><pre><span></span><code>kubectl apply -f prometheus-deployment.yaml
@@ -741,7 +740,7 @@ https://raw.githubusercontent.com/signalfx/apmworkshop/master/apm/k8s/dashboard_
 <h2 id="7-configure-otel-collector-to-transform-a-metric-name">7: Configure Otel Collector to Transform a Metric Name<a class="headerlink" href="#7-configure-otel-collector-to-transform-a-metric-name" title="Permanent link">&para;</a></h2>
 <p>This example uses the <a href="https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/processor/metricstransformprocessor">Metrics Transform Processor</a>  </p>
 <p>Change to the k8s Collector Config directory:<br />
-<div class="highlight"><pre><span></span><code>cd ~/apmworkshop/apm/k8s/collectorconfig
+<div class="highlight"><pre><span></span><code>cd ~/otelworkshop/k8s/collectorconfig
 </code></pre></div>
 Update realm/token/cluster in the <code>metricstransform.yaml</code> with your token/realm/cluster  </p>
 <p>Upgrade the Collector deployment with the values required for scraping Prometheus metrics from the Prometheus pod deployed in the previous step:</p>
@@ -783,12 +782,12 @@ i.e.
 <h2 id="bonus-instrumentation-examples">Bonus Instrumentation Examples<a class="headerlink" href="#bonus-instrumentation-examples" title="Permanent link">&para;</a></h2>
 <ul>
 <li>.NET containerized example is <a href="dotnet">located here</a>  </li>
-<li>Istio service mesh <a href="istio/">lab here</a></li>
+<li>Istio service mesh <a href="./istio/README.md">lab here</a></li>
 </ul>
 <hr />
 <h2 id="clean-up-deployments-and-services">Clean up deployments and services<a class="headerlink" href="#clean-up-deployments-and-services" title="Permanent link">&para;</a></h2>
 <p>To delete all k8s lab work:<br />
-in <code>~/apmworkshop/apm/k8s/</code><br />
+in <code>~/otelworkshop/k8s/</code><br />
 <div class="highlight"><pre><span></span><code>source delete-all-k8s.sh
 source delete-prometheus.sh
 </code></pre></div></p>

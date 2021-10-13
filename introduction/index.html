@@ -13,7 +13,7 @@
         <meta name="author" content="Steve Lerner Staff Sales Engineer USA">
       
       
-        <link rel="canonical" href="https://github.com/signalfx/otelworkshop/introduction/">
+        <link rel="canonical" href="https://github.com/otelworkshop/introduction/">
       
       <link rel="icon" href="../images/favicon.ico">
       <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.3.3">
@@ -57,7 +57,7 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="Splunk OpenTelemetry Workshop - Otel Workshop Introduction">
     <meta property="og:description" content="Learn to configure the OpenTelemetry Collector for APM and infrastructure monitoring as well as instrument applications with OpenTelemetry APM instrumentation to send telemetry to Splunk APM.">
-    <meta property="og:url" content="https://github.com/signalfx/otelworkshop/introduction/">
+    <meta property="og:url" content="https://github.com/otelworkshop/introduction/">
     <meta property="og:image" content="">
     <meta property="og:image:type" content="image/png">
     <meta property="og:image:width" content="1080">
@@ -165,7 +165,7 @@
     
       <div class="md-header__source">
         
-<a href="https://github.com/signalfx/otelworkshop" title="Go to repository" class="md-source" data-md-component="source">
+<a href="https://github.com/signalfx/otelworkshop/" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
@@ -253,7 +253,7 @@
   
     <div class="md-nav__source">
       
-<a href="https://github.com/signalfx/otelworkshop" title="Go to repository" class="md-source" data-md-component="source">
+<a href="https://github.com/signalfx/otelworkshop/" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
@@ -364,8 +364,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#workshop-activities" class="md-nav__link">
-    Workshop Activities
+  <a href="#workshop-agenda" class="md-nav__link">
+    Workshop Agenda
   </a>
   
 </li>
@@ -485,6 +485,10 @@
                 <h1 id="otel-workshop-introduction">Otel Workshop Introduction<a class="headerlink" href="#otel-workshop-introduction" title="Permanent link">&para;</a></h1>
 <ul>
 <li>The Splunk OpenTelemetry Workshop will teach you how to level up your Observability practice by using the OpenTelemetry Collector and APM Instrumentation to emit industry standard telemetry from your infrastructure and applications.</li>
+<li>This workshop is designed to run as a single user, or be run in a small group (upwards of 6) along with a leader guiding the group.<ul>
+<li>If running as a group, a pre-workshop prep call is necessary to ensure that all group members can spin up and/or access an Ubuntu Linux lab environment. Details are below.</li>
+</ul>
+</li>
 </ul>
 <h2 id="details">Details<a class="headerlink" href="#details" title="Permanent link">&para;</a></h2>
 <ul>
@@ -496,11 +500,14 @@
 <ul>
 <li>Prerequisites: completion of <a href="https://signalfx.github.io/observability-workshop/latest/">Splunk Observability Workshop</a> which trains on using metrics/APM and charts/dashboards/alerts or equivalent devops/SRE skills</li>
 <li>Splunk Observability Cloud Account</li>
+<li>Ability to spin up a VM or access a host with a Debian Linux environment with the following specs:<ul>
 <li>Debian (i.e. Ubuntu) Linux environment with minimum 12G RAM and 20G disk w/ lightweight Kubernetes (Rancher k3s) installed OR your own k8s cluster</li>
 </ul>
-<h2 id="workshop-activities">Workshop Activities<a class="headerlink" href="#workshop-activities" title="Permanent link">&para;</a></h2>
+</li>
+</ul>
+<h2 id="workshop-agenda">Workshop Agenda<a class="headerlink" href="#workshop-agenda" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Build a local Ubuntu VM Sandbox on Mac or Windows</li>
+<li>(Optional) Build a local Lab Environment Ubuntu Sandbox on Mac or Windows</li>
 <li>OpenTelemetry Collector and APM Labs<ul>
 <li>Linux Host<ul>
 <li>Set up OpenTelemetry Collector Agent on a Linux Host</li>
@@ -526,7 +533,7 @@
 <h2 id="disclaimers">Disclaimers<a class="headerlink" href="#disclaimers" title="Permanent link">&para;</a></h2>
 <ul>
 <li>This is not product documentation. Official documentation: https://docs.splunk.com/Observability</li>
-<li>These examples are unsupported and are for experimentation and educational purposes only.</li>
+<li>These examples are unsupported and are for experimentation and educational purposes only</li>
 </ul>
                 
               

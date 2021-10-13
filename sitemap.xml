@@ -1,127 +1,97 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://github.com/signalfx/otelworkshop/</loc>
+         <loc>https://github.com/otelworkshop/</loc>
          <lastmod>2021-10-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.com/signalfx/otelworkshop/apm/</loc>
+         <loc>https://github.com/otelworkshop/apm/</loc>
          <lastmod>2021-10-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.com/signalfx/otelworkshop/apm/dashboards/servicedashboard/</loc>
+         <loc>https://github.com/otelworkshop/apm/dashboards/servicedashboard/</loc>
          <lastmod>2021-10-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.com/signalfx/otelworkshop/apm/host/</loc>
+         <loc>https://github.com/otelworkshop/apm/host/</loc>
          <lastmod>2021-10-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.com/signalfx/otelworkshop/apm/java/</loc>
+         <loc>https://github.com/otelworkshop/apm/host/java/</loc>
          <lastmod>2021-10-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.com/signalfx/otelworkshop/apm/k8s/</loc>
+         <loc>https://github.com/otelworkshop/apm/host/node/</loc>
          <lastmod>2021-10-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.com/signalfx/otelworkshop/apm/k8s/collectorconfig/</loc>
+         <loc>https://github.com/otelworkshop/apm/host/python/</loc>
          <lastmod>2021-10-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.com/signalfx/otelworkshop/apm/k8s/dotnet/</loc>
+         <loc>https://github.com/otelworkshop/apm/k8s/</loc>
          <lastmod>2021-10-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.com/signalfx/otelworkshop/apm/k8s/istio/</loc>
+         <loc>https://github.com/otelworkshop/apm/misc/</loc>
          <lastmod>2021-10-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.com/signalfx/otelworkshop/apm/k8s/java/manual-inst/</loc>
+         <loc>https://github.com/otelworkshop/apm/misc/dotnet-2.1/</loc>
          <lastmod>2021-10-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.com/signalfx/otelworkshop/apm/k8s/python/</loc>
+         <loc>https://github.com/otelworkshop/apm/misc/ecs-ec2/</loc>
          <lastmod>2021-10-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.com/signalfx/otelworkshop/apm/misc/</loc>
+         <loc>https://github.com/otelworkshop/apm/misc/ecs-ec2/commands/</loc>
          <lastmod>2021-10-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.com/signalfx/otelworkshop/apm/misc/dotnet-2.1/</loc>
+         <loc>https://github.com/otelworkshop/apm/misc/ecs-fargate/</loc>
          <lastmod>2021-10-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.com/signalfx/otelworkshop/apm/misc/ecs-ec2/</loc>
+         <loc>https://github.com/otelworkshop/apm/misc/ecs-fargate/commands/</loc>
          <lastmod>2021-10-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.com/signalfx/otelworkshop/apm/misc/ecs-ec2/commands/</loc>
+         <loc>https://github.com/otelworkshop/apm/workshop-steps/appendix/</loc>
          <lastmod>2021-10-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.com/signalfx/otelworkshop/apm/misc/ecs-fargate/</loc>
+         <loc>https://github.com/otelworkshop/apm/workshop-steps/prep/</loc>
          <lastmod>2021-10-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.com/signalfx/otelworkshop/apm/misc/ecs-fargate/commands/</loc>
+         <loc>https://github.com/otelworkshop/apm/workshop-steps/workshop-labs/</loc>
          <lastmod>2021-10-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.com/signalfx/otelworkshop/apm/node/</loc>
+         <loc>https://github.com/otelworkshop/introduction/</loc>
          <lastmod>2021-10-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.com/signalfx/otelworkshop/apm/python/</loc>
-         <lastmod>2021-10-13</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://github.com/signalfx/otelworkshop/apm/python/traceinvaders/</loc>
-         <lastmod>2021-10-13</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://github.com/signalfx/otelworkshop/apm/workshop-steps/appendix/</loc>
-         <lastmod>2021-10-13</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://github.com/signalfx/otelworkshop/apm/workshop-steps/prep/</loc>
-         <lastmod>2021-10-13</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://github.com/signalfx/otelworkshop/apm/workshop-steps/workshop-labs/</loc>
-         <lastmod>2021-10-13</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://github.com/signalfx/otelworkshop/introduction/</loc>
-         <lastmod>2021-10-13</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://github.com/signalfx/otelworkshop/setup-tools/</loc>
+         <loc>https://github.com/otelworkshop/setup-tools/</loc>
          <lastmod>2021-10-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
