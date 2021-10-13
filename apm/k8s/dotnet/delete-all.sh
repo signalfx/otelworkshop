@@ -1,0 +1,1 @@
+sudo kubectl delete pod client-dotnet5-k8s &

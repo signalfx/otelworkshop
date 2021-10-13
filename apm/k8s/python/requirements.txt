@@ -1,0 +1,4 @@
+splunk-opentelemetry[all]
+flask
+requests
+prometheus_client
