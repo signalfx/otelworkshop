@@ -16,7 +16,6 @@ The Splunk OpenTelemetry Workshop will teach you how to level up your Observabil
 - Splunk Observability Cloud Account
 - Ability to use a multi-terminal IDE i.e. Microsoft Visual Studio Code or equivalent
 - Ability to spin up a VM or access a host with a Debian Linux environment with the following specs: Debian (i.e. Ubuntu) Linux environment with minimum 12G RAM and 20G disk w/ lightweight Kubernetes (Rancher k3s) installed OR your own k8s cluster
-- APM: monitors self written apps, with a focus on microservices, using current frameworks i.e. Java >=8, Python >= 3.6
 
 ## Document Conventions
 
