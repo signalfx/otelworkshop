@@ -1,6 +1,6 @@
 # Single Host Node.js Lab
 
-## Pre-Requisites
+## Prerequisites
 
 Make sure that you still have the Python Flask server from Python Lab running. If you accidentally shut it down follow steps from Python lab to restart the Python Flask server.
 

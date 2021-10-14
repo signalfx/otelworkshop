@@ -1,7 +1,3 @@
-# APM for Single Host
-
-## 1: Install Otel Collector
-
 `Splunk Obervability -> Data Setup -> Linux`  
 
 Choose the following:
@@ -19,9 +15,3 @@ Follow Data Setup Wizard for instructions on Linux installation:
 ![Linux](../../images/04-datasetup-linux.png)
 
 ![Linux Install](../../images/05-datasetup-linuxinstall.png)
-
-[Python: traces from Flask server and Python requests client](python.md)
-
-[Java: traces from OKHTTP client](java.md)
-
-[Node.js: traces Node HTTP.get client](node.md

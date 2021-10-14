@@ -77,15 +77,11 @@ nav:
   - OpenTelemetry Workshop:
     - Introduction: introduction/index.md
     - Preparation: apm/workshop-steps/prep.md
-    - Appendix: apm/workshop-steps/appendix.md
   - Workshop Labs:
-    - APM for a Single Host:
-      - apm/host/index.md
+    - APM for a Single Host (Execute in Order):
+      - Install Otel Collector: apm/host/index.md
+      - Python- Deploy Server and Client: apm/host/python.md
       - Java: apm/host/java.md
-      - Python: apm/host/python.md
       - Node.js: apm/host/node.md
     - APM for K8s / containerized apps:
-      - apm/k8s/index.md
-      - apm/k8s/istio.md
-      - apm/k8s/dotnet.md
-      - apm/k8s/dotnet21.md
+      - APM for k8s: apm/k8s/index.md

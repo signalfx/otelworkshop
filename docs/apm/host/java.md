@@ -2,7 +2,7 @@
 
 Each step should be performed in a separate terminal window.
 
-## Pre-Requisites
+## Prerequisites
 
 Make sure that you still have the Python Flask server from the Python Lab running. If you accidentally shut it down follow steps from Workshop #2 to restart the Python Flask server.
 
@@ -12,7 +12,7 @@ Make sure you are in the right directory to start the Java activities:
 cd ~/otelworkshop/host/java
 ```
 
-## Install Java Library
+## Download Otel Java Instrumentation
 
 Download Splunk OpenTelemetry Java Auto-instrumentation to `/opt`
 
@@ -20,7 +20,7 @@ Download Splunk OpenTelemetry Java Auto-instrumentation to `/opt`
 source install-java-otel.sh
 ```
 
-## Run the client
+## Run the Java HTTP requests client
 
 Run the Java example with OKHTTP requests:
 

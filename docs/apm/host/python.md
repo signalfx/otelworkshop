@@ -65,4 +65,4 @@ The `run-server.sh` and `run-client.sh` scripts set up the environment variables
 OpenTelemetry repo for Python is [here](https://github.com/signalfx/splunk-otel-python).
 
 !!! important
-    Leave the Flask server running you'll need need this process for the next client examples in the workshop.  
+    Leave the Flask server running you'll need need this process for the next client examples in the workshop.

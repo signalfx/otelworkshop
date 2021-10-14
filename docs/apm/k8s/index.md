@@ -1,5 +1,3 @@
-0: k8s Prep
-
 Identify your token and realm from the Splunk Observability Cloud Portal:   
 `Organization Settings->Access Tokens` and `Your Name->Account Settings`  
 
@@ -22,7 +20,7 @@ If you have the Otel Collector running on a host, remove it at this time:
  
 In Splunk Observability Cloud: `Data Setup->Kubernetes->Add Connection`  
 
-<img src="../assets/17-datasetup-k8s.png" width="360">git remote set-url origin "https://
+<img src="../../images/17-datasetup-k8s.png" width="360">git remote set-url origin "https://
 
 Choose the following:
 
@@ -41,7 +39,7 @@ And then select `Next`
 Copy and paste each step to your shell  
 The final step will install the Otel Collector pod  
 
-<img src="../assets/18-datasetup-k8sinstall.png" width="360"> 
+<img src="../../images/18-datasetup-k8sinstall.png" width="360"> 
 
 A result will look like this:  
 ```
@@ -130,7 +128,7 @@ Study the results:
 The APM Dashboard will show the instrumented Python-Requests and Java OKHTTP clients posting to the Flask Server.  
 Make sure you select the `apm-workshop` ENVIRONMENT to monitor.
 
-<img src="../assets/19-k8s-apm.png" width="360">  
+<img src="../../images/19-k8s-apm.png" width="360">  
 
 Study the `deployment.yaml` files:
 
@@ -165,15 +163,15 @@ In `Dashboards` open any `Sample Data->Sample Charts` `+` and select `Import Das
 
 Import the `dashboard_JVMMetrics.json` Dashboard.  
 
-<img src="../assets/30-import-dash.png" width="360">    
+<img src="../../images/30-import-dash.png" width="360">    
 
 All JVM Metrics  
 
-<img src="../assets/27-jvm.png" width="360">    
+<img src="../../images/27-jvm.png" width="360">    
 
 Filter by Application by adding `service:SERVICENAMEHERE`  
 
-<img src="../assets/28-jvm-filter.png" width="360">    
+<img src="../../images/28-jvm-filter.png" width="360">    
 
 Complete JVM metrics available [at this link](https://github.com/signalfx/splunk-otel-java/blob/main/docs/metrics.md#jvm)
 
@@ -195,17 +193,17 @@ kubectl apply -f java-reqs-manual-inst.yaml
 
 When this app deploys, it appears as an isolated bubble in the map. It has all metrics and tracing just like an auto-instrumented app does. 
 
-<img src="../assets/20-k8s-manual.png" width="360">  
+<img src="../../images/20-k8s-manual.png" width="360">  
 
 Take a look at the traces and their spans to see the manually added values of Message, Logs etc.
 
-<img src="../assets/21-k8s-m-trace.png" width="360">  
+<img src="../../images/21-k8s-m-trace.png" width="360">  
 
 You will see the function called ExampleSpan with custom `Logging` messages and a `message:myevent` span/tag.  
 
-<img src="../assets/22-k8s-m-span1.png" width="360">  
+<img src="../../images/22-k8s-m-span1.png" width="360">  
 
-<img src="../assets/23-k8s-m-span2.png" width="360"> 
+<img src="../../images/23-k8s-m-span2.png" width="360"> 
 
 Study the [manual instrumentation code example here.](https://github.com/signalfx/apmworkshop/blob/master/apm/k8s/java/manual-inst/src/main/java/sf/main/GetExample.java)
 
@@ -277,7 +275,7 @@ Study the results:
 
 Example `my.key` and you'll see that the value is `redacted` after applying the `spanprocessor.yaml` example
 
-<img src="../assets/25-span-redacted.png" width="360">  
+<img src="../../images/25-span-redacted.png" width="360">  
 
 If you want to make changes and update the `spanprocessor.yaml` or add more configurations, use:  
 `helm upgrade --resuse-values`
@@ -375,7 +373,7 @@ i.e.
 kubectl exec -it splunk-otel-collector-1620505665-agent-sw45w -- curl localhost:55679/debug/tracez | lynx -stdin
 ```
 
-<img src="../assets/06-zpages.png" width="360"> 
+<img src="../../images/06-zpages.png" width="360"> 
 
 #### Examine Otel Collector Config
 
