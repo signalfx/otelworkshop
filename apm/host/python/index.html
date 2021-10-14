@@ -577,7 +577,7 @@
   
     <li class="md-nav__item">
       <a href="../../k8s/istio/" class="md-nav__link">
-        Istio
+        Istio Setup
       </a>
     </li>
   
@@ -706,22 +706,22 @@
 <span class="nb">source</span> run-client.sh
 </code></pre></div>
 <p>The <code>python-requests.py</code> client will make calls to the flask server with a random short sleep time.<br />
-You can stop the requests with <code>ctrl-c</code></p>
+You can stop the requests with <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-c">C</kbd></span></p>
 <h2 id="validate-span-are-being-sent">Validate span are being sent<a class="headerlink" href="#validate-span-are-being-sent" title="Permanent link">&para;</a></h2>
 <p>Check OpenTelemetry Collector Statistics to see that spans are being sent. Open a new terminal window to your Linux instance (or use <code>tmux</code> and run in separate pane)</p>
 <p><code>lynx localhost:55679/debug/tracez</code> will show the metrics and spans being gathered and sent by the Collector.  </p>
 <p>Lynx is a text browser that was installed during with the <code>setup-tools</code>. Enabling a web browser to access your environment will allow for a full web GUI.  </p>
-<p><img alt="zpagaes" src="../../assets/06-zpages.png" /></p>
+<p><img alt="zpagaes" src="../../../images/06-zpages.png" /></p>
 <h2 id="apm-dashboard">APM Dashboard<a class="headerlink" href="#apm-dashboard" title="Permanent link">&para;</a></h2>
 <p>Traces / services will now be viewable in the APM dashboard. A new service takes about 90 seconds to register for the first time, and then all data will be available in real time.  </p>
-<p>Additionally span IDs will print in the terminal where flask-server.py is running. You can use <code>ctrl-c</code> to stop the requests and server any time.  </p>
+<p>Additionally span IDs will print in the terminal where flask-server.py is running. You can use <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-c">C</kbd></span> to stop the requests and server any time.  </p>
 <p>Navigate to <code>Splunk Overvability -&gt; APM</code></p>
-<p><img alt="image" src="../../assets/07-apm.png" /></p>
+<p><img alt="image" src="../../../images/07-apm.png" /></p>
 <p>Service map of this python demo  </p>
-<p><img alt="image" src="../../assets/08-python.png" /></p>
+<p><img alt="image" src="../../../images/08-python.png" /></p>
 <p>Click in the service dashboard requests and show sample traces, and then click the trace to see spans.</p>
-<p><img alt="image" src="../../assets/09-pythontraces.png" /><br />
-<img alt="image" src="../../assets/10-pythonspans.png" />  </p>
+<p><img alt="image" src="../../../images/09-pythontraces.png" /><br />
+<img alt="image" src="../../../images/10-pythonspans.png" />  </p>
 <p>Click on Troubleshooting to see the map with latency, errors, etc. Try the Tag Spotlight view of Span Tags.</p>
 <h2 id="auto-instrumentation">Auto-Instrumentation<a class="headerlink" href="#auto-instrumentation" title="Permanent link">&para;</a></h2>
 <p>The <code>run-server.sh</code> and <code>run-client.sh</code> scripts set up the environment variables for OpenTelemetry and invoke the Python auto instrumentation:  </p>
