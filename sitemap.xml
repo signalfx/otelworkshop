@@ -6,11 +6,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.com/otelworkshop/apm/</loc>
-         <lastmod>2021-10-14</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://github.com/otelworkshop/apm/dashboards/servicedashboard/</loc>
          <lastmod>2021-10-14</lastmod>
          <changefreq>daily</changefreq>
