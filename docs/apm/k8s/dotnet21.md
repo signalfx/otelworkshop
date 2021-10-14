@@ -3,6 +3,11 @@
 Containerized with these [instructions from Microsoft](https://docs.microsoft.com/en-us/dotnet/core/docker/build-container?tabs=windows)
 
 **For .NET Core 2.1** 
+
+```
+cd ~/otelworkshop/k8s/dotnet21
+```
+
 Deploy:  
 ```
 source deploy-client.sh
@@ -12,5 +17,3 @@ Delete deployment:
 ```
 source delete-all.sh
 ```
-
-[Click here to return to k8s APM labs](../README.md)

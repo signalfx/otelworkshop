@@ -29,7 +29,7 @@ For optimal learning we recommend that you use a fresh cloud VM running Ubuntu w
 
 If you chose your own Ubuntu machine, you can set it up with the Workshop software with this command: 
 
-`bash <(curl -s https://raw.githubusercontent.com/signalfx/apmworkshop/master/setup-tools/ubuntu.sh)`
+`bash <(curl -s https://raw.githubusercontent.com/signalfx/otelworkshop/master/setup-tools/ubuntu.sh)`
 
 **Local Lab Environment**  
 

@@ -13,13 +13,12 @@ bash <(curl -s https://raw.githubusercontent.com/signalfx/apmworkshop/master/set
 > If you are using k8s anywhere else you can still do this workshop but will need to ensure `helm`, `lynx` and the other commands encountered in the workshop are available. It is recommended to run this workshop in a debian environment.
 
 ---
-
-## 1: Use Data Setup Wizard for Splunk Otel Collector Pod on k3s
+### 1: Use Data Setup Wizard for Splunk Otel Collector Pod on k3s
 
 If you have the Otel Collector running on a host, remove it at this time:  
 `sudo sh /tmp/splunk-otel-collector.sh --uninstall`
 
-### Step 1: Splunk Observability Cloud Portal
+#### 1a: Splunk Observability Cloud Portal
  
 In Splunk Observability Cloud: `Data Setup->Kubernetes->Add Connection`  
 
@@ -56,7 +55,7 @@ TEST SUITE: None
 
 Note the name of the deployment when the install completes i.e.:   `splunk-otel-collector-1620505665`  
 
-### Step 2: Update k3s For Splunk Log Observer (Ignore if you are using k8s)
+#### 1b: Update k3s For Splunk Log Observer (Ignore if you are using k8s)
 
 k3s has a different format that standard k8s for logging and we need to update our deployment for this.  
 
@@ -69,7 +68,7 @@ splunk-otel-collector-1620504591        default         1               2021-05-
 ```
 The deployment name would be: `splunk-otel-collector-1620504591`  
 
-**Prepare values for Collector update**  
+#### Prepare values for Collector update  
 
 If you run into any errors from helm, fix with:  
 ```
@@ -89,11 +88,11 @@ make note of:
 `splunkAccessToken`  
 `splunkRealm`  
 
-**Prepare values.yaml file for updating the Helm chart**  
+#### Prepare values.yaml file for updating the Helm chart  
 
 Edit `k3slogs.yaml` with thes values above.
 
-**Update the Collector** 
+#### Update the Collector 
 
 Install the Collector configuration chart:  
 
@@ -114,8 +113,7 @@ splunk-otel-collector-chart/splunk-otel-collector
 ```
 
 ---
-
-## 2: Deploy APM For Containerized Apps: Python and Java
+### 2: Deploy APM For Containerized Apps: Python and Java
 
 Deploy the Flask server deployment/service and the python-requests (makes requests of Flask server) pod:  
 ```
@@ -127,14 +125,14 @@ Deploy the Java OKHTTP requests pod (makes requests of Flask server):
 ```
 kubectl apply -f java-deployment.yaml
 ```
-**Study the results**
+Study the results:
 
 The APM Dashboard will show the instrumented Python-Requests and Java OKHTTP clients posting to the Flask Server.  
 Make sure you select the `apm-workshop` ENVIRONMENT to monitor.
 
 <img src="../assets/19-k8s-apm.png" width="360">  
 
-**Study the `deployment.yaml` files**
+Study the `deployment.yaml` files:
 
 Example in Github or:  
 ```
@@ -157,16 +155,11 @@ The Collector pod is running with <ins>node wide visibility</ins>, so to tell ea
 ```
 
 ---
-## 3: Monitor JVM Metrics For a Java Container
+### 3: Monitor JVM Metrics For a Java Container
 
 JVM Metrics are emitted by the Splunk OpenTelemetry Java instrumentation and send to the Collector.  
-
-A dashboard template for JVM metrics works as follows:  
-
-Load the JVM Metrics Template:  
-
-Download this file to your local machine:  
-https://raw.githubusercontent.com/signalfx/apmworkshop/master/apm/k8s/dashboard_JVMMetrics.json  
+ 
+Download this file to your local machine: [JVM Metrics Dashboard Template](https://raw.githubusercontent.com/signalfx/otelworkshop/master/k8s/dashboard_JVMMetrics.json)  
 
 In `Dashboards` open any `Sample Data->Sample Charts` `+` and select `Import Dashboard`  
 
@@ -182,11 +175,10 @@ Filter by Application by adding `service:SERVICENAMEHERE`
 
 <img src="../assets/28-jvm-filter.png" width="360">    
 
-Complete JVM metrics available
-* [at this link](https://github.com/signalfx/splunk-otel-java/blob/main/docs/metrics.md#jvm)
+Complete JVM metrics available [at this link](https://github.com/signalfx/splunk-otel-java/blob/main/docs/metrics.md#jvm)
 
 ---
-## 4:  Manually instrument a Java App And Add Custom Tags
+### 4:  Manually instrument a Java App And Add Custom Tags
 
 Let's say you have an app that has your own functions and doesn't only use auto-instrumented frameworks- or doesn't have any of them!  
 
@@ -222,14 +214,78 @@ There are two methods shown- the decorator @WithSpan method (easiest), and using
 Note that this is the most minimal example of manual instrumentation- there is a vast amount of power available in OpenTelemetry- please see [the documentation](https://github.com/open-telemetry/opentelemetry-java-instrumentation) and [in depth details](https://github.com/open-telemetry/opentelemetry-java/blob/master/QUICKSTART.md#tracing)
 
 ---
-## 5: Process Spans with the Otel Collector
+### 5: Process Spans with the Otel Collector
 
-See [Processing Spans](./collectorconfig/README.md)  
+The Otel Collector has many powerful configuration options ranging from splitting telemetry to multiple destinations to sampling to span processing.  
+
+[Processor documentation](https://github.com/open-telemetry/opentelemetry-collector/tree/main/processor)  
+
+[Collector config examples](https://github.com/signalfx/splunk-otel-collector-chart/tree/main/examples)  
+
+[Full documentation](https://github.com/signalfx/splunk-otel-collector)  
+
+#### Prepare values for Collector update
+
+```
+helm list
+```
+```
+helm get values NAME
+```
+
+i.e. `helm get values splunk-otel-collector-1620609739`
+
+make note of:  
+`clusterNAME`  
+`splunkAccessToken`  
+`splunkRealm`  
+
+#### Span Processing Example: Redacting Data from a Span Attribute
+
+Change to the example directory:
+```
+cd ~/otelworkshop/k8s/collectorconfig
+```
+
+#### Prepare values.yaml file for updating the Helm chart  
+
+Edit `spanprocessor.yaml` with thes values from Step 1.  
+
+#### Update the Collector 
+
+Install the Collector configuration chart:  
+
+```
+helm upgrade --install \ 
+YOURCOLLECTORHERE \
+--values spanprocessor.yaml \
+splunk-otel-collector-chart/splunk-otel-collector
+```
+
+i.e.
+
+```
+helm upgrade  --install \
+splunk-otel-collector-1620609739 \
+--values spanprocessor.yaml \
+splunk-otel-collector-chart/splunk-otel-collector
+```
+
+Study the results:  
+
+`Splunk Observability Portal -> APM -> Explore -> java-otel-manual-inst -> Traces`
+
+Example `my.key` and you'll see that the value is `redacted` after applying the `spanprocessor.yaml` example
+
+<img src="../assets/25-span-redacted.png" width="360">  
+
+If you want to make changes and update the `spanprocessor.yaml` or add more configurations, use:  
+`helm upgrade --resuse-values`
 
 ---
-## 6: Receive Prometheus Metrics at the Otel Collector
+### 6: Receive Prometheus Metrics at the Otel Collector
 
-**Add a Prometheus endpoint pod**  
+#### Add a Prometheus endpoint pod  
 
 Change to the k8s Collector Config directory:  
 ```
@@ -241,7 +297,7 @@ Add the Prometheus pod (source code is in the `k8s/python` directory):
 kubectl apply -f prometheus-deployment.yaml
 ```
 
-**Update Otel Collector to Scrape the Prometheus Pod**
+#### Update Otel Collector to Scrape the Prometheus Pod
 
 Update realm/token/cluster in the `otel-prometheus.yaml`  
 
@@ -257,7 +313,7 @@ Upgrade the Collector deployment with the values required for scraping Prometheu
 helm upgrade --reuse-values splunk-otel-collector-YOURCOLLECTORVALUE --values otel-prometheus.yaml splunk-otel-collector-chart/splunk-otel-collector
 ```
 
-**Find Prometheus Metric and Generate Chart**
+#### Find Prometheus Metric and Generate Chart
 
 `Splunk Observabilty -> Menu -> Metrics -> Metric Finder`  
 
@@ -270,8 +326,7 @@ Chart appears with value `17`
 Examine the collector update `otel-prometheus.yaml` to see how this works.
 
 ---
-
-## 7: Configure Otel Collector to Transform a Metric Name
+### 7: Configure Otel Collector to Transform a Metric Name
 
 This example uses the [Metrics Transform Processor](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/processor/metricstransformprocessor)  
 
@@ -287,7 +342,7 @@ Upgrade the Collector deployment with the values required for scraping Prometheu
 helm upgrade --reuse-values splunk-otel-collector-YOURCOLLECTORVALUE --values metricstransform.yaml splunk-otel-collector-chart/splunk-otel-collector
 ```
 
-**Find Transformed Prometheus Metric and Generate Chart**
+#### Find Transformed Prometheus Metric and Generate Chart
 
 `Splunk Observabilty -> Menu -> Metrics -> Metric Finder`  
 
@@ -300,10 +355,9 @@ You'll now see the new chart for the metric formerly known as CustomGauge that h
 Examine the collector update `metricstransform.yaml` to see how this works.
 
 ---
+### Monitoring and Troubleshooting  
 
-## Monitoring and Troubleshooting  
-
-**View Otel Collector POD stats** 
+#### View Otel Collector POD stats
 
 ```
 kubectl get pods
@@ -323,7 +377,7 @@ kubectl exec -it splunk-otel-collector-1620505665-agent-sw45w -- curl localhost:
 
 <img src="../assets/06-zpages.png" width="360"> 
 
-**Examine Otel Collector Config**
+#### Examine Otel Collector Config
 
 get your Collector agent pod name via:
 ```
@@ -345,14 +399,13 @@ kubectl exec -it YOURAGENTPODHERE -- curl localhost:55554/debug/configz/initial
 ```
 
 ---
+### Bonus Instrumentation Examples: Istio and .NET
 
-## Bonus Instrumentation Examples
+#### .NET: containerized example is [located here](dotnet.md)  
+#### Istio: service mesh [lab here](istio.md)
 
-* .NET containerized example is [located here](dotnet)  
-* Istio service mesh [lab here](./istio/README.md)
 ---
-
-## Clean up deployments and services
+### Clean up deployments and services
 
 To delete all k8s lab work:  
 in `~/otelworkshop/k8s/`  

@@ -1,24 +1,28 @@
-# Otel Workshop Introduction  
-
 - The Splunk OpenTelemetry Workshop will teach you how to level up your Observability practice by using the OpenTelemetry Collector and APM Instrumentation to emit industry standard telemetry from your infrastructure and applications.
-- This workshop is designed to run as a single user, or be run in a small group (upwards of 6) along with a leader guiding the group.
-    - If running as a group, a pre-workshop prep call is necessary to ensure that all group members can spin up and/or access an Ubuntu Linux lab environment. Details are below.
-
-## Details  
-
-- Audience: Intermediate and advanced developers, devops, and SREs who have already set up their Splunk Observability Cloud account and have tried out integrations and dashboards Skill level should include setting up and troubleshooting Linux and Kubernetes environments as well as deploying applications written in current versions of Java, Python, Node.
-- APM: monitors self written apps, with a focus on microservices, using current frameworks i.e. Java >=8, Python >= 3.6
-- All examples have source code supplied
 
 ## Requirements  
+- Audience
+    - Intermediate and advanced developers, devops, and SREs who have already set up their Splunk Observability Cloud account and have tried out integrations and dashboards Skill level should include setting up and troubleshooting Linux and Kubernetes environments as well as deploying applications written in current versions of Java, Python, Node.
+    - This workshop is designed to run as a single user, or be run in a small group (upwards of 6) along with a leader guiding the group.
+    - If running as a group, a pre-workshop prep call is necessary to ensure that all group members can spin up and/or access an Ubuntu Linux lab environment. Details are below.
+- Prerequisites
+    - Completion of [Splunk Observability Workshop](https://signalfx.github.io/observability-workshop/latest/) which trains on using metrics/APM and charts/dashboards/alerts or equivalent devops/SRE skills
+    - Splunk Observability Cloud Account
+    - Ability to use a multi-terminal IDE i.e. Microsoft Visual Studio Code or equivalent
+    - Ability to spin up a VM or access a host with a Debian Linux environment with the following specs:
+        - Debian (i.e. Ubuntu) Linux environment with minimum 12G RAM and 20G disk w/ lightweight Kubernetes (Rancher k3s) installed OR your own k8s cluster
+- APM: monitors self written apps, with a focus on microservices, using current frameworks i.e. Java >=8, Python >= 3.6
 
-- Prerequisites: completion of [Splunk Observability Workshop](https://signalfx.github.io/observability-workshop/latest/) which trains on using metrics/APM and charts/dashboards/alerts or equivalent devops/SRE skills
-- Splunk Observability Cloud Account
-- Ability to spin up a VM or access a host with a Debian Linux environment with the following specs:
-    - Debian (i.e. Ubuntu) Linux environment with minimum 12G RAM and 20G disk w/ lightweight Kubernetes (Rancher k3s) installed OR your own k8s cluster
+## Document Conventions
+Variables from your Splunk Observability account are displayed like this: YOURVARIABLEHERE.   
+I.e. to change your REALM to `us1` change `api.YOURREALMHERE.signalfx.com` to `api.us1.signalfx.com`  
+
+- k8s = Kubernetes
+- k3s = a lightweight Kubernetes from Rancher (https://www.k3s.io)
+- signalfx = Splunk Observability domain name/endpoint/technology name
+- otel = OpenTelemetry
 
 ## Workshop Agenda  
-
 - (Optional) Build a local Lab Environment Ubuntu Sandbox on Mac or Windows
 - OpenTelemetry Collector and APM Labs
     - Linux Host
@@ -37,6 +41,6 @@
           - Troubleshooting the Collector
 
 ## Disclaimers
-
-- This is not product documentation. Official documentation: https://docs.splunk.com/Observability
-- These examples are unsupported and are for experimentation and educational purposes only
+- This is not product documentation: [Click for Official documentation](https://docs.splunk.com/Observability)
+- Breaking changes to OpenTelemetry and Splunk services may occur- please submit issues on the GitHub repo if any are encountered
+- These examples are not commercial products and are for experimentation and educational purposes only
