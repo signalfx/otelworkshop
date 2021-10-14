@@ -88,7 +88,7 @@ To manage multipass VM:
 - `multipass delete primary` deletes the VM from the hypervisor  
 - `multipass purge` purges created images but leaves the ubuntu template intace  
 
-### Install Lab Software On Ubuntu VM
+### Install OTel Workshop
 
 A bootstrap script will install everything needed and clone this repo.  
 This will take up to 10 minutes to execute- leave it running until complete.  
@@ -103,7 +103,7 @@ Once in your Multipass Ubuntu VM:
 bash <(curl -s https://raw.githubusercontent.com/signalfx/apmworkshop/master/setup-tools/ubuntu.sh)
 ```
 
-## Review key OpenTelemetry APM concepts
+## Key OTel APM concepts
 
 Moving parts that make APM happen in OpenTelemetry:
 

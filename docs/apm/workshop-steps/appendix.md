@@ -1,7 +1,7 @@
 
 # Appendix
 
-## Spin up Ubuntu VM on Mac or Windows  
+## Ubuntu Virtual Machine  
 
 [Multipass](http://multipass.run) deploys and runs Ubuntu virtual machines easily on Mac and Windows.  
 
@@ -19,7 +19,7 @@ multipass launch -n primary -d 16G -m 6G
 
 Make sure to always run `sudo apt-get -y update` before executing any step in the workshop.
 
-## Appendix B: Kubernetes Cluster Setup Hints
+## K8s Cluster Setup Hints
 
 K3s is a lightweight Kubernetes deployment from Rancher: [https://k3s.io/](https://k3s.io/)
 
@@ -60,7 +60,7 @@ To tear down a Multipass VM:
 multipass delete primary --purge
 ```
 
-## Use tmux instead of separate terminal windows/tabs
+## Using tmux
 
 `tmux` is recommended to split your terminal into several panes so that you can run an application in each pane without having to containerize applications- and you can keep a separate pane open for checking status of spans, the host, etc.
 
