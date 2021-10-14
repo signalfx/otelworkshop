@@ -14,11 +14,11 @@ Choose the following:
 
 Follow Data Setup Wizard for instructions on Linux installation:
 
-![Data Setup](../assets/03-datasetup.png)
+![Data Setup](../../images/03-datasetup.png)
 
-![Linux](../assets/04-datasetup-linux.png)
+![Linux](../../images/04-datasetup-linux.png)
 
-![Linux Install](../assets/05-datasetup-linuxinstall.png)
+![Linux Install](../../images/05-datasetup-linuxinstall.png)
 
 [Python: traces from Flask server and Python requests client](python.md)
 

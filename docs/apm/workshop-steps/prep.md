@@ -8,10 +8,10 @@ How to find realm:
 
 `Splunk Observability Menu -> Your Name -> Account Settings`
 
-![Realm](../../assets/01-realm.png)
+![Realm](../../images/01-realm.png)
 
 How to find token:  
-![Token](../../assets/02-token.png)
+![Token](../../images/02-token.png)
 
 ## Create Lab Environment  
 

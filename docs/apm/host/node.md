@@ -33,13 +33,13 @@ You will see requests printed to the window
 
 Traces / services will now be viewable in the APM dashboard. A new service takes about 90 seconds to register for the firs time, and then all data will be available in real time.
 
-Additionally span IDs will print in the terminal where flask-server.py is running. You can use `ctrl-c` to stop the requests and server any time. You should now see a Node requests service alongside the Python and Java ones.  
+Additionally span IDs will print in the terminal where flask-server.py is running. You can use ++ctrl+c++ to stop the requests and server any time. You should now see a Node requests service alongside the Python and Java ones.  
 
-![Node](../../assets/14-node.png)
+![Node](../../images/14-node.png)
 
-![Node Traces](../../assets/15-nodetraces.png)
+![Node Traces](../../images/15-nodetraces.png)
 
-![Node Spans](../../assets/16-nodespans.png)
+![Node Spans](../../images/16-nodespans.png)
 
 ## Auto Instrumentation
 

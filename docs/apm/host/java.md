@@ -34,15 +34,15 @@ You will see requests printed to the window.
 
 Traces/services will now be viewable in the APM dashboard. A new service takes about 90 seconds to register for the first time, the Python and n all data will be available in real time.  
 
-Additionally the requests made by Java will print in the terminal where flask-server.py is running. You can use `ctrl-c` to stop the requests and server any time.
+Additionally the requests made by Java will print in the terminal where flask-server.py is running. You can use ++ctrl+c++ to stop the requests and server any time.
 
 You should now see a new Java requests service alongside the Python one.
 
-![Java](../../assets/11-java.png)
+![Java](../../images/11-java.png)
 
-![Java Traces](../../assets/12-javatraces.png)
+![Java Traces](../../images/12-javatraces.png)
 
-![Java Spans](../../assets/13-javaspans.png)
+![Java Spans](../../images/13-javaspans.png)
 
 ## Auto-instrumentation
 

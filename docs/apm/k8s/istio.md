@@ -137,11 +137,11 @@ source loadgen.sh
 
 You will see a service map with the Istio mesh and the Flask server:  
 
-![Istio](../../assets/istio1.png)
+![Istio](../../images/istio1.png)
 
 Traces will show the request hitting the service mesh and the mesh hitting the service itself:  
 
-[Istio2](../../assets/istio2.png)
+[Istio2](../../images/istio2.png)
 
 Stop loadgen:
 
