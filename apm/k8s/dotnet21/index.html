@@ -13,14 +13,14 @@
         <meta name="author" content="Steve Lerner Staff Sales Engineer USA">
       
       
-        <link rel="canonical" href="https://github.com/otelworkshop/apm/misc/ecs-ec2/">
+        <link rel="canonical" href="https://github.com/otelworkshop/apm/k8s/dotnet21/">
       
       <link rel="icon" href="../../../images/favicon.ico">
       <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.3.3">
     
     
       
-        <title>Splunk APM Trace Generator Demo For AWS ECS EC2 - Splunk OpenTelemetry Workshop</title>
+        <title>Dotnet21 - Splunk OpenTelemetry Workshop</title>
       
     
     
@@ -55,9 +55,9 @@
       
     
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Splunk OpenTelemetry Workshop - Splunk APM Trace Generator Demo For AWS ECS EC2">
+    <meta property="og:title" content="Splunk OpenTelemetry Workshop - Dotnet21">
     <meta property="og:description" content="Learn to configure the OpenTelemetry Collector for APM and infrastructure monitoring as well as instrument applications with OpenTelemetry APM instrumentation to send telemetry to Splunk APM.">
-    <meta property="og:url" content="https://github.com/otelworkshop/apm/misc/ecs-ec2/">
+    <meta property="og:url" content="https://github.com/otelworkshop/apm/k8s/dotnet21/">
     <meta property="og:image" content="">
     <meta property="og:image:type" content="image/png">
     <meta property="og:image:width" content="1080">
@@ -84,11 +84,6 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
-      
-        
-        <a href="#splunk-apm-trace-generator-demo-for-aws-ecs-ec2" class="md-skip">
-          Skip to content
-        </a>
       
     </div>
     <div data-md-component="announce">
@@ -131,7 +126,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Splunk APM Trace Generator Demo For AWS ECS EC2
+              Dotnet21
             
           </span>
         </div>
@@ -383,7 +378,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../k8s/" class="md-nav__link">
+      <a href="../" class="md-nav__link">
         APM for k8s / containerized apps
       </a>
     </li>
@@ -417,77 +412,19 @@
               
                 
                 
-                <h1 id="splunk-apm-trace-generator-demo-for-aws-ecs-ec2">Splunk APM Trace Generator Demo For AWS ECS EC2<a class="headerlink" href="#splunk-apm-trace-generator-demo-for-aws-ecs-ec2" title="Permanent link">&para;</a></h1>
-<p>This repo demonstrates a reference implemenation for a single AWS ECS EC2 task example of Splunk APM.</p>
-<p>The single task spins up two ECS containers on EC2:</p>
-<h1 id="1-splk-agent-ec2-sidecar-to-observe-ecs-and-relay-traces-to-splunk-signalfx">1 splk-agent-ec2 - sidecar to observe ECS and relay traces to Splunk SignalFx<a class="headerlink" href="#1-splk-agent-ec2-sidecar-to-observe-ecs-and-relay-traces-to-splunk-signalfx" title="Permanent link">&para;</a></h1>
-<h1 id="2-trace-generator-ec2-generates-traces-using-redis-queries-to-a-self-running-redis-server">2 trace-generator-ec2 - generates traces using redis queries to a self running redis server<a class="headerlink" href="#2-trace-generator-ec2-generates-traces-using-redis-queries-to-a-self-running-redis-server" title="Permanent link">&para;</a></h1>
-<h3 id="setup">SETUP<a class="headerlink" href="#setup" title="Permanent link">&para;</a></h3>
-<h4 id="example-of-stock-signalfx-agent-setup-in-aws-ecs-ec2-not-apm-ready">Example of stock SignalFx Agent Setup in AWS ECS EC2 (Not APM Ready)<a class="headerlink" href="#example-of-stock-signalfx-agent-setup-in-aws-ecs-ec2-not-apm-ready" title="Permanent link">&para;</a></h4>
-<p><a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ECS_CLI.html">AWS ECS CLI</a> must be installed for these examples.</p>
-<p>Pay critical attention to setting up:<br />
-VPC: https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html<br />
-Log Environment: https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_cloudwatch_logs.html  </p>
-<p>To set up a SignalFx SmartAgent container in ECS:</p>
-<p>(Adjust values to match your environment)  </p>
-<p>Configure ECS Cluster:<br />
-<div class="highlight"><pre><span></span><code>ecs-cli configure \
---cluster test-cluster-ec2 \
---default-launch-type EC2 \
---config-name test-cluster-ec2 \
---region YOURREGIONHEREi.e.us-east-1
+                  <h1>Dotnet21</h1>
+                
+                <p>.NET CORE example uses the .NET http client to get non-responding URL so makes valid traces with 403 status code</p>
+<p>Containerized with these <a href="https://docs.microsoft.com/en-us/dotnet/core/docker/build-container?tabs=windows">instructions from Microsoft</a></p>
+<p><strong>For .NET Core 2.1</strong> </p>
+<div class="highlight"><pre><span></span><code>cd ~/otelworkshop/k8s/dotnet21
+</code></pre></div>
+<p>Deploy:<br />
+<div class="highlight"><pre><span></span><code>source deploy-client.sh
 </code></pre></div></p>
-<p>Configure ECS CLI Profile:<br />
-<div class="highlight"><pre><span></span><code>ecs-cli \
-configure profile \
---access-key YOURAWSKEYHERE \
---secret-key YOURAWSSECRETKEYHERE \
---profile-name ecs-ec2-profile
+<p>Delete deployment:
+<div class="highlight"><pre><span></span><code>source delete-all.sh
 </code></pre></div></p>
-<p>Deploy ECS EC2 VM:  </p>
-<p>note the AWS ECS Keypair name is found in the AWS console under EC2-&gt;Key Pairs  </p>
-<div class="highlight"><pre><span></span><code>ecs-cli up \
---keypair YOURAWSEC2KEYPAIRNAMEHERE \
---capability-iam --size 2 \
---instance-type t2.medium \
---cluster-config test-cluster-ec2 \
---ecs-profile ecs-ec2-profile \
---port 9080
-</code></pre></div>
-<p>Register your ECS EC2 tasks:</p>
-<p>Deploy with the following commands- <em>you must change the variables in caps in these task .json files to suit your environment:</em></p>
-<p>RELEASEVERSIONHERE: Use the current SignalFx SmartAgent version in the Helm script below from here: https://github.com/signalfx/signalfx-agent/releases i.e. 5.9.0</p>
-<p><code>aws ecs register-task-definition --cli-input-json file://splk-agent-task-ec2.json</code></p>
-<p>Make sure to change the AWS REGION and then:</p>
-<p><code>aws ecs register-task-definition --cli-input-json file://trace-generator-ecs-ec2.json</code></p>
-<p>Note that the task definition will increment each time you try it- from 1 to 2 etc. To check which version is current use:<br />
-<code>aws ecs list-task-definitions</code></p>
-<p>Deploy agent task to cluster:</p>
-<div class="highlight"><pre><span></span><code>aws ecs create-service \
---cluster test-cluster-ec2 \
---task-definition splk-agent-ec2:1 \
---service-name splk-agent-ec2 \
---scheduling-strategy DAEMON
-</code></pre></div>
-<p>Deploy trace generator task to cluster:</p>
-<div class="highlight"><pre><span></span><code>aws ecs create-service \
---cluster test-cluster-ec2 \
---task-definition trace-generator-ec2:1 \
---service-name trace-generator-ec2 \
---scheduling-strategy DAEMON
-</code></pre></div>
-<p>Check processes:</p>
-<p><code>ecs-cli ps --cluster-config test-cluster-ec2 --ecs-profile ecs-ec2-profile</code></p>
-<p>At this point you should see your Splunk SignalFx ECS Container:</p>
-<p><img src="../../../../assets/ecs-metrics.png" width="360" /> </p>
-<p>And your trace-generator generating traces:</p>
-<p><img src="../../../../assets/ecs-trace-generator2.png" width="360" /> </p>
-<p>Cleanup:<br />
-<code>aws ecs delete-service --cluster test-cluster-ec2 --service splk-agent-ec2 --force</code> <br />
-<code>aws ecs delete-service --cluster test-cluster-ec2 --service trace-generator-ec2 --force</code>  <br />
-<code>ecs-cli down --cluster test-cluster-ec2 --region YOURREGIONHEREi.e.us-east-1</code> </p>
-<h3 id="extras">Extras<a class="headerlink" href="#extras" title="Permanent link">&para;</a></h3>
-<p>The <a href="commands/">commands.md</a> file offers helpful commands for ECS Fargate management for the AWS CLI.</p>
                 
               
               

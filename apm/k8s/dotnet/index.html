@@ -13,21 +13,21 @@
         <meta name="author" content="Steve Lerner Staff Sales Engineer USA">
       
       
-        <link rel="canonical" href="https://github.com/otelworkshop/apm/misc/ecs-fargate/commands/">
+        <link rel="canonical" href="https://github.com/otelworkshop/apm/k8s/dotnet/">
       
-      <link rel="icon" href="../../../../images/favicon.ico">
+      <link rel="icon" href="../../../images/favicon.ico">
       <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.3.3">
     
     
       
-        <title>Commands - Splunk OpenTelemetry Workshop</title>
+        <title>Dotnet - Splunk OpenTelemetry Workshop</title>
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.5143246d.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.5143246d.min.css">
       
         
-        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.3f5d1f46.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.3f5d1f46.min.css">
         
       
     
@@ -42,7 +42,7 @@
     
     
     
-      <link rel="stylesheet" href="../../../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
     
     
       
@@ -55,9 +55,9 @@
       
     
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Splunk OpenTelemetry Workshop - Commands">
+    <meta property="og:title" content="Splunk OpenTelemetry Workshop - Dotnet">
     <meta property="og:description" content="Learn to configure the OpenTelemetry Collector for APM and infrastructure monitoring as well as instrument applications with OpenTelemetry APM instrumentation to send telemetry to Splunk APM.">
-    <meta property="og:url" content="https://github.com/otelworkshop/apm/misc/ecs-fargate/commands/">
+    <meta property="og:url" content="https://github.com/otelworkshop/apm/k8s/dotnet/">
     <meta property="og:image" content="">
     <meta property="og:image:type" content="image/png">
     <meta property="og:image:width" content="1080">
@@ -76,7 +76,7 @@
     <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
   
     
-    <script>function __prefix(e){return new URL("../../../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    <script>function __prefix(e){return new URL("../../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
     
       <script>var palette=__get("__palette");if(null!==palette&&"object"==typeof palette.color)for(var key in palette.color)document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
     
@@ -84,11 +84,6 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
-      
-        
-        <a href="#create" class="md-skip">
-          Skip to content
-        </a>
       
     </div>
     <div data-md-component="announce">
@@ -113,9 +108,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../../.." title="Splunk OpenTelemetry Workshop" class="md-header__button md-logo" aria-label="Splunk OpenTelemetry Workshop" data-md-component="logo">
+    <a href="../../.." title="Splunk OpenTelemetry Workshop" class="md-header__button md-logo" aria-label="Splunk OpenTelemetry Workshop" data-md-component="logo">
       
-  <img src="../../../../images/logo.png" alt="logo">
+  <img src="../../../images/logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -131,7 +126,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Commands
+              Dotnet
             
           </span>
         </div>
@@ -196,7 +191,7 @@
 
 
   <li class="md-tabs__item">
-    <a href="../../../.." class="md-tabs__link">
+    <a href="../../.." class="md-tabs__link">
       Home
     </a>
   </li>
@@ -211,7 +206,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../../introduction/" class="md-tabs__link">
+      <a href="../../../introduction/" class="md-tabs__link">
         Otel Workshop
       </a>
     </li>
@@ -241,9 +236,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../../.." title="Splunk OpenTelemetry Workshop" class="md-nav__button md-logo" aria-label="Splunk OpenTelemetry Workshop" data-md-component="logo">
+    <a href="../../.." title="Splunk OpenTelemetry Workshop" class="md-nav__button md-logo" aria-label="Splunk OpenTelemetry Workshop" data-md-component="logo">
       
-  <img src="../../../../images/logo.png" alt="logo">
+  <img src="../../../images/logo.png" alt="logo">
 
     </a>
     Splunk OpenTelemetry Workshop
@@ -272,7 +267,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         Home
       </a>
     </li>
@@ -313,7 +308,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../introduction/" class="md-nav__link">
+      <a href="../../../introduction/" class="md-nav__link">
         Otel Workshop Introduction
       </a>
     </li>
@@ -327,7 +322,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../workshop-steps/prep/" class="md-nav__link">
+      <a href="../../workshop-steps/prep/" class="md-nav__link">
         Workshop Prep
       </a>
     </li>
@@ -369,7 +364,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../host/" class="md-nav__link">
+      <a href="../../host/" class="md-nav__link">
         APM for a Single Host
       </a>
     </li>
@@ -383,7 +378,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../k8s/" class="md-nav__link">
+      <a href="../" class="md-nav__link">
         APM for k8s / containerized apps
       </a>
     </li>
@@ -417,24 +412,21 @@
               
                 
                 
-                  <h1>Commands</h1>
+                  <h1>Dotnet</h1>
                 
-                <h4 id="create">Create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h4>
-<p><code>aws ecs create-cluster --cluster-name YOURCLUSTERNAMEHERE</code> <br />
-<code>aws ecs register-task-definition --cli-input-json file://YOURTASKDEFINITIONHERE.json</code>   </p>
-<p><code>aws ecs create-service --cluster test-cluster --service-name signalfx-demo --task-definition signalfx-demo:1 \</code> <br />
-<code>--desired-count 1 --launch-type "FARGATE" \</code> <br />
-<code>--network-configuration "awsvpcConfiguration={subnets=[subnet-YOURSUBNETIDHERE],securityGroups=[sg-YOURSECURITYGROUPIDHERE],assignPublicIp=ENABLED}"</code></p>
-<h4 id="monitor">Monitor<a class="headerlink" href="#monitor" title="Permanent link">&para;</a></h4>
-<p><code>aws ecs list-task-definitions</code><br />
-<code>aws ecs list-clusters</code><br />
-<code>aws ecs list-services --cluster YOURCLUSTERNAMEHERE</code> <br />
-<code>aws ecs describe-services --cluster YOURCLUSTERNAMEHERE --services YOURSERVICENAMEHERE</code>   </p>
-<h4 id="cleanup">Cleanup<a class="headerlink" href="#cleanup" title="Permanent link">&para;</a></h4>
-<p><code>aws ecs deregister-task-definition --task-definition FAMILYNAMEHERE:VERSIONHERE</code> <br />
-<code>aws ecs delete-service --cluster YOURCLUSTERNAMEHERE --service YOURSERVICENAMEHERE --force</code> <br />
-<code>aws ecs delete-cluster --cluster YOURCLUSTERNAMEHERE</code><br />
-<code>ecs-cli down --cluster YOURCLUSTERNAMEHERE --region YOURREGIONHERE</code></p>
+                <p>.NET CORE example uses the .NET http client to get non-responding URL so makes valid traces with 403 status code</p>
+<p>Containerized with these <a href="https://docs.microsoft.com/en-us/dotnet/core/docker/build-container?tabs=windows">instructions from Microsoft</a></p>
+<p><strong>.NET Core 5</strong> </p>
+<div class="highlight"><pre><span></span><code>cd ~/otelworkshop/k8s/dotnet
+</code></pre></div>
+<p>Deploy:<br />
+<div class="highlight"><pre><span></span><code>source deploy-client.sh
+</code></pre></div></p>
+<p>Delete deployment:
+<div class="highlight"><pre><span></span><code>source delete-all.sh
+</code></pre></div></p>
+<p><strong>.NET Core 2.1</strong> 
+.NET Core 2.1 <a href="../dotnet21/">located here</a></p>
                 
               
               
@@ -512,10 +504,10 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.instant", "navigation.sections", "navigation.expand", "navigation.top", "toc.integrate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../../assets/javascripts/workers/search.8397ff9e.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.instant", "navigation.sections", "navigation.expand", "navigation.top", "toc.integrate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.8397ff9e.min.js", "version": null}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.f89c2efe.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.f89c2efe.min.js"></script>
       
     
   </body>

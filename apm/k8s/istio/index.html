@@ -13,21 +13,21 @@
         <meta name="author" content="Steve Lerner Staff Sales Engineer USA">
       
       
-        <link rel="canonical" href="https://github.com/otelworkshop/apm/misc/">
+        <link rel="canonical" href="https://github.com/otelworkshop/apm/k8s/istio/">
       
-      <link rel="icon" href="../../images/favicon.ico">
+      <link rel="icon" href="../../../images/favicon.ico">
       <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.3.3">
     
     
       
-        <title>Index - Splunk OpenTelemetry Workshop</title>
+        <title>Istio - Splunk OpenTelemetry Workshop</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.5143246d.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.5143246d.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.3f5d1f46.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.3f5d1f46.min.css">
         
       
     
@@ -42,7 +42,7 @@
     
     
     
-      <link rel="stylesheet" href="../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
     
     
       
@@ -55,9 +55,9 @@
       
     
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Splunk OpenTelemetry Workshop - Index">
+    <meta property="og:title" content="Splunk OpenTelemetry Workshop - Istio">
     <meta property="og:description" content="Learn to configure the OpenTelemetry Collector for APM and infrastructure monitoring as well as instrument applications with OpenTelemetry APM instrumentation to send telemetry to Splunk APM.">
-    <meta property="og:url" content="https://github.com/otelworkshop/apm/misc/">
+    <meta property="og:url" content="https://github.com/otelworkshop/apm/k8s/istio/">
     <meta property="og:image" content="">
     <meta property="og:image:type" content="image/png">
     <meta property="og:image:width" content="1080">
@@ -76,7 +76,7 @@
     <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
   
     
-    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    <script>function __prefix(e){return new URL("../../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
     
       <script>var palette=__get("__palette");if(null!==palette&&"object"==typeof palette.color)for(var key in palette.color)document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
     
@@ -84,6 +84,11 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#istio-setup" class="md-skip">
+          Skip to content
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -108,9 +113,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Splunk OpenTelemetry Workshop" class="md-header__button md-logo" aria-label="Splunk OpenTelemetry Workshop" data-md-component="logo">
+    <a href="../../.." title="Splunk OpenTelemetry Workshop" class="md-header__button md-logo" aria-label="Splunk OpenTelemetry Workshop" data-md-component="logo">
       
-  <img src="../../images/logo.png" alt="logo">
+  <img src="../../../images/logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -126,7 +131,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Index
+              Istio
             
           </span>
         </div>
@@ -191,7 +196,7 @@
 
 
   <li class="md-tabs__item">
-    <a href="../.." class="md-tabs__link">
+    <a href="../../.." class="md-tabs__link">
       Home
     </a>
   </li>
@@ -206,7 +211,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../introduction/" class="md-tabs__link">
+      <a href="../../../introduction/" class="md-tabs__link">
         Otel Workshop
       </a>
     </li>
@@ -236,9 +241,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Splunk OpenTelemetry Workshop" class="md-nav__button md-logo" aria-label="Splunk OpenTelemetry Workshop" data-md-component="logo">
+    <a href="../../.." title="Splunk OpenTelemetry Workshop" class="md-nav__button md-logo" aria-label="Splunk OpenTelemetry Workshop" data-md-component="logo">
       
-  <img src="../../images/logo.png" alt="logo">
+  <img src="../../../images/logo.png" alt="logo">
 
     </a>
     Splunk OpenTelemetry Workshop
@@ -267,7 +272,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         Home
       </a>
     </li>
@@ -308,7 +313,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../introduction/" class="md-nav__link">
+      <a href="../../../introduction/" class="md-nav__link">
         Otel Workshop Introduction
       </a>
     </li>
@@ -322,7 +327,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../workshop-steps/prep/" class="md-nav__link">
+      <a href="../../workshop-steps/prep/" class="md-nav__link">
         Workshop Prep
       </a>
     </li>
@@ -364,7 +369,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../host/" class="md-nav__link">
+      <a href="../../host/" class="md-nav__link">
         APM for a Single Host
       </a>
     </li>
@@ -378,7 +383,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../k8s/" class="md-nav__link">
+      <a href="../" class="md-nav__link">
         APM for k8s / containerized apps
       </a>
     </li>
@@ -412,9 +417,100 @@
               
                 
                 
-                  <h1>Index</h1>
+                  <h1>Istio</h1>
                 
-                <p>Oct 2021- ECS examples are work in process- do not use until this README changes</p>
+                <h2 id="istio-setup">Istio Setup<a class="headerlink" href="#istio-setup" title="Permanent link">&para;</a></h2>
+<p>CAVEAT: THIS LAB IS DESIGNED FOR THE UBUNTU SANDBOX CREATED AT THE START OF THE APM WORKSHOP AND IS TESTED IN THAT ENVIRONMENT ONLY
+THIS LAB IS A WORK IN PROCESS AND YOUR RESULTS MAY VARY  </p>
+<p>This exercise will install an Istio service mesh on a Kubernetes cluster that directs external requests to a Python Flask server.
+Both the service mesh and the Flask server will emit spans.
+The result will show tracing of the external request to the node and through the mesh to the Flask server.  </p>
+<hr />
+<h2 id="1-install-opentelemetry-collector">1: Install OpenTelemetry Collector<a class="headerlink" href="#1-install-opentelemetry-collector" title="Permanent link">&para;</a></h2>
+<p>If you have an existing collector running remove it.</p>
+<p>Follow Data Setup wizard but add:<br />
+<code>--set autodetect.istio=true</code></p>
+<p>i.e.</p>
+<div class="highlight"><pre><span></span><code>helm install \
+--set splunkAccessToken=&#39;YOURTOKENHERE&#39; \
+--set clusterName=&#39;YOURCLUSTERNAMEHERE&#39; \
+--set splunkRealm=&#39;YOURREALMHERE&#39; \
+--set autodetect.istio=true \
+--set provider=&#39; &#39; \
+--set distro=&#39; &#39; \
+--set otelCollector.enabled=&#39;false&#39; \
+--generate-name \
+splunk-otel-collector-chart/splunk-otel-collector
+</code></pre></div>
+<hr />
+<h2 id="2-set-up-istio">2: Set Up Istio<a class="headerlink" href="#2-set-up-istio" title="Permanent link">&para;</a></h2>
+<p>Download Istio:
+<div class="highlight"><pre><span></span><code>cd ~
+curl -L https://istio.io/downloadIstio | sh -
+</code></pre></div></p>
+<p>Follow instructions from the installer script that are now in your terminal to add Istio's bin path to your env then:  <br />
+<code>istioctl install</code></p>
+<hr />
+<h2 id="3-deploy-istio-configurations-and-example-flask-microservice">3: Deploy Istio configurations and example Flask microservice<a class="headerlink" href="#3-deploy-istio-configurations-and-example-flask-microservice" title="Permanent link">&para;</a></h2>
+<p>Enable automatic Istio proxy injection. <a href="https://istio.io/latest/docs/setup/additional-setup/sidecar-injection/#automatic-sidecar-injection">More info here</a>  <br />
+<code>kubectl label namespace default istio-injection=enabled</code></p>
+<p>Change to the APM Workshop Istio directory:<br />
+<code>cd ~/otelworkshop/k8s/istio</code>  </p>
+<p>Install the Splunk tracing profile for Istio:  <br />
+<code>istioctl install -f tracing.yaml</code></p>
+<p>Set and validate ingress ports for Nodeport example and configure ingress host for local k3s workshop example:<br />
+<code>source setup-envs.sh</code>  </p>
+<p>You should see a result that looks like:<br />
+<div class="highlight"><pre><span></span><code>TCP_INGRESS_PORT=
+INGRESS_PORT=30785
+INGRESS_HOST=172.31.19.248
+SECURE_INGRESS_PORT=32071
+</code></pre></div></p>
+<p>Deploy Flask service configured for Istio:<br />
+<code>kubectl apply -f flask-deployment-istio.yaml</code>  </p>
+<p>Single test Flask service:<br />
+<code>source test-flask.sh</code>  </p>
+<p>Results should show a direct request to the Flask server:  </p>
+<div class="highlight"><pre><span></span><code>You getted: b&#39;&#39; Request headers: Host: localhost:30001
+User-Agent: curl/7.68.0
+Accept: */*
+Server: 1
+</code></pre></div>
+<p>Single test Istio:<br />
+<code>source test-istio.sh</code>  </p>
+<p>When hitting the service mesh from outside the cluster, you'll receive the mesh diagnostic data plus the B3 Trace/Span ID:</p>
+<div class="highlight"><pre><span></span><code>You getted: b&#39;&#39; Request headers: Host: 172.31.19.248:31177
+User-Agent: curl/7.68.0
+Accept: */*
+Server: 1
+X-Forwarded-For: 10.42.0.1
+X-Forwarded-Proto: http
+X-Envoy-Internal: true
+X-Request-Id: 447af547-7b8f-96db-a0b5-08efce526a8d
+X-Envoy-Decorator-Operation: server-flask-otel-k8s.default.svc.cluster.local:5000/echo
+X-Envoy-Peer-Metadata: ChQKDkFQUF9DT05UQUlORVJTEgIaAAoaCgpDTFVTVEVSX0lEEgwaCkt...
+3NnYXRld2F5
+X-Envoy-Peer-Metadata-Id: router~10.42.0.11~istio-ingressgateway-7d97f78f5-dg5zc.istio-system~istio-system.svc.cluster.local
+X-Envoy-Attempt-Count: 1
+X-B3-Traceid: 5035304e854aa834e990df295b1d98e9
+X-B3-Spanid: e990df295b1d98e9
+X-B3-Sampled: 1
+</code></pre></div>
+<p>To generate many requests so that the example appears in the APM service map, use the load generator:  </p>
+<p>Load gen Istio for two minutes:  <br />
+<code>source loadgen.sh</code>  </p>
+<p>You will see a service map with the Istio mesh and the Flask server:  </p>
+<p><img src="../../assets/istio1.png" width="360">  </p>
+<p>Traces will show the request hitting the service mesh and the mesh hitting the service itself:  </p>
+<p><img src="../../assets/istio2.png" width="360">  </p>
+<p>Stop loadgen:<br />
+<code>ctrl-c</code>  </p>
+<p>Cleanup:<br />
+remove k8s examples:<br />
+<code>source delete-all.sh</code></p>
+<p>Remove Istio:<br />
+From the Istio bin directory: 
+<code>istioctl x uninstall --purge</code></p>
                 
               
               
@@ -492,10 +588,10 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.instant", "navigation.sections", "navigation.expand", "navigation.top", "toc.integrate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.8397ff9e.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.instant", "navigation.sections", "navigation.expand", "navigation.top", "toc.integrate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.8397ff9e.min.js", "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.f89c2efe.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.f89c2efe.min.js"></script>
       
     
   </body>
