@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Learn to configure the OpenTelemetry Collector for APM and infrastructure monitoring as well as instrument applications with OpenTelemetry APM instrumentation to send telemetry to Splunk APM.">
+        <meta name="description" content="Learn to configure the Splunk OpenTelemetry Connector for APM and Infrastructure Monitoring as well as instrument applications with OpenTelemetry APM instrumentation to send telemetry to Splunk APM">
       
       
       
@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://github.com/otelworkshop/apm/dashboards/servicedashboard/">
       
       <link rel="icon" href="../../../images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.3.3">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.8">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.5143246d.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.92558b1b.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.3f5d1f46.min.css">
@@ -56,7 +56,7 @@
     
     <meta property="og:type" content="website">
     <meta property="og:title" content="Splunk OpenTelemetry Workshop - Servicedashboard">
-    <meta property="og:description" content="Learn to configure the OpenTelemetry Collector for APM and infrastructure monitoring as well as instrument applications with OpenTelemetry APM instrumentation to send telemetry to Splunk APM.">
+    <meta property="og:description" content="Learn to configure the Splunk OpenTelemetry Connector for APM and Infrastructure Monitoring as well as instrument applications with OpenTelemetry APM instrumentation to send telemetry to Splunk APM">
     <meta property="og:url" content="https://github.com/otelworkshop/apm/dashboards/servicedashboard/">
     <meta property="og:image" content="">
     <meta property="og:image:type" content="image/png">
@@ -104,9 +104,7 @@
       
     </div>
     
-      
-
-<header class="md-header" data-md-component="header">
+      <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="../../.." title="Splunk OpenTelemetry Workshop" class="md-header__button md-logo" aria-label="Splunk OpenTelemetry Workshop" data-md-component="logo">
       
@@ -172,7 +170,6 @@
       </div>
     
   </nav>
-  
 </header>
     
     <div class="md-container" data-md-component="container">
@@ -180,7 +177,6 @@
       
         
           
-            
 <nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
   <div class="md-tabs__inner md-grid">
     <ul class="md-tabs__list">
@@ -207,16 +203,38 @@
   
     <li class="md-tabs__item">
       <a href="../../../introduction/" class="md-tabs__link">
-        Otel Workshop
+        OpenTelemetry Workshop
       </a>
     </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../host/" class="md-tabs__link">
+        Workshop Labs
+      </a>
+    </li>
+  
+
   
 
       
     </ul>
   </div>
 </nav>
-          
         
       
       <main class="md-main" data-md-component="main">
@@ -232,9 +250,7 @@
   
 
 
-  
-
-<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="../../.." title="Splunk OpenTelemetry Workshop" class="md-nav__button md-logo" aria-label="Splunk OpenTelemetry Workshop" data-md-component="logo">
       
@@ -287,51 +303,84 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" data-md-state="indeterminate" type="checkbox" id="__nav_2" checked>
       
-      
-      
-      
-        <label class="md-nav__link" for="__nav_2">
-          Otel Workshop
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Otel Workshop" data-md-level="1">
+      <label class="md-nav__link" for="__nav_2">
+        OpenTelemetry Workshop
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="OpenTelemetry Workshop" data-md-level="1">
         <label class="md-nav__title" for="__nav_2">
           <span class="md-nav__icon md-icon"></span>
-          Otel Workshop
+          OpenTelemetry Workshop
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
             
-              
   
   
   
     <li class="md-nav__item">
       <a href="../../../introduction/" class="md-nav__link">
-        Otel Workshop Introduction
+        Introduction
       </a>
     </li>
   
 
-            
           
             
-              
   
   
   
     <li class="md-nav__item">
       <a href="../../workshop-steps/prep/" class="md-nav__link">
-        Workshop Prep
+        Preparation
       </a>
     </li>
   
 
-            
           
             
-              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workshop-steps/appendix/" class="md-nav__link">
+        Appendix
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" data-md-state="indeterminate" type="checkbox" id="__nav_3" checked>
+      
+      <label class="md-nav__link" for="__nav_3">
+        Workshop Labs
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Workshop Labs" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Workshop Labs
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
   
   
   
@@ -341,57 +390,149 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" data-md-state="indeterminate" type="checkbox" id="__nav_2_3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1" data-md-state="indeterminate" type="checkbox" id="__nav_3_1" checked>
       
-      
-      
-      
-        <label class="md-nav__link" for="__nav_2_3">
-          Otel Workshop Labs
+      <label class="md-nav__link" for="__nav_3_1">
+        APM for a Single Host
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="APM for a Single Host" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_1">
           <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Otel Workshop Labs" data-md-level="2">
-        <label class="md-nav__title" for="__nav_2_3">
-          <span class="md-nav__icon md-icon"></span>
-          Otel Workshop Labs
+          APM for a Single Host
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
             
-              
   
   
   
     <li class="md-nav__item">
       <a href="../../host/" class="md-nav__link">
-        APM for a Single Host
+        APM for Single Host
       </a>
     </li>
   
 
-            
           
             
-              
   
   
   
     <li class="md-nav__item">
-      <a href="../../k8s/" class="md-nav__link">
-        APM for k8s / containerized apps
+      <a href="../../host/java/" class="md-nav__link">
+        Java
       </a>
     </li>
   
 
+          
             
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../host/python/" class="md-nav__link">
+        Python
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../host/node/" class="md-nav__link">
+        Node.js
+      </a>
+    </li>
+  
+
           
         </ul>
       </nav>
     </li>
   
 
+          
             
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" data-md-state="indeterminate" type="checkbox" id="__nav_3_2" checked>
+      
+      <label class="md-nav__link" for="__nav_3_2">
+        APM for K8s / containerized apps
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="APM for K8s / containerized apps" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          APM for K8s / containerized apps
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../k8s/" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../k8s/istio/" class="md-nav__link">
+        Istio
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../k8s/dotnet/" class="md-nav__link">
+        Dotnet
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../k8s/dotnet21/" class="md-nav__link">
+        Dotnet21
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
           
         </ul>
       </nav>
@@ -446,12 +587,10 @@
             Copyright 2021 Splunk Inc. All rights reserved.
           </div>
         
-        
-          Made with
-          <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-            Material for MkDocs
-          </a>
-        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
         
       </div>
       
@@ -494,10 +633,10 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.instant", "navigation.sections", "navigation.expand", "navigation.top", "toc.integrate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.8397ff9e.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.instant", "navigation.sections", "navigation.expand", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.94ec81fe.min.js", "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.f89c2efe.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.48dfec6c.min.js"></script>
       
     
   </body>
