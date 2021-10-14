@@ -53,7 +53,7 @@ strong.label-button, mark.critic {
 }
 
 .label-button.splunk {
-    background-color: #E20082;
+    background-color: #3a8ac5;
 }
 
 .label-button.victorops {
@@ -128,10 +128,10 @@ header.md-header {
 }
 
 :root {
-    --md-primary-fg-color: #E20082;
-    --md-accent-fg-color: #E20082;
-    --md-primary-fg-color--light: #E20082;
-    --md-primary-fg-color--dark: #E20082;
+    --md-primary-fg-color: #3a8ac5;
+    --md-accent-fg-color: #3a8ac5;
+    --md-primary-fg-color--light: #3a8ac5;
+    --md-primary-fg-color--dark: #3a8ac5;
 }
 
 [data-md-color-scheme="slate"] {
