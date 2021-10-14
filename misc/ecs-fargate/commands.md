@@ -1,4 +1,6 @@
-#### Create
+# ECS Commands
+
+## Create
 
 ```bash
 aws ecs create-cluster --cluster-name YOURCLUSTERNAMEHERE
@@ -8,7 +10,7 @@ aws ecs create-service --cluster test-cluster --service-name signalfx-demo --tas
 --network-configuration "awsvpcConfiguration={subnets=[subnet-YOURSUBNETIDHERE],securityGroups=[sg-YOURSECURITYGROUPIDHERE],assignPublicIp=ENABLED}"
 ```
 
-#### Monitor
+## Monitor
 
 ```bash
 aws ecs list-task-definitions
@@ -17,7 +19,7 @@ aws ecs list-services --cluster YOURCLUSTERNAMEHERE
 aws ecs describe-services --cluster YOURCLUSTERNAMEHERE --services YOURSERVICENAMEHERE
 ```
 
-#### Cleanup
+## Cleanup
 
 ```bash
 aws ecs deregister-task-definition --task-definition FAMILYNAMEHERE:VERSIONHERE

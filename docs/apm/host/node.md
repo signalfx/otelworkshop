@@ -42,7 +42,6 @@ You should now see a Node requests service alongside the Python and Java ones.
 
 ![Node Spans](../../assets/16-nodespans.png)
 
-
 ## 5. Where is the auto-instrumentation?
 
 For Node.js, the current auto-instrum
