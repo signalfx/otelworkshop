@@ -1,54 +1,54 @@
+# Single Host Java Lab
+
 Each step should be performed in a separate terminal window.
 
----
-## 1 Open new terminal
+## Pre-Requisites
 
 Make sure that you still have the Python Flask server from the Python Lab running. If you accidentally shut it down follow steps from Workshop #2 to restart the Python Flask server.
 
 Make sure you are in the right directory to start the Java activities:  
-```
+
+```bash
 cd ~/otelworkshop/host/java
 ```
 
----
-## 2 Download Splunk OpenTelemetry Java Auto-instrumentation to /opt
+## Install Java Library
 
-```
+Download Splunk OpenTelemetry Java Auto-instrumentation to `/opt`
+
+```bash
 source install-java-otel.sh
 ```
 
----
-## 3 Run the Java example with OKHTTP requests
+## Run the client
 
-```
+Run the Java example with OKHTTP requests:
+
+```bash
 source run-client.sh
-``` 
+```
 
 You will see requests printed to the window.
 
----
-## 4 Traces / services will now be viewable in the APM dashboard
+## APM Dashboard
 
-A new service takes about 90 seconds to register for the first time, the Python and n all data will be available in real time.  
+Traces/services will now be viewable in the APM dashboard. A new service takes about 90 seconds to register for the first time, the Python and n all data will be available in real time.  
 
-Additionally the requests made by Java will print in the terminal where flask-server.py is running.  
-
-You can use `ctrl-c` to stop the requests and server any time.
+Additionally the requests made by Java will print in the terminal where flask-server.py is running. You can use `ctrl-c` to stop the requests and server any time.
 
 You should now see a new Java requests service alongside the Python one.
 
-<img src="../../assets/11-java.png" width="360">  
+![Java](../../assets/11-java.png)
 
-<img src="../../assets/12-javatraces.png" width="360">  
+![Java Traces](../../assets/12-javatraces.png)
 
-<img src="../../assets/13-javaspans.png" width="360">  
+![Java Spans](../../assets/13-javaspans.png)
 
----
-## 5 Where is the auto-instrumentation?
+## Auto-instrumentation
 
-In the `run-client.sh` scrthe Python ipt the java command:
+In the `run-client.sh` script the java command:
 
-```
+```bash
 java \
 -Dexec.executable="java" \
 -Dotel.resource.attributes=service.name=java-otel-client,deployment.environment=apm-workshop \
@@ -58,10 +58,6 @@ java \
 -jar ./target/java-app-1.0-SNAPSHOT.jar
 ```
 
-The `splunk-otel-javaagent.jar` file is the automatic OpenTelemetry instrumentation that will emit spans from the app. No code changes are necessary.
+The `splunk-otel-javaagent.jar` file is the automatic OpenTelemetry instrumentation that will emit spans from the app. No code changes are necessary! The `otel.` resources set up the service name, environment, and destination to send the JVM metrics and spans.
 
-The `otel.` resources set up the service name, environment, and destination to send the JVM metrics and spans.  
-
-Splunk's OpenTelmetry autoinstrumentation for Java is here: https://github.com/signalfx/splunk-otel-java
-
-[Back to labs](index.md)
+Splunk's OpenTelmetry autoinstrumentation for Java is [here](https://github.com/signalfx/splunk-otel-java)
