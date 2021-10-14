@@ -36,7 +36,7 @@ theme:
     - navigation.sections
     - navigation.expand
     - navigation.top
-    - toc.integrate
+   # - toc.integrate
 
 markdown_extensions:
   - footnotes
@@ -74,13 +74,18 @@ plugins:
 
 nav:
   - Home: index.md
-  - Otel Workshop:
-    - Otel Workshop Introduction: introduction/index.md
-    - Workshop Prep: apm/workshop-steps/prep.md
+  - OpenTelemetry Workshop:
+    - Introduction: introduction/index.md
+    - Preparation: apm/workshop-steps/prep.md
     - Appendix: apm/workshop-steps/appendix.md
-    - Otel Workshop Labs:
-      - APM for a Single Host: apm/host/index.md
+  - Workshop Labs:
+    - APM for a Single Host:
+      - apm/host/index.md
       - Java: apm/host/java.md
       - Python: apm/host/python.md
       - Node.js: apm/host/node.md
-      - APM for K8s / containerized apps: apm/k8s/index.md
+    - APM for K8s / containerized apps:
+      - apm/k8s/index.md
+      - apm/k8s/istio.md
+      - apm/k8s/dotnet.md
+      - apm/k8s/dotnet21.md
