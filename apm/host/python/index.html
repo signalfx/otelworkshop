@@ -16,15 +16,15 @@
         <link rel="canonical" href="https://github.com/otelworkshop/apm/host/python/">
       
       <link rel="icon" href="../../../images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.8">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.3.3">
     
     
       
-        <title>Python - Splunk OpenTelemetry Workshop</title>
+        <title>Python- Deploy Server and Client - Splunk OpenTelemetry Workshop</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.92558b1b.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.5143246d.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.3f5d1f46.min.css">
@@ -55,7 +55,7 @@
       
     
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Splunk OpenTelemetry Workshop - Python">
+    <meta property="og:title" content="Splunk OpenTelemetry Workshop - Python- Deploy Server and Client">
     <meta property="og:description" content="Learn to configure the Splunk OpenTelemetry Connector for APM and Infrastructure Monitoring as well as instrument applications with OpenTelemetry APM instrumentation to send telemetry to Splunk APM">
     <meta property="og:url" content="https://github.com/otelworkshop/apm/host/python/">
     <meta property="og:image" content="">
@@ -109,7 +109,9 @@
       
     </div>
     
-      <header class="md-header" data-md-component="header">
+      
+
+<header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="../../.." title="Splunk OpenTelemetry Workshop" class="md-header__button md-logo" aria-label="Splunk OpenTelemetry Workshop" data-md-component="logo">
       
@@ -129,7 +131,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Python
+              Python- Deploy Server and Client
             
           </span>
         </div>
@@ -175,6 +177,7 @@
       </div>
     
   </nav>
+  
 </header>
     
     <div class="md-container" data-md-component="container">
@@ -182,6 +185,7 @@
       
         
           
+            
 <nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
   <div class="md-tabs__inner md-grid">
     <ul class="md-tabs__list">
@@ -242,6 +246,7 @@
     </ul>
   </div>
 </nav>
+          
         
       
       <main class="md-main" data-md-component="main">
@@ -310,10 +315,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" data-md-state="indeterminate" type="checkbox" id="__nav_2" checked>
       
-      <label class="md-nav__link" for="__nav_2">
-        OpenTelemetry Workshop
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          OpenTelemetry Workshop
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="OpenTelemetry Workshop" data-md-level="1">
         <label class="md-nav__title" for="__nav_2">
           <span class="md-nav__icon md-icon"></span>
@@ -322,6 +331,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -332,8 +342,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -344,18 +356,7 @@
     </li>
   
 
-          
             
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../workshop-steps/appendix/" class="md-nav__link">
-        Appendix
-      </a>
-    </li>
-  
-
           
         </ul>
       </nav>
@@ -378,10 +379,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
       
-      <label class="md-nav__link" for="__nav_3">
-        Workshop Labs
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Workshop Labs
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Workshop Labs" data-md-level="1">
         <label class="md-nav__title" for="__nav_3">
           <span class="md-nav__icon md-icon"></span>
@@ -390,6 +395,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
     
@@ -403,42 +409,37 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1" type="checkbox" id="__nav_3_1" checked>
       
-      <label class="md-nav__link" for="__nav_3_1">
-        APM for a Single Host
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="APM for a Single Host" data-md-level="2">
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_1">
+          APM for a Single Host (Execute in Order)
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="APM for a Single Host (Execute in Order)" data-md-level="2">
         <label class="md-nav__title" for="__nav_3_1">
           <span class="md-nav__icon md-icon"></span>
-          APM for a Single Host
+          APM for a Single Host (Execute in Order)
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
     <li class="md-nav__item">
       <a href="../" class="md-nav__link">
-        APM for Single Host
+        Install Otel Collector
       </a>
     </li>
   
 
+            
           
             
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../java/" class="md-nav__link">
-        Java
-      </a>
-    </li>
-  
-
-          
-            
+              
   
   
     
@@ -453,12 +454,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Python
+          Python- Deploy Server and Client
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Python
+        Python- Deploy Server and Client
       </a>
       
         
@@ -517,8 +518,24 @@
     </li>
   
 
+            
           
             
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java/" class="md-nav__link">
+        Java
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
   
   
   
@@ -529,14 +546,17 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -548,10 +568,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" data-md-state="indeterminate" type="checkbox" id="__nav_3_2" checked>
       
-      <label class="md-nav__link" for="__nav_3_2">
-        APM for K8s / containerized apps
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_2">
+          APM for K8s / containerized apps
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="APM for K8s / containerized apps" data-md-level="2">
         <label class="md-nav__title" for="__nav_3_2">
           <span class="md-nav__icon md-icon"></span>
@@ -560,58 +584,25 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
     <li class="md-nav__item">
       <a href="../../k8s/" class="md-nav__link">
-        Index
+        APM for k8s
       </a>
     </li>
   
 
-          
             
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../k8s/istio/" class="md-nav__link">
-        Istio Setup
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../k8s/dotnet/" class="md-nav__link">
-        Dotnet
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../k8s/dotnet21/" class="md-nav__link">
-        Dotnet21
-      </a>
-    </li>
-  
-
           
         </ul>
       </nav>
     </li>
   
 
+            
           
         </ul>
       </nav>
@@ -729,7 +720,7 @@ You can stop the requests with <span class="keys"><kbd class="key-control">Ctrl<
 <p>OpenTelemetry repo for Python is <a href="https://github.com/signalfx/splunk-otel-python">here</a>.</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>Leave the Flask server running you'll need need this process for the next client examples in the workshop.  </p>
+<p>Leave the Flask server running you'll need need this process for the next client examples in the workshop.</p>
 </div>
                 
               
@@ -755,7 +746,7 @@ You can stop the requests with <span class="keys"><kbd class="key-control">Ctrl<
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../java/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Java" rel="prev">
+        <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Install Otel Collector" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -764,20 +755,20 @@ You can stop the requests with <span class="keys"><kbd class="key-control">Ctrl<
               <span class="md-footer__direction">
                 Previous
               </span>
-              Java
+              Install Otel Collector
             </div>
           </div>
         </a>
       
       
         
-        <a href="../node/" class="md-footer__link md-footer__link--next" aria-label="Next: Node.js" rel="next">
+        <a href="../java/" class="md-footer__link md-footer__link--next" aria-label="Next: Java" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Node.js
+              Java
             </div>
           </div>
           <div class="md-footer__button md-icon">
@@ -795,10 +786,12 @@ You can stop the requests with <span class="keys"><kbd class="key-control">Ctrl<
             Copyright 2021 Splunk Inc. All rights reserved.
           </div>
         
-        Made with
-        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-          Material for MkDocs
-        </a>
+        
+          Made with
+          <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+            Material for MkDocs
+          </a>
+        
         
       </div>
       
@@ -841,10 +834,10 @@ You can stop the requests with <span class="keys"><kbd class="key-control">Ctrl<
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.instant", "navigation.sections", "navigation.expand", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.94ec81fe.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.instant", "navigation.sections", "navigation.expand", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.8397ff9e.min.js", "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.48dfec6c.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.f89c2efe.min.js"></script>
       
     
   </body>
