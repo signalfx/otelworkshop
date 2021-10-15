@@ -13,14 +13,14 @@
         <meta name="author" content="Steve Lerner Staff Sales Engineer USA">
       
       
-        <link rel="canonical" href="https://github.com/otelworkshop/apm/workshop-steps/prep/">
+        <link rel="canonical" href="https://github.com/otelworkshop/apm/k8s/prep/">
       
       <link rel="icon" href="../../../images/favicon.ico">
       <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.3.3">
     
     
       
-        <title>Preparation - Splunk OpenTelemetry Workshop</title>
+        <title>Log in to your Splunk Observability account to identify token/realm - Splunk OpenTelemetry Workshop</title>
       
     
     
@@ -55,9 +55,9 @@
       
     
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Splunk OpenTelemetry Workshop - Preparation">
+    <meta property="og:title" content="Splunk OpenTelemetry Workshop - Log in to your Splunk Observability account to identify token/realm">
     <meta property="og:description" content="Learn to configure the Splunk OpenTelemetry Connector for APM and Infrastructure Monitoring as well as instrument applications with OpenTelemetry APM instrumentation to send telemetry to Splunk APM">
-    <meta property="og:url" content="https://github.com/otelworkshop/apm/workshop-steps/prep/">
+    <meta property="og:url" content="https://github.com/otelworkshop/apm/k8s/prep/">
     <meta property="og:image" content="">
     <meta property="og:image:type" content="image/png">
     <meta property="og:image:width" content="1080">
@@ -131,7 +131,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Preparation
+              Log in to your Splunk Observability account to identify token/realm
             
           </span>
         </div>
@@ -205,15 +205,13 @@
         
   
   
-    
-  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../../../introduction/" class="md-tabs__link md-tabs__link--active">
+      <a href="../../../introduction/" class="md-tabs__link">
         OpenTelemetry Workshop
       </a>
     </li>
@@ -285,14 +283,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" data-md-state="indeterminate" type="checkbox" id="__nav_2" checked>
       
       
       
@@ -327,106 +323,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Preparation
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../workshop-steps/prep/" class="md-nav__link">
         Preparation
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#create-lab-environment" class="md-nav__link">
-    Create Lab Environment
-  </a>
-  
-    <nav class="md-nav" aria-label="Create Lab Environment">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#recommended-environment" class="md-nav__link">
-    Recommended Environment
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#local-environment" class="md-nav__link">
-    Local Environment
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#mac-os" class="md-nav__link">
-    Mac OS
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#windows" class="md-nav__link">
-    Windows
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#launch-multipass-ubuntu-vm" class="md-nav__link">
-    Launch Multipass Ubuntu VM
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#install-otel-workshop" class="md-nav__link">
-    Install OTel Workshop
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#key-otel-apm-concepts" class="md-nav__link">
-    Key OTel APM concepts
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -581,7 +482,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../k8s/" class="md-nav__link">
+      <a href="../" class="md-nav__link">
         APM for k8s
       </a>
     </li>
@@ -802,41 +703,6 @@ This will take up to 10 minutes to execute- leave it running until complete.  </
       
         
 <footer class="md-footer">
-  
-    <nav class="md-footer__inner md-grid" aria-label="Footer">
-      
-        
-        <a href="../../../introduction/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Introduction" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              Introduction
-            </div>
-          </div>
-        </a>
-      
-      
-        
-        <a href="../../host/" class="md-footer__link md-footer__link--next" aria-label="Next: Install Otel Collector" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              Install Otel Collector
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
