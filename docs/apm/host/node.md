@@ -1,10 +1,14 @@
 # Single Host Node.js Lab
 
+Each step should be performed in a separate terminal window.
+
 ## Prerequisites
 
-Make sure that you still have the Python Flask server from Python Lab running. If you accidentally shut it down follow steps from Python lab to restart the Python Flask server.
+Make sure that you still have the Python Flask server from the Python Lab running. If you accidentally shut it down follow steps from the Python lab to restart the Python Flask server.
 
-Make sure you are in the right directory to start the node.js activities:  
+Make sure you are in the right directory to start the Node.js activities:  
+
+**Open a new terminal in your Linux instance**  
 
 ```bash
 cd ~/otelworkshop/host/node
@@ -41,7 +45,7 @@ Additionally span IDs will print in the terminal where flask-server.py is runnin
 
 ![Node Spans](../../images/16-nodespans.png)
 
-## Auto Instrumentation
+## Where is the OpenTelemetry Instrumentation?
 
 For Node.js, the current auto-instrum
 tation is based on OpenTracing from Splunk SignalFx. These spans are accepted by the OpenTelmetry Collector.

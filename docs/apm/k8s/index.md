@@ -2,13 +2,18 @@ Identify your token and realm from the Splunk Observability Cloud Portal:
 `Organization Settings->Access Tokens` and `Your Name->Account Settings`  
 
 > <ins>If using your own k8s cluster on an Ubuntu host</ins>  
+> Remove the Otel Collector if its running on the same host as your k8s cluster:
+> ```bash
+> sudo sh /tmp/splunk-otel-collector.sh --uninstall
+> ```
 > Use this setup script to bootstrap your Debian based k8s environment with everything needed for the k8s workshop:  
 ```
 bash <(curl -s https://raw.githubusercontent.com/signalfx/otelworkshop/master/setup-tools/k8s-env-only.sh)
 ```
 > Ensure you have `helm` and `lynx` installed.  
+>  
 > Skip to: **2: Deploy APM for containerized apps: Python and Java**  
-> If you are using k8s anywhere else you can still do this workshop but will need to ensure `helm`, `lynx` and the other commands encountered in the workshop are available. It is recommended to run this workshop in a debian environment.
+> If you are using k8s anywhere else you can still do this workshop but will need to ensure `helm`, `lynx` are available.
 
 ---
 ### 1: Use Data Setup Wizard for Splunk Otel Collector Pod on k3s
@@ -35,9 +40,7 @@ Choose the following:
 
 And then select `Next`  
 
-`Install Integration` page:  
-Copy and paste each step to your shell  
-The final step will install the Otel Collector pod  
+Follow the steps on the `Install Integration` page.
 
 <img src="../../images/18-datasetup-k8sinstall.png" width="360"> 
 

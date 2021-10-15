@@ -4,9 +4,11 @@ Each step should be performed in a separate terminal window.
 
 ## Prerequisites
 
-Make sure that you still have the Python Flask server from the Python Lab running. If you accidentally shut it down follow steps from Workshop #2 to restart the Python Flask server.
+Make sure that you still have the Python Flask server from the Python Lab running. If you accidentally shut it down follow steps from the Python lab to restart the Python Flask server.
 
 Make sure you are in the right directory to start the Java activities:  
+
+**Open a new terminal in your Linux instance**  
 
 ```bash
 cd ~/otelworkshop/host/java
@@ -14,7 +16,7 @@ cd ~/otelworkshop/host/java
 
 ## Download Otel Java Instrumentation
 
-Download Splunk OpenTelemetry Java Auto-instrumentation to `/opt`
+Download Splunk OpenTelemetry Java Auto-instrumentation to `/opt`:
 
 ```bash
 source install-java-otel.sh
@@ -28,7 +30,7 @@ Run the Java example with OKHTTP requests:
 source run-client.sh
 ```
 
-You will see requests printed to the window.
+You will see requests printed to the terminal.
 
 ## APM Dashboard
 
@@ -44,7 +46,7 @@ You should now see a new Java requests service alongside the Python one.
 
 ![Java Spans](../../images/13-javaspans.png)
 
-## Auto-instrumentation
+## Where is the OpenTelemetry Instrumentation?
 
 In the `run-client.sh` script the java command:
 

@@ -4,18 +4,19 @@ Each step should be performed in a separate terminal window.
 
 ## Configure Environment
 
-Set up environment and run Python Flask server using auto-instrumentation
+**Open the first terminal window** in your Linux instance and set up environment and run Python Flask server using auto-instrumentation:
 
 ```bash
 cd ~/otelworkshop/host/python
 source run-server.sh
 ```
-
 You will see the server startup text when this is run.
 
 ## Run client application
 
-Run the client python app via the `splk-py-trace` command to send requests to the Flask server. Open a new terminal window to your Linux instance and run the Python client to sent POST requests to the Flask server.
+**Open a new terminal window** in your Linux instance and run the Python client to sent POST requests to the Flask server:  
+
+Run the client python app via the `splk-py-trace` command to send requests to the Flask server:  
 
 ```bash
 cd ~/otelworkshop/host/python
@@ -56,7 +57,7 @@ Click in the service dashboard requests and show sample traces, and then click t
 
 Click on Troubleshooting to see the map with latency, errors, etc. Try the Tag Spotlight view of Span Tags.
 
-## Auto-Instrumentation
+## Where is the OpenTelemetry Instrumentation?
 
 The `run-server.sh` and `run-client.sh` scripts set up the environment variables for OpenTelemetry and invoke the Python auto instrumentation:  
 
