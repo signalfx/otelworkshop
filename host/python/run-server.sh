@@ -4,4 +4,4 @@ export OTEL_RESOURCE_ATTRIBUTES=service.name=py-otel-flask-server,deployment.env
 export OTEL_EXPORTER_OTLP_ENDPOINT=http://127.0.0.1:4317
 # ensure path is correct
 export PATH="$HOME/.local/bin:$PATH"
-splk-py-trace python3 flask-server.py
+splunk-py-trace python3 flask-server.py

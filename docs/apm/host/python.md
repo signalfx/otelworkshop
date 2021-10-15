@@ -28,7 +28,7 @@ You can stop the requests with ++ctrl+c++
 
 ## Validate span are being sent
 
-Check OpenTelemetry Collector Statistics to see that spans are being sent. Open a new terminal window to your Linux instance (or use `tmux` and run in separate pane)
+Check OpenTelemetry Collector Statistics to see that spans are being sent. Open a new terminal window to your Linux instance.
 
 `lynx localhost:55679/debug/tracez` will show the metrics and spans being gathered and sent by the Collector.  
 
@@ -50,12 +50,10 @@ Service map of this python demo
 
 ![image](../../images/08-python.png)
 
-Click in the service dashboard requests and show sample traces, and then click the trace to see spans.
+Click on one of the peaks in the grey graph within "Services By Latency (P90)" on the right hand side and then click the trace to see spans. Also try out **Tag Spotlight** to see how application operations are broken down in a granular way. You can also try the **Tags** menu on top to search for a single trace or group of traces by key:value.
 
 ![image](../../images/09-pythontraces.png)  
 ![image](../../images/10-pythonspans.png)  
-
-Click on Troubleshooting to see the map with latency, errors, etc. Try the Tag Spotlight view of Span Tags.
 
 ## Where is the OpenTelemetry Instrumentation?
 
