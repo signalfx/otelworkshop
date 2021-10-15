@@ -1039,12 +1039,15 @@
 <code>Organization Settings-&gt;Access Tokens</code> and <code>Your Name-&gt;Account Settings</code>  </p>
 <blockquote>
 <p><ins>If using your own k8s cluster on an Ubuntu host</ins><br />
+Remove the Otel Collector if its running on the same host as your k8s cluster:
+<div class="highlight"><pre><span></span><code>sudo sh /tmp/splunk-otel-collector.sh --uninstall
+</code></pre></div>
 Use this setup script to bootstrap your Debian based k8s environment with everything needed for the k8s workshop:<br />
 <div class="highlight"><pre><span></span><code>bash &lt;(curl -s https://raw.githubusercontent.com/signalfx/otelworkshop/master/setup-tools/k8s-env-only.sh)
 </code></pre></div>
-Ensure you have <code>helm</code> and <code>lynx</code> installed.<br />
-Skip to: <strong>2: Deploy APM for containerized apps: Python and Java</strong><br />
-If you are using k8s anywhere else you can still do this workshop but will need to ensure <code>helm</code>, <code>lynx</code> and the other commands encountered in the workshop are available. It is recommended to run this workshop in a debian environment.</p>
+Ensure you have <code>helm</code> and <code>lynx</code> installed.  </p>
+<p>Skip to: <strong>2: Deploy APM for containerized apps: Python and Java</strong><br />
+If you are using k8s anywhere else you can still do this workshop but will need to ensure <code>helm</code>, <code>lynx</code> are available.</p>
 </blockquote>
 <hr />
 <h3 id="1-use-data-setup-wizard-for-splunk-otel-collector-pod-on-k3s">1: Use Data Setup Wizard for Splunk Otel Collector Pod on k3s<a class="headerlink" href="#1-use-data-setup-wizard-for-splunk-otel-collector-pod-on-k3s" title="Permanent link">&para;</a></h3>
@@ -1089,9 +1092,7 @@ If you are using k8s anywhere else you can still do this workshop but will need 
 </tbody>
 </table>
 <p>And then select <code>Next</code>  </p>
-<p><code>Install Integration</code> page:<br />
-Copy and paste each step to your shell<br />
-The final step will install the Otel Collector pod  </p>
+<p>Follow the steps on the <code>Install Integration</code> page.</p>
 <p><img src="../../images/18-datasetup-k8sinstall.png" width="360"> </p>
 <p>A result will look like this:<br />
 <div class="highlight"><pre><span></span><code>NAME: splunk-otel-collector-1620505665

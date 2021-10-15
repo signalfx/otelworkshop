@@ -490,8 +490,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#auto-instrumentation" class="md-nav__link">
-    Auto-instrumentation
+  <a href="#where-is-the-opentelemetry-instrumentation" class="md-nav__link">
+    Where is the OpenTelemetry Instrumentation?
   </a>
   
 </li>
@@ -640,8 +640,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#auto-instrumentation" class="md-nav__link">
-    Auto-instrumentation
+  <a href="#where-is-the-opentelemetry-instrumentation" class="md-nav__link">
+    Where is the OpenTelemetry Instrumentation?
   </a>
   
 </li>
@@ -662,19 +662,20 @@
                 <h1 id="single-host-java-lab">Single Host Java Lab<a class="headerlink" href="#single-host-java-lab" title="Permanent link">&para;</a></h1>
 <p>Each step should be performed in a separate terminal window.</p>
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
-<p>Make sure that you still have the Python Flask server from the Python Lab running. If you accidentally shut it down follow steps from Workshop #2 to restart the Python Flask server.</p>
+<p>Make sure that you still have the Python Flask server from the Python Lab running. If you accidentally shut it down follow steps from the Python lab to restart the Python Flask server.</p>
 <p>Make sure you are in the right directory to start the Java activities:  </p>
+<p><strong>Open a new terminal in your Linux instance</strong>  </p>
 <div class="highlight"><pre><span></span><code><span class="nb">cd</span> ~/otelworkshop/host/java
 </code></pre></div>
 <h2 id="download-otel-java-instrumentation">Download Otel Java Instrumentation<a class="headerlink" href="#download-otel-java-instrumentation" title="Permanent link">&para;</a></h2>
-<p>Download Splunk OpenTelemetry Java Auto-instrumentation to <code>/opt</code></p>
+<p>Download Splunk OpenTelemetry Java Auto-instrumentation to <code>/opt</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="nb">source</span> install-java-otel.sh
 </code></pre></div>
 <h2 id="run-the-java-http-requests-client">Run the Java HTTP requests client<a class="headerlink" href="#run-the-java-http-requests-client" title="Permanent link">&para;</a></h2>
 <p>Run the Java example with OKHTTP requests:</p>
 <div class="highlight"><pre><span></span><code><span class="nb">source</span> run-client.sh
 </code></pre></div>
-<p>You will see requests printed to the window.</p>
+<p>You will see requests printed to the terminal.</p>
 <h2 id="apm-dashboard">APM Dashboard<a class="headerlink" href="#apm-dashboard" title="Permanent link">&para;</a></h2>
 <p>Traces/services will now be viewable in the APM dashboard. A new service takes about 90 seconds to register for the first time, the Python and n all data will be available in real time.  </p>
 <p>Additionally the requests made by Java will print in the terminal where flask-server.py is running. You can use <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-c">C</kbd></span> to stop the requests and server any time.</p>
@@ -682,7 +683,7 @@
 <p><img alt="Java" src="../../../images/11-java.png" /></p>
 <p><img alt="Java Traces" src="../../../images/12-javatraces.png" /></p>
 <p><img alt="Java Spans" src="../../../images/13-javaspans.png" /></p>
-<h2 id="auto-instrumentation">Auto-instrumentation<a class="headerlink" href="#auto-instrumentation" title="Permanent link">&para;</a></h2>
+<h2 id="where-is-the-opentelemetry-instrumentation">Where is the OpenTelemetry Instrumentation?<a class="headerlink" href="#where-is-the-opentelemetry-instrumentation" title="Permanent link">&para;</a></h2>
 <p>In the <code>run-client.sh</code> script the java command:</p>
 <div class="highlight"><pre><span></span><code>java <span class="se">\</span>
 -Dexec.executable<span class="o">=</span><span class="s2">&quot;java&quot;</span> <span class="se">\</span>

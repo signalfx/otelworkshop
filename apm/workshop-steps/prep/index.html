@@ -377,8 +377,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#local-environment" class="md-nav__link">
-    Local Environment
+  <a href="#how-to-build-an-ubuntu-vm-on-your-windows-or-mac-pc" class="md-nav__link">
+    How To Build An Ubuntu VM on your Windows or Mac PC
   </a>
   
 </li>
@@ -650,8 +650,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#local-environment" class="md-nav__link">
-    Local Environment
+  <a href="#how-to-build-an-ubuntu-vm-on-your-windows-or-mac-pc" class="md-nav__link">
+    How To Build An Ubuntu VM on your Windows or Mac PC
   </a>
   
 </li>
@@ -721,11 +721,12 @@
 <p>Splunk Observability is for <strong>server environments</strong>. This workshop uses <strong>Ubuntu Linux</strong> as the lab server environment. You can use any Ubuntu platform - bare metal, VM, or cloud VM.</p>
 <h3 id="recommended-environment">Recommended Environment<a class="headerlink" href="#recommended-environment" title="Permanent link">&para;</a></h3>
 <p>For optimal learning we recommend that you use a fresh cloud VM running Ubuntu with minimum 12GB RAM and 20GB disk space.  </p>
+<p>Splunk provdes AWS EC2 <a href="https://github.com/signalfx/observability-workshop/tree/master/aws/ec2">setup/bootstrap scripts via Terraform.</a></p>
 <p>If you chose your own Ubuntu machine, you can set it up with the Workshop software with this command:</p>
 <div class="highlight"><pre><span></span><code>bash &lt;<span class="o">(</span>curl -s https://raw.githubusercontent.com/signalfx/otelworkshop/master/setup-tools/ubuntu.sh<span class="o">)</span>
 </code></pre></div>
-<h3 id="local-environment">Local Environment<a class="headerlink" href="#local-environment" title="Permanent link">&para;</a></h3>
-<p>If you cannot procure a cloud VM, you can create an Ubuntu Linux environment on a Mac or PC and install the necessary software components:</p>
+<h3 id="how-to-build-an-ubuntu-vm-on-your-windows-or-mac-pc">How To Build An Ubuntu VM on your Windows or Mac PC<a class="headerlink" href="#how-to-build-an-ubuntu-vm-on-your-windows-or-mac-pc" title="Permanent link">&para;</a></h3>
+<p>If you cannot procure a cloud VM, you can create an Ubuntu Linux environment on a Mac or PC and install the necessary software components</p>
 <h3 id="mac-os">Mac OS<a class="headerlink" href="#mac-os" title="Permanent link">&para;</a></h3>
 <p>Install <a href="https://brew.sh">Homebrew</a>:</p>
 <div class="highlight"><pre><span></span><code>/bin/bash -c <span class="s2">&quot;</span><span class="k">$(</span>curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh<span class="k">)</span><span class="s2">&quot;</span>

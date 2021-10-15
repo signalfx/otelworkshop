@@ -504,8 +504,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#auto-instrumentation" class="md-nav__link">
-    Auto Instrumentation
+  <a href="#where-is-the-opentelemetry-instrumentation" class="md-nav__link">
+    Where is the OpenTelemetry Instrumentation?
   </a>
   
 </li>
@@ -640,8 +640,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#auto-instrumentation" class="md-nav__link">
-    Auto Instrumentation
+  <a href="#where-is-the-opentelemetry-instrumentation" class="md-nav__link">
+    Where is the OpenTelemetry Instrumentation?
   </a>
   
 </li>
@@ -660,9 +660,11 @@
                 
                 
                 <h1 id="single-host-nodejs-lab">Single Host Node.js Lab<a class="headerlink" href="#single-host-nodejs-lab" title="Permanent link">&para;</a></h1>
+<p>Each step should be performed in a separate terminal window.</p>
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
-<p>Make sure that you still have the Python Flask server from Python Lab running. If you accidentally shut it down follow steps from Python lab to restart the Python Flask server.</p>
-<p>Make sure you are in the right directory to start the node.js activities:  </p>
+<p>Make sure that you still have the Python Flask server from the Python Lab running. If you accidentally shut it down follow steps from the Python lab to restart the Python Flask server.</p>
+<p>Make sure you are in the right directory to start the Node.js activities:  </p>
+<p><strong>Open a new terminal in your Linux instance</strong>  </p>
 <div class="highlight"><pre><span></span><code><span class="nb">cd</span> ~/otelworkshop/host/node
 </code></pre></div>
 <h2 id="configure-nodejs-environment">Configure Node.js environment<a class="headerlink" href="#configure-nodejs-environment" title="Permanent link">&para;</a></h2>
@@ -681,7 +683,7 @@ npm install signalfx-tracing
 <p><img alt="Node" src="../../../images/14-node.png" /></p>
 <p><img alt="Node Traces" src="../../../images/15-nodetraces.png" /></p>
 <p><img alt="Node Spans" src="../../../images/16-nodespans.png" /></p>
-<h2 id="auto-instrumentation">Auto Instrumentation<a class="headerlink" href="#auto-instrumentation" title="Permanent link">&para;</a></h2>
+<h2 id="where-is-the-opentelemetry-instrumentation">Where is the OpenTelemetry Instrumentation?<a class="headerlink" href="#where-is-the-opentelemetry-instrumentation" title="Permanent link">&para;</a></h2>
 <p>For Node.js, the current auto-instrum
 tation is based on OpenTracing from Splunk SignalFx. These spans are accepted by the OpenTelmetry Collector.</p>
 <p>In <code>app.js</code> is a call to initiate an auto-instrumenting tracer from npm package <code>signalfx-tracing</code></p>
