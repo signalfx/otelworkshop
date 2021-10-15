@@ -8,7 +8,7 @@ It is recommended to do each step in a separate terminal.
 Make sure that you still have the Python Flask server from Lab #2 running. If you accidentally shut it down follow steps from Workshop #2 to restart the Python Flask server.
 
 Make sure you are in the right directory to start the Java activities:  
-`cd ~/apmworkshop/apm/java`
+`cd ~/otelworkshop/host/java`
 ***
 ## Step #2 Download Splunk OpenTelemetry Java Auto-instrumentation to /opt
 

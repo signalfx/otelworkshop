@@ -7,7 +7,7 @@ Make sure that you still have the Python Flask server from Workshop Activity #2 
 Make sure you are in the right directory to start the node.js activities:  
 
 ```bash
-cd ~/apmworkshop/apm/node
+cd ~/otelworkshop/host/node
 ```
 
 ## Step #2 Set up your node environment for APM

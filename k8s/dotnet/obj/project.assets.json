@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/ubuntu/apmworkshop/apm/misc/dotnet/myApp.csproj",
+      "projectUniqueName": "/home/ubuntu/apmworkshop/k8s/dotnet/myApp.csproj",
       "projectName": "myApp",
-      "projectPath": "/home/ubuntu/apmworkshop/apm/misc/dotnet/myApp.csproj",
+      "projectPath": "/home/ubuntu/apmworkshop/k8s/dotnet/myApp.csproj",
       "packagesPath": "/home/ubuntu/.nuget/packages/",
-      "outputPath": "/home/ubuntu/apmworkshop/apm/misc/dotnet/obj/",
+      "outputPath": "/home/ubuntu/apmworkshop/k8s/dotnet/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/ubuntu/.nuget/NuGet/NuGet.Config"

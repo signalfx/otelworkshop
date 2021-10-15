@@ -205,7 +205,7 @@ You will see the function called ExampleSpan with custom `Logging` messages and 
 
 <img src="../../images/23-k8s-m-span2.png" width="360"> 
 
-Study the [manual instrumentation code example here.](https://github.com/signalfx/apmworkshop/blob/master/apm/k8s/java/manual-inst/src/main/java/sf/main/GetExample.java)
+Study the [manual instrumentation code example here.](https://github.com/signalfx/otelworkshop/blob/master/k8s/java/manual-inst/src/main/java/sf/main/GetExample.java)
 
 There are two methods shown- the decorator @WithSpan method (easiest), and using the GlobalTracer method (more complicated/powerful)...
 

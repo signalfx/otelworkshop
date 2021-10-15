@@ -1,11 +1,11 @@
-### This lab requires starting from the main [APM Instrumentation Workshop](../workshop-steps/3-workshop-labs.md)
+### This lab requires starting from the first Workshop host lab
 
 It is recommended to do each step in a separate terminal.
 ***
 ## Step #1 Set up environment and run Python Flask server using auto-instrumentation
 
 ```
-cd ~/apmworkshop/apm/python
+cd ~/otelworkshop/host/python
 source run-server.sh
 ```
 
@@ -16,7 +16,7 @@ You will see the server startup text when this is run.
 Open a new terminal window to your Linux instance and run the Python client to sent POST requests to the Flask server.
 
 ```
-cd ~/apmworkshop/apm/python
+cd ~/otelworkshop/host/python
 source run-client.sh
 ```
 
