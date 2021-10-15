@@ -4,7 +4,7 @@ Identify your token and realm from the Splunk Observability Cloud Portal:
 > <ins>If using your own k8s cluster on an Ubuntu host</ins>  
 > Use this setup script to bootstrap your Debian based k8s environment with everything needed for the k8s workshop:  
 ```
-bash <(curl -s https://raw.githubusercontent.com/signalfx/apmworkshop/master/setup-tools/k8s-env-only.sh)
+bash <(curl -s https://raw.githubusercontent.com/signalfx/otelworkshop/master/setup-tools/k8s-env-only.sh)
 ```
 > Ensure you have `helm` and `lynx` installed.  
 > Skip to: **2: Deploy APM for containerized apps: Python and Java**  

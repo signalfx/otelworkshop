@@ -10,12 +10,12 @@ The task spins up two ECS Fargate containers:
 ### SETUP
 The agent is a standard deployment of a Fargate container as documented here: [Splunk Infra Fargate Deployment](https://github.com/signalfx/signalfx-agent/tree/master/deployments/fargate)
 
-The agent .yaml configuration is based on this [Fargate Example agent.yaml](https://raw.githubusercontent.com/signalfx/apmworkshop/master/apm/agent/fargate/agent.yaml)
+The agent .yaml configuration is based on this [Fargate Example agent.yaml](https://raw.githubusercontent.com/signalfx/otelworkshop/master/apm/agent/fargate/agent.yaml)
 
 It has been configured for APM with instructions here:
 https://docs.signalfx.com/en/latest/apm/apm-getting-started/apm-smart-agent.html
 
-To use this example task you must change the REALM of the `traceendpointurl` (or set it as an environment variable) in the `.json` task definition: [Fargate Example agent.yaml](https://raw.githubusercontent.com/signalfx/apmworkshop/master/apm/agent/fargate/agent.yaml)
+To use this example task you must change the REALM of the `traceendpointurl` (or set it as an environment variable) in the `.json` task definition: [Fargate Example agent.yaml](https://raw.githubusercontent.com/signalfx/otelworkshop/master/apm/agent/fargate/agent.yaml)
 
 To deploy this example, you must have a Fargate ECS environment ready to go with VPC, task roles for logs, etc..
 
@@ -73,4 +73,4 @@ If you just want to run the Splunk SmartAgent, you can use the `fargate-agent.js
 
 The [commands.md](./commands.md) file offers helpful commands for ECS Fargate management for the AWS CLI.
 
-Dockerfile for the java trace generator is here: https://raw.githubusercontent.com/signalfx/apmworkshop/master/apm/k8s/python/tools
+Dockerfile for the java trace generator is here: https://raw.githubusercontent.com/signalfx/otelworkshop/master/apm/k8s/python/tools
