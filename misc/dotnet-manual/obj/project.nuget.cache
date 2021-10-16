@@ -1,0 +1,32 @@
+{
+  "version": 2,
+  "dgSpecHash": "KtuNYN1fZoBecM383kRjejXc053pa4fuZmkcnDAN6y4msL0ywjFGGKixAh7SyGaAZSAexP/EF/vFJ+qc0GUC4w==",
+  "success": true,
+  "projectFilePath": "E:\\Code\\otelworkshop\\misc\\dotnet-manual\\dotnet-manual.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\steve\\.nuget\\packages\\google.protobuf\\3.15.5\\google.protobuf.3.15.5.nupkg.sha512",
+    "C:\\Users\\steve\\.nuget\\packages\\grpc.core.api\\2.32.0\\grpc.core.api.2.32.0.nupkg.sha512",
+    "C:\\Users\\steve\\.nuget\\packages\\grpc.net.client\\2.32.0\\grpc.net.client.2.32.0.nupkg.sha512",
+    "C:\\Users\\steve\\.nuget\\packages\\grpc.net.common\\2.32.0\\grpc.net.common.2.32.0.nupkg.sha512",
+    "C:\\Users\\steve\\.nuget\\packages\\microsoft.extensions.configuration\\2.1.0\\microsoft.extensions.configuration.2.1.0.nupkg.sha512",
+    "C:\\Users\\steve\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\2.1.0\\microsoft.extensions.configuration.abstractions.2.1.0.nupkg.sha512",
+    "C:\\Users\\steve\\.nuget\\packages\\microsoft.extensions.configuration.binder\\2.1.0\\microsoft.extensions.configuration.binder.2.1.0.nupkg.sha512",
+    "C:\\Users\\steve\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\2.1.0\\microsoft.extensions.dependencyinjection.abstractions.2.1.0.nupkg.sha512",
+    "C:\\Users\\steve\\.nuget\\packages\\microsoft.extensions.logging\\2.1.0\\microsoft.extensions.logging.2.1.0.nupkg.sha512",
+    "C:\\Users\\steve\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\3.0.3\\microsoft.extensions.logging.abstractions.3.0.3.nupkg.sha512",
+    "C:\\Users\\steve\\.nuget\\packages\\microsoft.extensions.logging.configuration\\2.1.0\\microsoft.extensions.logging.configuration.2.1.0.nupkg.sha512",
+    "C:\\Users\\steve\\.nuget\\packages\\microsoft.extensions.options\\2.1.0\\microsoft.extensions.options.2.1.0.nupkg.sha512",
+    "C:\\Users\\steve\\.nuget\\packages\\microsoft.extensions.options.configurationextensions\\2.1.0\\microsoft.extensions.options.configurationextensions.2.1.0.nupkg.sha512",
+    "C:\\Users\\steve\\.nuget\\packages\\microsoft.extensions.primitives\\2.1.0\\microsoft.extensions.primitives.2.1.0.nupkg.sha512",
+    "C:\\Users\\steve\\.nuget\\packages\\opentelemetry\\1.1.0\\opentelemetry.1.1.0.nupkg.sha512",
+    "C:\\Users\\steve\\.nuget\\packages\\opentelemetry.api\\1.1.0\\opentelemetry.api.1.1.0.nupkg.sha512",
+    "C:\\Users\\steve\\.nuget\\packages\\opentelemetry.exporter.console\\1.1.0\\opentelemetry.exporter.console.1.1.0.nupkg.sha512",
+    "C:\\Users\\steve\\.nuget\\packages\\opentelemetry.exporter.opentelemetryprotocol\\1.1.0\\opentelemetry.exporter.opentelemetryprotocol.1.1.0.nupkg.sha512",
+    "C:\\Users\\steve\\.nuget\\packages\\system.collections.immutable\\1.4.0\\system.collections.immutable.1.4.0.nupkg.sha512",
+    "C:\\Users\\steve\\.nuget\\packages\\system.diagnostics.diagnosticsource\\5.0.1\\system.diagnostics.diagnosticsource.5.0.1.nupkg.sha512",
+    "C:\\Users\\steve\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512",
+    "C:\\Users\\steve\\.nuget\\packages\\system.reflection.emit.lightweight\\4.7.0\\system.reflection.emit.lightweight.4.7.0.nupkg.sha512",
+    "C:\\Users\\steve\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.5.2\\system.runtime.compilerservices.unsafe.4.5.2.nupkg.sha512"
+  ],
+  "logs": []
+}
