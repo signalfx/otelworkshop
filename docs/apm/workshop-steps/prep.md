@@ -114,6 +114,6 @@ Moving parts that make APM happen in OpenTelemetry:
 - Application spans will be sent to the OpenTelemetry Collector running on a host or k8s pod to correlate APM with host/cluster metrics. The Collector then relays the spans to Splunk Observability Cloud APM where they will be assembled into traces.  
 - The APM spans flow in real time and there is no sampling. Pre-made default Service Dashboards with application metrics for each app will appear once spans are received by Splunk APM. The APM view has directed troubleshooting.  
 - Environment variables control the setup of APM. These names vary based on instrumentation but they always include:  
-      - **Endpoint**: destination to send spans  
-      - **Service name**: the name of the application as you want it to appear in a service map  
-      - **Environment**: a value for segmenting betwen dev/prod etc. Can be set with instrumentation and not necessarily as part of an ENV variable.
+  - **Endpoint**: destination to send spans  
+  - **Service name**: the name of the application as you want it to appear in a service map  
+  - **Environment**: a value for segmenting betwen dev/prod etc. Can be set with instrumentation and not necessarily as part of an ENV variable.

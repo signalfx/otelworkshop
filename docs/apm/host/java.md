@@ -8,7 +8,7 @@ Make sure that you still have the Python Flask server from the Python Lab runnin
 
 Make sure you are in the right directory to start the Java activities:  
 
-**Open a new terminal in your Linux instance**  
+## Open a new terminal in your Linux instance
 
 ```bash
 cd ~/otelworkshop/host/java

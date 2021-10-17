@@ -10,6 +10,7 @@ Each step should be performed in a separate terminal window.
 cd ~/otelworkshop/host/python
 source run-server.sh
 ```
+
 You will see the server startup text when this is run.
 
 ## Run client application

@@ -1,4 +1,6 @@
-`Splunk Obervability -> Data Setup -> Linux`  
+# Install OpenTelemetry Connector
+
+`Splunk Observability -> Data Setup -> Linux`
 
 Choose the following:
 
