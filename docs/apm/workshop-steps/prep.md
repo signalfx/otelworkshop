@@ -21,7 +21,7 @@ Splunk Observability is for **server environments**. This workshop uses **Ubuntu
 
 For optimal learning we recommend that you use a fresh cloud VM running Ubuntu with minimum 12GB RAM and 20GB disk space.  
 
-Splunk provdes AWS EC2 [setup/bootstrap scripts via Terraform.](https://github.com/signalfx/observability-workshop/tree/master/aws/ec2)
+Splunk provdes AWS EC2 [setup/bootstrap scripts via Terraform](https://github.com/signalfx/observability-workshop/tree/master/aws/ec2). Also, [`cloud-init`](https://github.com/signalfx/observability-workshop/blob/master/cloud-init/k3s.yaml) YAML files are available for Multipass.
 
 If you chose your own Ubuntu machine, you can set it up with the Workshop software with this command:
 
