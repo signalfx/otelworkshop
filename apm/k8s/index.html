@@ -1051,11 +1051,15 @@ If you are using k8s anywhere else you can still do this workshop but will need 
 </blockquote>
 <hr />
 <h3 id="1-use-data-setup-wizard-for-splunk-otel-collector-pod-on-k3s">1: Use Data Setup Wizard for Splunk Otel Collector Pod on k3s<a class="headerlink" href="#1-use-data-setup-wizard-for-splunk-otel-collector-pod-on-k3s" title="Permanent link">&para;</a></h3>
-<p>If you have the Otel Collector running on a host, remove it at this time:<br />
+<blockquote>
+<p><strong>IMPORTANT: If you have the Otel Collector and prior lab examples running on a host, them at this time:</strong><br />
+Stop all the prior labs apps by using <code>ctrl-c</code> in each terminal window and then closing the window.<br />
+Remove the host based otel collector: 
 <code>sudo sh /tmp/splunk-otel-collector.sh --uninstall</code></p>
+</blockquote>
 <h4 id="1a-splunk-observability-cloud-portal">1a: Splunk Observability Cloud Portal<a class="headerlink" href="#1a-splunk-observability-cloud-portal" title="Permanent link">&para;</a></h4>
 <p>In Splunk Observability Cloud: <code>Data Setup-&gt;Kubernetes-&gt;Add Connection</code>  </p>
-<p><img src="../../images/17-datasetup-k8s.png" width="360">git remote set-url origin "https://</p>
+<p><img src="../../images/17-datasetup-k8s.png" width="360">  </p>
 <p>Choose the following:</p>
 <table>
 <thead>
@@ -1125,6 +1129,9 @@ sudo chmod 755 /etc/rancher/k3s/k3s.yaml
 <code>splunkAccessToken</code><br />
 <code>splunkRealm</code>  </p>
 <h4 id="prepare-valuesyaml-file-for-updating-the-helm-chart">Prepare values.yaml file for updating the Helm chart<a class="headerlink" href="#prepare-valuesyaml-file-for-updating-the-helm-chart" title="Permanent link">&para;</a></h4>
+<p>Start in k8s directory:
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span> ~/otelworkshop/k8s
+</code></pre></div></p>
 <p>Edit <code>k3slogs.yaml</code> with thes values above.</p>
 <h4 id="update-the-collector">Update the Collector<a class="headerlink" href="#update-the-collector" title="Permanent link">&para;</a></h4>
 <p>Install the Collector configuration chart:  </p>
