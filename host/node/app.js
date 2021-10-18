@@ -1,4 +1,3 @@
-const tracer = require('signalfx-tracing').init()
 var http = require('http');
 
 function httpget() {

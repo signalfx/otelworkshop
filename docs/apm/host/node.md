@@ -18,7 +18,8 @@ cd ~/otelworkshop/host/node
 
 ```bash
 npm init && \
-npm install signalfx-tracing
+npm install @splunk/otel --save && \
+npm install @opentelemetry/instrumentation-http --save
 ```
 
 During `npm init` you can use all defaults
@@ -47,17 +48,6 @@ Additionally span IDs will print in the terminal where flask-server.py is runnin
 
 ## Where is the OpenTelemetry Instrumentation?
 
-For Node.js, the current auto-instrum
-tation is based on OpenTracing from Splunk SignalFx. These spans are accepted by the OpenTelmetry Collector.
+You can see in the `run-client.sh` how the environment has been set up for OpenTelemtry and where the autoinstrumentation takes place as the node app runs.
 
-In `app.js` is a call to initiate an auto-instrumenting tracer from npm package `signalfx-tracing`
-
-```nodejs
-const tracer = require('signalfx-tracing').init()
-```
-
-This auto-instrumenting tracer must be added to the top of a Node app however no code changes are necessary.  
-
-You can see in the `run-client.sh` how the environment has been set up for OpenTelemtry.
-
-Splunk's autoinstrumentation for node.js is [here](https://github.com/signalfx/signalfx-nodejs-tracing)
+Splunk's Otel autoinstrumentation for node.js is [here](https://github.com/signalfx/splunk-otel-js)
