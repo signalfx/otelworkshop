@@ -169,13 +169,10 @@ JVM Metrics are emitted by the Splunk OpenTelemetry Java instrumentation and sen
  
 Download this file to your local machine: [JVM Metrics Dashboard Template](https://raw.githubusercontent.com/signalfx/otelworkshop/master/k8s/dashboard_JVMMetrics.json)  
 
-In `Dashboards` open any `Sample Data->Sample Charts` `+` and select `Import Dashboard`  
+Select the + Icon on top right and create a new **Dashboard Group** called `test`  
 
-Import the `dashboard_JVMMetrics.json` Dashboard.  
-
-<img src="../../images/30-import-dash.png" width="360">    
-
-All JVM Metrics  
+Click the + Icon again and select `Import->Dahsboard`  
+and select the downloaded `dashboard_JVMMetrics.json` file.   
 
 <img src="../../images/27-jvm.png" width="360">    
 
