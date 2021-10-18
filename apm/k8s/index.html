@@ -1178,10 +1178,9 @@ The .yaml files show the environment variables telling the instrumentation to se
 <h3 id="3-monitor-jvm-metrics-for-a-java-container">3: Monitor JVM Metrics For a Java Container<a class="headerlink" href="#3-monitor-jvm-metrics-for-a-java-container" title="Permanent link">&para;</a></h3>
 <p>JVM Metrics are emitted by the Splunk OpenTelemetry Java instrumentation and send to the Collector.  </p>
 <p>Download this file to your local machine: <a href="https://raw.githubusercontent.com/signalfx/otelworkshop/master/k8s/dashboard_JVMMetrics.json">JVM Metrics Dashboard Template</a>  </p>
-<p>In <code>Dashboards</code> open any <code>Sample Data-&gt;Sample Charts</code> <code>+</code> and select <code>Import Dashboard</code>  </p>
-<p>Import the <code>dashboard_JVMMetrics.json</code> Dashboard.  </p>
-<p><img src="../../images/30-import-dash.png" width="360">    </p>
-<p>All JVM Metrics  </p>
+<p>Select the + Icon on top right and create a new <strong>Dashboard Group</strong> called <code>test</code>  </p>
+<p>Click the + Icon again and select <code>Import-&gt;Dahsboard</code><br />
+and select the downloaded <code>dashboard_JVMMetrics.json</code> file.   </p>
 <p><img src="../../images/27-jvm.png" width="360">    </p>
 <p>Filter by Application by adding <code>service:SERVICENAMEHERE</code>  </p>
 <p><img src="../../images/28-jvm-filter.png" width="360">    </p>
