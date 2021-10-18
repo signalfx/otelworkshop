@@ -1,4 +1,4 @@
-sudo apt-get -y update
+apmworkshopsudo apt-get -y update
 
 #install helm
 curl -s https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash
@@ -37,7 +37,7 @@ sudo apt install -y lynx
 curl -sS https://webinstall.dev/k9s | bash
 
 #clone workshop
-git clone https://github.com/signalfx/apmworkshop
+git clone https://github.com/signalfx/otelworkshop
 
 #update .bashrc for workshop
 curl https://raw.githubusercontent.com/signalfx/otelworkshop/master/setup-tools/bashrc -o bashrc
