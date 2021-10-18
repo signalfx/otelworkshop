@@ -483,6 +483,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#open-a-new-terminal-in-your-linux-instance" class="md-nav__link">
+    Open a new terminal in your Linux instance
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#configure-nodejs-environment" class="md-nav__link">
     Configure Node.js environment
   </a>
@@ -619,6 +626,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#open-a-new-terminal-in-your-linux-instance" class="md-nav__link">
+    Open a new terminal in your Linux instance
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#configure-nodejs-environment" class="md-nav__link">
     Configure Node.js environment
   </a>
@@ -664,12 +678,13 @@
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
 <p>Make sure that you still have the Python Flask server from the Python Lab running. If you accidentally shut it down follow steps from the Python lab to restart the Python Flask server.</p>
 <p>Make sure you are in the right directory to start the Node.js activities:  </p>
-<p><strong>Open a new terminal in your Linux instance</strong>  </p>
+<h2 id="open-a-new-terminal-in-your-linux-instance">Open a new terminal in your Linux instance<a class="headerlink" href="#open-a-new-terminal-in-your-linux-instance" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="nb">cd</span> ~/otelworkshop/host/node
 </code></pre></div>
 <h2 id="configure-nodejs-environment">Configure Node.js environment<a class="headerlink" href="#configure-nodejs-environment" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>npm init <span class="o">&amp;&amp;</span> <span class="se">\</span>
-npm install signalfx-tracing
+npm install @splunk/otel --save <span class="o">&amp;&amp;</span> <span class="se">\</span>
+npm install @opentelemetry/instrumentation-http --save
 </code></pre></div>
 <p>During <code>npm init</code> you can use all defaults</p>
 <h2 id="configure-httpget-requests">Configure HTTP.get requests<a class="headerlink" href="#configure-httpget-requests" title="Permanent link">&para;</a></h2>
@@ -684,14 +699,8 @@ npm install signalfx-tracing
 <p><img alt="Node Traces" src="../../../images/15-nodetraces.png" /></p>
 <p><img alt="Node Spans" src="../../../images/16-nodespans.png" /></p>
 <h2 id="where-is-the-opentelemetry-instrumentation">Where is the OpenTelemetry Instrumentation?<a class="headerlink" href="#where-is-the-opentelemetry-instrumentation" title="Permanent link">&para;</a></h2>
-<p>For Node.js, the current auto-instrum
-tation is based on OpenTracing from Splunk SignalFx. These spans are accepted by the OpenTelmetry Collector.</p>
-<p>In <code>app.js</code> is a call to initiate an auto-instrumenting tracer from npm package <code>signalfx-tracing</code></p>
-<div class="highlight"><pre><span></span><code>const tracer = require(&#39;signalfx-tracing&#39;).init()
-</code></pre></div>
-<p>This auto-instrumenting tracer must be added to the top of a Node app however no code changes are necessary.  </p>
-<p>You can see in the <code>run-client.sh</code> how the environment has been set up for OpenTelemtry.</p>
-<p>Splunk's autoinstrumentation for node.js is <a href="https://github.com/signalfx/signalfx-nodejs-tracing">here</a></p>
+<p>You can see in the <code>run-client.sh</code> how the environment has been set up for OpenTelemtry and where the autoinstrumentation takes place as the node app runs.</p>
+<p>Splunk's Otel autoinstrumentation for node.js is <a href="https://github.com/signalfx/splunk-otel-js">here</a></p>
                 
               
               

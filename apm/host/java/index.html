@@ -469,6 +469,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#open-a-new-terminal-in-your-linux-instance" class="md-nav__link">
+    Open a new terminal in your Linux instance
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#download-otel-java-instrumentation" class="md-nav__link">
     Download Otel Java Instrumentation
   </a>
@@ -619,6 +626,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#open-a-new-terminal-in-your-linux-instance" class="md-nav__link">
+    Open a new terminal in your Linux instance
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#download-otel-java-instrumentation" class="md-nav__link">
     Download Otel Java Instrumentation
   </a>
@@ -664,7 +678,7 @@
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
 <p>Make sure that you still have the Python Flask server from the Python Lab running. If you accidentally shut it down follow steps from the Python lab to restart the Python Flask server.</p>
 <p>Make sure you are in the right directory to start the Java activities:  </p>
-<p><strong>Open a new terminal in your Linux instance</strong>  </p>
+<h2 id="open-a-new-terminal-in-your-linux-instance">Open a new terminal in your Linux instance<a class="headerlink" href="#open-a-new-terminal-in-your-linux-instance" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="nb">cd</span> ~/otelworkshop/host/java
 </code></pre></div>
 <h2 id="download-otel-java-instrumentation">Download Otel Java Instrumentation<a class="headerlink" href="#download-otel-java-instrumentation" title="Permanent link">&para;</a></h2>
@@ -688,12 +702,10 @@
 <div class="highlight"><pre><span></span><code>java <span class="se">\</span>
 -Dexec.executable<span class="o">=</span><span class="s2">&quot;java&quot;</span> <span class="se">\</span>
 -Dotel.resource.attributes<span class="o">=</span>service.name<span class="o">=</span>java-otel-client,deployment.environment<span class="o">=</span>apm-workshop <span class="se">\</span>
--Dotel.exporter.otlp.endpoint<span class="o">=</span>http://127.0.0.1:4317 <span class="se">\</span>
--Dsplunk.metrics.endpoint<span class="o">=</span>http://127.0.0.1:9943 <span class="se">\</span>
 -javaagent:/opt/splunk-otel-javaagent.jar <span class="se">\</span>
 -jar ./target/java-app-1.0-SNAPSHOT.jar
 </code></pre></div>
-<p>The <code>splunk-otel-javaagent.jar</code> file is the automatic OpenTelemetry instrumentation that will emit spans from the app. No code changes are necessary! The <code>otel.</code> resources set up the service name, environment, and destination to send the JVM metrics and spans.</p>
+<p>The <code>splunk-otel-javaagent.jar</code> file is the automatic OpenTelemetry instrumentation that will emit spans from the app. No code changes are necessary! The <code>otel.</code> resources set up the service name Aand environment. Config details can be found <a href="https://docs.splunk.com/Observability/gdi/get-data-in/application/java/configuration/advanced-java-otel-configuration.html">here</a></p>
 <p>Splunk's OpenTelmetry autoinstrumentation for Java is <a href="https://github.com/signalfx/splunk-otel-java">here</a></p>
                 
               
