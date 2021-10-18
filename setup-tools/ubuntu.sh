@@ -1,4 +1,4 @@
-apmworkshopsudo apt-get -y update
+sudo apt-get -y update
 
 #install helm
 curl -s https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash
