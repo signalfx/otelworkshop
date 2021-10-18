@@ -18,14 +18,16 @@ bash <(curl -s https://raw.githubusercontent.com/signalfx/otelworkshop/master/se
 ---
 ### 1: Use Data Setup Wizard for Splunk Otel Collector Pod on k3s
 
-If you have the Otel Collector running on a host, remove it at this time:  
-`sudo sh /tmp/splunk-otel-collector.sh --uninstall`
+>**IMPORTANT: If you have the Otel Collector and prior lab examples running on a host, them at this time:**  
+>Stop all the prior labs apps by using `ctrl-c` in each terminal window and then closing the window.  
+>Remove the host based otel collector: 
+>`sudo sh /tmp/splunk-otel-collector.sh --uninstall`
 
 #### 1a: Splunk Observability Cloud Portal
  
 In Splunk Observability Cloud: `Data Setup->Kubernetes->Add Connection`  
 
-<img src="../../images/17-datasetup-k8s.png" width="360">git remote set-url origin "https://
+<img src="../../images/17-datasetup-k8s.png" width="360">  
 
 Choose the following:
 
@@ -90,6 +92,11 @@ make note of:
 `splunkRealm`  
 
 #### Prepare values.yaml file for updating the Helm chart  
+
+Start in k8s directory:
+```bash
+cd ~/otelworkshop/k8s
+```
 
 Edit `k3slogs.yaml` with thes values above.
 

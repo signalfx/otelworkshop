@@ -1,6 +1,6 @@
-clusterName: YOURCLUSTERNAMEHERE
-splunkRealm: YOURREALMHERE
-splunkAccessToken: YOURTOKENNAMEHERE
+clusterName: YOURCLUSTERHERE
+splunkObservability.realm: YOURREALMHERE        
+splunkObservability.accessToken: YOURTOKENHERE
 
 otelAgent:
   config:

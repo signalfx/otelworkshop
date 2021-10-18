@@ -1,6 +1,6 @@
 clusterName: YOURCLUSTERHERE
-splunkRealm: YOUREREALMHERE
-splunkAccessToken: YOURTOKENHERE
+splunkObservability.realm: YOURREALMHERE        
+splunkObservability.accessToken: YOURTOKENHERE
 
 # commented areas show how to add multiple prometheus endpoints
 
