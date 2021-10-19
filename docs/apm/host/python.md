@@ -2,6 +2,8 @@
 
 Each step should be performed in a separate terminal window.
 
+Make sure your Ubuntu environment was prepared properly as described in the **Preparation** section.  
+
 ## Configure Environment
 
 **Open the first terminal window** in your Linux instance and set up environment and run Python Flask server using auto-instrumentation:
