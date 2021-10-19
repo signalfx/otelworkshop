@@ -1,14 +1,10 @@
 # Single Host Java Lab
 
-Each step should be performed in a separate terminal window.
-
-## Prerequisites
-
 Make sure that you still have the Python Flask server from the Python Lab running. If you accidentally shut it down follow steps from the Python lab to restart the Python Flask server.
 
-Make sure you are in the right directory to start the Java activities:  
+## Start in the Java example directory
 
-## Open a new terminal in your Linux instance
+**Open a new terminal window** 
 
 ```bash
 cd ~/otelworkshop/host/java
@@ -24,7 +20,7 @@ source install-java-otel.sh
 
 ## Run the Java HTTP requests client
 
-Run the Java example with OKHTTP requests:
+Run the Java client example which uses OKHTTP requests to the Python Flask Server:
 
 ```bash
 source run-client.sh

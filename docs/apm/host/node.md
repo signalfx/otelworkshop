@@ -1,14 +1,11 @@
 # Single Host Node.js Lab
 
-Each step should be performed in a separate terminal window.
-
-## Prerequisites
-
 Make sure that you still have the Python Flask server from the Python Lab running. If you accidentally shut it down follow steps from the Python lab to restart the Python Flask server.
 
-Make sure you are in the right directory to start the Node.js activities:  
+## Start in the Node example directory
 
-## Open a new terminal in your Linux instance
+**Open a new terminal window** 
+
 ```bash
 cd ~/otelworkshop/host/node
 ```
@@ -23,7 +20,7 @@ npm install @opentelemetry/instrumentation-http --save
 
 During `npm init` you can use all defaults
 
-## Configure HTTP.get requests
+## Run .js HTTP.get requests client
 
 Set up environment and run the node app with HTTP.get requests
 

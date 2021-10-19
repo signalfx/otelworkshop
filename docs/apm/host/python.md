@@ -4,7 +4,7 @@ Each step should be performed in a separate terminal window.
 
 Make sure your Ubuntu environment was prepared properly as described in the **Preparation** section.  
 
-## Configure Environment
+## Configure Environment Variables for Otel and Run Python Flask Server
 
 **Open the first terminal window** in your Linux instance and set up environment and run Python Flask server using auto-instrumentation:
 
@@ -15,11 +15,11 @@ source run-server.sh
 
 You will see the server startup text when this is run.
 
-## Run client application
+## Run Python Client Application
 
 **Open a new terminal window** in your Linux instance and run the Python client to sent POST requests to the Flask server:  
 
-Run the client python app via the `splk-py-trace` command to send requests to the Flask server:  
+Run the client Python app via the `splunk-py-trace` command to send requests to the Flask server:  
 
 ```bash
 cd ~/otelworkshop/host/python
@@ -62,7 +62,7 @@ Click on one of the peaks in the grey graph within "Services By Latency (P90)" o
 
 The `run-server.sh` and `run-client.sh` scripts set up the environment variables for OpenTelemetry and invoke the Python auto instrumentation:  
 
-`splk-py-trace` is the auto instrumenting function that runs Python3 with the instrumentation that automatically emits spans from the Python app. No code changes are necessary. Splunk Observability Cloud has a `Getting Data In` Wizard to guide through instrumentation setup.
+`spluk-py-trace` is the auto instrumenting function that runs Python3 with the instrumentation that automatically emits spans from the Python app. No code changes are necessary. Splunk Observability Cloud has a `Data Setup` Wizard to guide through instrumentation setup.
 
 OpenTelemetry repo for Python is [here](https://github.com/signalfx/splunk-otel-python).
 
