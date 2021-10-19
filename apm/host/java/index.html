@@ -462,15 +462,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#prerequisites" class="md-nav__link">
-    Prerequisites
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#open-a-new-terminal-in-your-linux-instance" class="md-nav__link">
-    Open a new terminal in your Linux instance
+  <a href="#start-in-the-java-example-directory" class="md-nav__link">
+    Start in the Java example directory
   </a>
   
 </li>
@@ -619,15 +612,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#prerequisites" class="md-nav__link">
-    Prerequisites
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#open-a-new-terminal-in-your-linux-instance" class="md-nav__link">
-    Open a new terminal in your Linux instance
+  <a href="#start-in-the-java-example-directory" class="md-nav__link">
+    Start in the Java example directory
   </a>
   
 </li>
@@ -674,11 +660,9 @@
                 
                 
                 <h1 id="single-host-java-lab">Single Host Java Lab<a class="headerlink" href="#single-host-java-lab" title="Permanent link">&para;</a></h1>
-<p>Each step should be performed in a separate terminal window.</p>
-<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
 <p>Make sure that you still have the Python Flask server from the Python Lab running. If you accidentally shut it down follow steps from the Python lab to restart the Python Flask server.</p>
-<p>Make sure you are in the right directory to start the Java activities:  </p>
-<h2 id="open-a-new-terminal-in-your-linux-instance">Open a new terminal in your Linux instance<a class="headerlink" href="#open-a-new-terminal-in-your-linux-instance" title="Permanent link">&para;</a></h2>
+<h2 id="start-in-the-java-example-directory">Start in the Java example directory<a class="headerlink" href="#start-in-the-java-example-directory" title="Permanent link">&para;</a></h2>
+<p><strong>Open a new terminal window</strong> </p>
 <div class="highlight"><pre><span></span><code><span class="nb">cd</span> ~/otelworkshop/host/java
 </code></pre></div>
 <h2 id="download-otel-java-instrumentation">Download Otel Java Instrumentation<a class="headerlink" href="#download-otel-java-instrumentation" title="Permanent link">&para;</a></h2>
@@ -686,7 +670,7 @@
 <div class="highlight"><pre><span></span><code><span class="nb">source</span> install-java-otel.sh
 </code></pre></div>
 <h2 id="run-the-java-http-requests-client">Run the Java HTTP requests client<a class="headerlink" href="#run-the-java-http-requests-client" title="Permanent link">&para;</a></h2>
-<p>Run the Java example with OKHTTP requests:</p>
+<p>Run the Java client example which uses OKHTTP requests to the Python Flask Server:</p>
 <div class="highlight"><pre><span></span><code><span class="nb">source</span> run-client.sh
 </code></pre></div>
 <p>You will see requests printed to the terminal.</p>
