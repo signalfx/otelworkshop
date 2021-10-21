@@ -79,9 +79,9 @@ nav:
     - Preparation: apm/workshop-steps/prep.md
     - Workshop Labs:
       - APM for a Single Host (Execute in Order):
-        - 1. Install Otel Collector: apm/host/index.md
-        - 2. Python- Deploy Server and Client: apm/host/python.md
-        - 3. Java: apm/host/java.md
-        - 4. Node.js: apm/host/node.md
+        - 1. Install Otel Collector On Host: apm/host/index.md
+        - 2. Python- Deploy HTTP Server and Client: apm/host/python.md
+        - 3. Java- Deploy HTTP Client: apm/host/java.md
+        - 4. Node.js- Deploy HTTP Client: apm/host/node.md
       - APM for K8s / containerized apps:
         - APM for k8s: apm/k8s/index.md
