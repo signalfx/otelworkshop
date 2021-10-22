@@ -285,7 +285,7 @@ Example `my.key` and you'll see that the value is `redacted` after applying the 
 <img src="../../images/25-span-redacted.png" width="360">  
 
 If you want to make changes and update the `spanprocessor.yaml` or add more configurations, use:  
-`helm upgrade --resuse-values`
+`helm upgrade --reuse-values`
 
 ---
 ### 6: Receive Prometheus Metrics at the Otel Collector
