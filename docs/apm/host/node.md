@@ -13,13 +13,13 @@ cd ~/otelworkshop/host/node
 
 ## Configure Node.js environment
 
+During `npm init` below you can use all defaults when prompted:  
+
 ```bash
 npm init && \
 npm install @splunk/otel --save && \
 npm install @opentelemetry/instrumentation-http --save
 ```
-
-During `npm init` you can use all defaults
 
 ## Run .js HTTP.get requests client
 
