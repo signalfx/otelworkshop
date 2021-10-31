@@ -1152,28 +1152,30 @@ splunk-otel-collector-chart/splunk-otel-collector
 </code></pre></div>
 <hr />
 <h3 id="2-deploy-apm-for-containerized-apps-python-and-java">2: Deploy APM For Containerized Apps: Python and Java<a class="headerlink" href="#2-deploy-apm-for-containerized-apps-python-and-java" title="Permanent link">&para;</a></h3>
-<blockquote>
-<p><ins>If you are doing this workshop as part of a group, before the next step, add your initials do the APM environment</ins><br />
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>If you are doing this workshop as part of a group, before the next step, add your initials do the APM environment: 
 edit the <code>py-deployment.yaml</code> below and add your initials to the environment i.e. change all instances:<br />
 <code>deployment.environment=apm-workshop</code><br />
 to  <br />
 <code>deployment.environment=sjl-apm-workshop</code> </p>
-</blockquote>
+</div>
 <p>Deploy the Flask server deployment/service and the python-requests (makes requests of Flask server) pod:<br />
 <div class="highlight"><pre><span></span><code>cd ~/otelworkshop/k8s
 kubectl apply -f py-deployment.yaml
 </code></pre></div></p>
-<blockquote>
-<p><ins>If you are doing this workshop as part of a group, before the next step, add your initials do the APM environment</ins><br />
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>If you are doing this workshop as part of a group, before the next step, add your initials do the APM environment: 
 edit the <code>java-deployment.yaml</code> below and add your initials to the environment i.e. change all instances:<br />
 <code>deployment.environment=apm-workshop</code><br />
 to  <br />
-<code>deployment.environment=sjl-apm-workshop</code> 
-Deploy the Java OKHTTP requests pod (makes requests of Flask server):<br />
+<code>deployment.environment=sjl-apm-workshop</code>  </p>
+</div>
+<p>Deploy the Java OKHTTP requests pod (makes requests of Flask server):<br />
 <div class="highlight"><pre><span></span><code>kubectl apply -f java-deployment.yaml
 </code></pre></div>
 Study the results:</p>
-</blockquote>
 <p>The APM Dashboard will show the instrumented Python-Requests and Java OKHTTP clients posting to the Flask Server.<br />
 Make sure you select the <code>apm-workshop</code> ENVIRONMENT to monitor.</p>
 <p><img src="../../images/19-k8s-apm.png" width="360">  </p>
@@ -1210,15 +1212,16 @@ and select the downloaded <code>dashboard_JVMMetrics.json</code> file.   </p>
 <p>Example is here:</p>
 <p><code>cd ~/otelworkshop/k8s/java/manual-inst</code>  </p>
 <p>Deploy an app with ONLY manual instrumentation:  </p>
-<blockquote>
-<p><ins>If you are doing this workshop as part of a group, before the next step, add your initials do the APM environment</ins><br />
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>If you are doing this workshop as part of a group, before the next step, add your initials do the APM environment: 
 edit the <code>java-reqs-manual-inst.yaml</code> below and add your initials to the environment i.e. change all instances:<br />
 <code>deployment.environment=apm-workshop</code><br />
 to  <br />
-<code>deployment.environment=sjl-apm-workshop</code> 
+<code>deployment.environment=sjl-apm-workshop</code>  </p>
+</div>
 <div class="highlight"><pre><span></span><code>kubectl apply -f java-reqs-manual-inst.yaml
-</code></pre></div></p>
-</blockquote>
+</code></pre></div>
 <p>When this app deploys, it appears as an isolated bubble in the map. It has all metrics and tracing just like an auto-instrumented app does. </p>
 <p><img src="../../images/20-k8s-manual.png" width="360">  </p>
 <p>Take a look at the traces and their spans to see the manually added values of Message, Logs etc.</p>

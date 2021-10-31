@@ -670,15 +670,16 @@
 </code></pre></div>
 <h2 id="run-the-java-http-requests-client">Run the Java HTTP requests client<a class="headerlink" href="#run-the-java-http-requests-client" title="Permanent link">&para;</a></h2>
 <p>Run the Java client example which uses OKHTTP requests to the Python Flask Server:</p>
-<blockquote>
-<p><ins>If you are doing this workshop as part of a group, before the next step, add your initials do the APM environment</ins><br />
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>If you are doing this workshop as part of a group, before the next step, add your initials do the APM environment:
 edit the <code>run-client.sh</code> script below and add your initials to the environment i.e. change:<br />
 <code>export OTEL_RESOURCE_ATTRIBUTES=deployment.environment=apm-workshop</code><br />
 to  <br />
-<code>export OTEL_RESOURCE_ATTRIBUTES=deployment.environment=sjl-apm-workshop</code><br />
+<code>export OTEL_RESOURCE_ATTRIBUTES=deployment.environment=sjl-apm-workshop</code>  </p>
+</div>
 <div class="highlight"><pre><span></span><code><span class="nb">source</span> run-client.sh
-</code></pre></div></p>
-</blockquote>
+</code></pre></div>
 <p>You will see requests printed to the terminal.</p>
 <h2 id="apm-dashboard">APM Dashboard<a class="headerlink" href="#apm-dashboard" title="Permanent link">&para;</a></h2>
 <p>Traces/services will now be viewable in the APM dashboard. A new service takes about 90 seconds to register for the first time, the Python and n all data will be available in real time.  </p>

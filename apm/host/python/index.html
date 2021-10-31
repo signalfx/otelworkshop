@@ -663,30 +663,32 @@
 <p>Make sure your Ubuntu environment was prepared properly as described in the <strong>Preparation</strong> section.  </p>
 <h2 id="configure-environment-variables-for-otel-and-run-python-flask-server">Configure Environment Variables for Otel and Run Python Flask Server<a class="headerlink" href="#configure-environment-variables-for-otel-and-run-python-flask-server" title="Permanent link">&para;</a></h2>
 <p><strong>Open the first terminal window</strong> in your Linux instance and set up environment and run Python Flask server using auto-instrumentation:</p>
-<blockquote>
-<p><ins>If you are doing this workshop as part of a group, before the next step, add your initials do the APM environment</ins><br />
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>If you are doing this workshop as part of a group, before the next step, add your initials do the APM environment:
 edit the <code>run-server.sh</code> script below and add your initials to the environment i.e. change:<br />
 <code>export OTEL_RESOURCE_ATTRIBUTES=deployment.environment=apm-workshop</code><br />
 to  <br />
-<code>export OTEL_RESOURCE_ATTRIBUTES=deployment.environment=sjl-apm-workshop</code><br />
+<code>export OTEL_RESOURCE_ATTRIBUTES=deployment.environment=sjl-apm-workshop</code>  </p>
+</div>
 <div class="highlight"><pre><span></span><code><span class="nb">cd</span> ~/otelworkshop/host/python
 <span class="nb">source</span> run-server.sh
-</code></pre></div></p>
-</blockquote>
+</code></pre></div>
 <p>You will see the server startup text when this is run.</p>
 <h2 id="run-python-client-application">Run Python Client Application<a class="headerlink" href="#run-python-client-application" title="Permanent link">&para;</a></h2>
 <p><strong>Open a new terminal window</strong> in your Linux instance and run the Python client to sent POST requests to the Flask server:  </p>
 <p>Run the client Python app via the <code>splunk-py-trace</code> command to send requests to the Flask server:  </p>
-<blockquote>
-<p><ins>If you are doing this workshop as part of a group, before the next step, add your initials do the APM environment</ins><br />
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>If you are doing this workshop as part of a group, before the next step, add your initials do the APM environment:
 edit the <code>run-client.sh</code> script below and add your initials to the environment i.e. change:<br />
 <code>export OTEL_RESOURCE_ATTRIBUTES=deployment.environment=apm-workshop</code><br />
 to  <br />
-<code>export OTEL_RESOURCE_ATTRIBUTES=deployment.environment=sjl-apm-workshop</code>  <br />
+<code>export OTEL_RESOURCE_ATTRIBUTES=deployment.environment=sjl-apm-workshop</code>  </p>
+</div>
 <div class="highlight"><pre><span></span><code><span class="nb">cd</span> ~/otelworkshop/host/python
 <span class="nb">source</span> run-client.sh
-</code></pre></div></p>
-</blockquote>
+</code></pre></div>
 <p>The <code>python-requests.py</code> client will make calls to the flask server with a random short sleep time.<br />
 You can stop the requests with <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-c">C</kbd></span></p>
 <h2 id="validate-span-are-being-sent">Validate span are being sent<a class="headerlink" href="#validate-span-are-being-sent" title="Permanent link">&para;</a></h2>

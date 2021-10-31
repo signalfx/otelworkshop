@@ -622,6 +622,14 @@ INGRESS_HOST=172.31.19.248
 SECURE_INGRESS_PORT=32071
 </code></pre></div>
 <p>Deploy Flask service configured for Istio:  </p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>If you are doing this workshop as part of a group, before the next step, add your initials do the APM environment: 
+edit the <code>flask-deployment-istio.yaml</code> below and add your initials to the environment i.e. change all instances:<br />
+<code>deployment.environment=apm-workshop</code><br />
+to  <br />
+<code>deployment.environment=sjl-apm-workshop</code> </p>
+</div>
 <div class="highlight"><pre><span></span><code>kubectl apply -f flask-deployment-istio.yaml
 </code></pre></div>
 <p>Single test Flask service:<br />
