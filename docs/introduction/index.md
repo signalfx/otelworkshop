@@ -2,6 +2,8 @@
 
 The Splunk OpenTelemetry Workshop will teach you how to level up your Observability practice by using the OpenTelemetry Collector and APM Instrumentation to emit industry standard telemetry from your infrastructure and applications.
 
+Source repo is here: [https://github.com/signalfx/otelworkshop](https://github.com/signalfx/otelworkshop)
+
 ## Requirements
 
 ### Audience
