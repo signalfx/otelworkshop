@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://github.com/otelworkshop/apm/host/">
       
       <link rel="icon" href="../../images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.3.3">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-7.3.6">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.5143246d.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.a57b2b03.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.3f5d1f46.min.css">
@@ -564,6 +564,33 @@
 <p><img alt="Data Setup" src="../../images/03-datasetup.png" /></p>
 <p><img alt="Linux" src="../../images/04-datasetup-linux.png" /></p>
 <p><img alt="Linux Install" src="../../images/05-datasetup-linuxinstall.png" /></p>
+<p>Check status of collector:</p>
+<div class="highlight"><pre><span></span><code>sudo systemctl status splunk-otel-collector
+</code></pre></div>
+<p>Should output something like:</p>
+<div class="highlight"><pre><span></span><code>● splunk-otel-collector.service - Splunk OpenTelemetry Collector
+     Loaded: loaded (/lib/systemd/system/splunk-otel-collector.service; enabled; vendor preset: enabled)
+    Drop-In: /etc/systemd/system/splunk-otel-collector.service.d
+             └─service-owner.conf
+     Active: active (running) since Sun 2021-10-31 13:07:27 UTC; 1min 11s ago
+   Main PID: 37949 (otelcol)
+      Tasks: 9 (limit: 19200)
+     Memory: 100.2M
+     CGroup: /system.slice/splunk-otel-collector.service
+             └─37949 /usr/bin/otelcol
+
+Oct 31 13:07:27 ip-172-31-70-180 otelcol[37949]: 2021-10-31T13:07:27.556Z        info        builder/receivers_builder.go:73  &gt;
+Oct 31 13:07:27 ip-172-31-70-180 otelcol[37949]: 2021-10-31T13:07:27.556Z        info        builder/receivers_builder.go:68  &gt;
+Oct 31 13:07:27 ip-172-31-70-180 otelcol[37949]: 2021-10-31T13:07:27.556Z        info        builder/receivers_builder.go:73  &gt;
+Oct 31 13:07:27 ip-172-31-70-180 otelcol[37949]: 2021-10-31T13:07:27.556Z        info        healthcheck/handler.go:129       &gt;
+Oct 31 13:07:27 ip-172-31-70-180 otelcol[37949]: 2021-10-31T13:07:27.556Z        info        service/telemetry.go:92        Se&gt;
+Oct 31 13:07:27 ip-172-31-70-180 otelcol[37949]: 2021-10-31T13:07:27.557Z        info        service/telemetry.go:116        S&gt;
+Oct 31 13:07:27 ip-172-31-70-180 otelcol[37949]: 2021-10-31T13:07:27.557Z        info        service/collector.go:230        S&gt;
+Oct 31 13:07:27 ip-172-31-70-180 otelcol[37949]: 2021-10-31T13:07:27.557Z        info        service/collector.go:132        E&gt;
+Oct 31 13:07:37 ip-172-31-70-180 otelcol[37949]: 2021-10-31T13:07:37.826Z        info        hostmetadata/metadata.go:75      &gt;
+Oct 31 13:07:37 ip-172-31-70-180 otelcol[37949]: 2021-10-31T13:07:37.826Z        info        hostmetadata/metadata.go:83      &gt;
+</code></pre></div>
+<p>Your machine will be visible in Splunk Observability in <code>Infrastructure</code> either in the public cloud platform you are using or <code>My Data Center</code> if you are using Multipass or any other non public cloud machine.</p>
                 
               
               
@@ -676,10 +703,10 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.instant", "navigation.sections", "navigation.expand", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.8397ff9e.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.instant", "navigation.sections", "navigation.expand", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.fcfe8b6d.min.js", "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.f89c2efe.min.js"></script>
+      <script src="../../assets/javascripts/bundle.b1047164.min.js"></script>
       
     
   </body>
