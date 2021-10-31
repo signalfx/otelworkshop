@@ -1,6 +1,9 @@
+export OTEL_RESOURCE_ATTRIBUTES=deployment.environment=apm-workshop
+export OTEL_SERVICE_NAME=java-otel-client
+export OTEL_EXPORTER_OTLP_ENDPOINT=http://127.0.0.1:4317
+
 java \
 -Dexec.executable="java" \
--Dotel.resource.attributes=service.name=java-otel-client,deployment.environment=apm-workshop \
 -Dsplunk.metrics.enabled=false \
 -javaagent:/opt/splunk-otel-javaagent.jar \
 -jar ./target/java-app-1.0-SNAPSHOT.jar
