@@ -123,11 +123,12 @@ splunk-otel-collector-chart/splunk-otel-collector
 ---
 ### 2: Deploy APM For Containerized Apps: Python and Java
 
-><ins>If you are doing this workshop as part of a group, before the next step, add your initials do the APM environment</ins>  
->edit the `py-deployment.yaml` below and add your initials to the environment i.e. change all instances:  
->`deployment.environment=apm-workshop`  
-to    
->`deployment.environment=sjl-apm-workshop` 
+!!! important
+    If you are doing this workshop as part of a group, before the next step, add your initials do the APM environment: 
+    edit the `py-deployment.yaml` below and add your initials to the environment i.e. change all instances:  
+    `deployment.environment=apm-workshop`  
+    to    
+    `deployment.environment=sjl-apm-workshop` 
 
 Deploy the Flask server deployment/service and the python-requests (makes requests of Flask server) pod:  
 ```
@@ -135,11 +136,13 @@ cd ~/otelworkshop/k8s
 kubectl apply -f py-deployment.yaml
 ```
 
-><ins>If you are doing this workshop as part of a group, before the next step, add your initials do the APM environment</ins>  
->edit the `java-deployment.yaml` below and add your initials to the environment i.e. change all instances:  
->`deployment.environment=apm-workshop`  
-to    
->`deployment.environment=sjl-apm-workshop` 
+!!! important
+    If you are doing this workshop as part of a group, before the next step, add your initials do the APM environment: 
+    edit the `java-deployment.yaml` below and add your initials to the environment i.e. change all instances:  
+    `deployment.environment=apm-workshop`  
+    to    
+    `deployment.environment=sjl-apm-workshop`  
+     
 Deploy the Java OKHTTP requests pod (makes requests of Flask server):  
 ```
 kubectl apply -f java-deployment.yaml
@@ -205,11 +208,14 @@ Example is here:
 `cd ~/otelworkshop/k8s/java/manual-inst`  
 
 Deploy an app with ONLY manual instrumentation:  
-><ins>If you are doing this workshop as part of a group, before the next step, add your initials do the APM environment</ins>  
->edit the `java-reqs-manual-inst.yaml` below and add your initials to the environment i.e. change all instances:  
->`deployment.environment=apm-workshop`  
-to    
->`deployment.environment=sjl-apm-workshop` 
+
+!!! important
+    If you are doing this workshop as part of a group, before the next step, add your initials do the APM environment: 
+    edit the `java-reqs-manual-inst.yaml` below and add your initials to the environment i.e. change all instances:  
+    `deployment.environment=apm-workshop`  
+    to    
+    `deployment.environment=sjl-apm-workshop`  
+    
 ```
 kubectl apply -f java-reqs-manual-inst.yaml
 ```

@@ -84,6 +84,13 @@ SECURE_INGRESS_PORT=32071
 
 Deploy Flask service configured for Istio:  
 
+!!! important
+    If you are doing this workshop as part of a group, before the next step, add your initials do the APM environment: 
+    edit the `flask-deployment-istio.yaml` below and add your initials to the environment i.e. change all instances:  
+    `deployment.environment=apm-workshop`  
+    to    
+    `deployment.environment=sjl-apm-workshop` 
+
 ```bash
 kubectl apply -f flask-deployment-istio.yaml
 ```
