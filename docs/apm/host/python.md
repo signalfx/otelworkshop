@@ -9,6 +9,11 @@ Make sure your Ubuntu environment was prepared properly as described in the **Pr
 
 **Open the first terminal window** in your Linux instance and set up environment and run Python Flask server using auto-instrumentation:
 
+><ins>If you are doing this workshop as part of a group, before the next step, add your initials do the APM environment</ins>  
+>edit the `run-server.sh` script below and add your initials to the environment i.e. change:  
+>`export OTEL_RESOURCE_ATTRIBUTES=deployment.environment=apm-workshop`  
+to    
+>`export OTEL_RESOURCE_ATTRIBUTES=deployment.environment=sjl-apm-workshop`  
 ```bash
 cd ~/otelworkshop/host/python
 source run-server.sh
@@ -22,6 +27,11 @@ You will see the server startup text when this is run.
 
 Run the client Python app via the `splunk-py-trace` command to send requests to the Flask server:  
 
+><ins>If you are doing this workshop as part of a group, before the next step, add your initials do the APM environment</ins>  
+>edit the `run-client.sh` script below and add your initials to the environment i.e. change:  
+>`export OTEL_RESOURCE_ATTRIBUTES=deployment.environment=apm-workshop`  
+to    
+>`export OTEL_RESOURCE_ATTRIBUTES=deployment.environment=sjl-apm-workshop`  
 ```bash
 cd ~/otelworkshop/host/python
 source run-client.sh
@@ -32,9 +42,12 @@ You can stop the requests with ++ctrl+c++
 
 ## Validate span are being sent
 
-Check OpenTelemetry Collector Statistics to see that spans are being sent. Open a new terminal window to your Linux instance.
+**Open a new terminal window** in your Linux instance to check OpenTelemetry Collector Statistics to see that spans are being sent.
 
-`lynx localhost:55679/debug/tracez` will show the metrics and spans being gathered and sent by the Collector.  
+```bash
+lynx localhost:55679/debug/tracez
+```
+will show the metrics and spans being gathered and sent by the Collector.  
 
 Lynx is a text browser that was installed during with the `setup-tools`. Enabling a web browser to access your environment will allow for a full web GUI.  
 
@@ -43,8 +56,12 @@ Lynx is a text browser that was installed during with the `setup-tools`. Enablin
 ## APM Dashboard
 
 Traces / services will now be viewable in the APM dashboard. A new service takes about 90 seconds to register for the first time, and then all data will be available in real time.  
+
+The `Environment` pulldown will let you see the APM map associated with your individual environment that you set with your initials if this was done earlier.  
   
 Additionally span IDs will print in the terminal where flask-server.py is running. You can use ++ctrl+c++ to stop the requests and server any time.  
+
+The Python server application will be called: `py-otel-flask-server`  and the client will be called `py-otel-client`.  
 
 Navigate to `Splunk Overvability -> APM`
 
@@ -58,6 +75,8 @@ Click on one of the peaks in the grey graph within "Services By Latency (P90)" o
 
 ![image](../../images/09-pythontraces.png)  
 ![image](../../images/10-pythonspans.png)  
+
+To learn more about traces and spans [see the Splunk APM documentation](https://docs.splunk.com/Observability/apm/terms-concepts/traces-spans.html#apm-traces-spans)
 
 ## Where is the OpenTelemetry Instrumentation?
 

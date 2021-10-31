@@ -23,6 +23,11 @@ source install-java-otel.sh
 
 Run the Java client example which uses OKHTTP requests to the Python Flask Server:
 
+><ins>If you are doing this workshop as part of a group, before the next step, add your initials do the APM environment</ins>  
+>edit the `run-client.sh` script below and add your initials to the environment i.e. change:  
+>`export OTEL_RESOURCE_ATTRIBUTES=deployment.environment=apm-workshop`  
+to    
+>`export OTEL_RESOURCE_ATTRIBUTES=deployment.environment=sjl-apm-workshop`  
 ```bash
 source run-client.sh
 ```

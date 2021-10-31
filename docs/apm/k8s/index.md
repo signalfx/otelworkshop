@@ -123,12 +123,23 @@ splunk-otel-collector-chart/splunk-otel-collector
 ---
 ### 2: Deploy APM For Containerized Apps: Python and Java
 
+><ins>If you are doing this workshop as part of a group, before the next step, add your initials do the APM environment</ins>  
+>edit the `py-deployment.yaml` below and add your initials to the environment i.e. change all instances:  
+>`deployment.environment=apm-workshop`  
+to    
+>`deployment.environment=sjl-apm-workshop` 
+
 Deploy the Flask server deployment/service and the python-requests (makes requests of Flask server) pod:  
 ```
 cd ~/otelworkshop/k8s
 kubectl apply -f py-deployment.yaml
 ```
 
+><ins>If you are doing this workshop as part of a group, before the next step, add your initials do the APM environment</ins>  
+>edit the `java-deployment.yaml` below and add your initials to the environment i.e. change all instances:  
+>`deployment.environment=apm-workshop`  
+to    
+>`deployment.environment=sjl-apm-workshop` 
 Deploy the Java OKHTTP requests pod (makes requests of Flask server):  
 ```
 kubectl apply -f java-deployment.yaml
@@ -149,7 +160,7 @@ Example in Github or:
 ```
 The .yaml files show the environment variables telling the instrumentation to send spans to the OpenTelemetry Collector.
 
-Normally we use an environment variable pointing to `localhost` on a single host application where the SmartAgent is running. In k8s we have separate pods in a cluster for apps and the Collector.   
+Normally we use an environment variable pointing to `localhost` on a single host application where the Collector is running. In k8s we have separate pods in a cluster for apps and the Collector.   
 
 The Collector pod is running with <ins>node wide visibility</ins>, so to tell each application pod where to send spans:
 
@@ -158,8 +169,8 @@ The Collector pod is running with <ins>node wide visibility</ins>, so to tell ea
   valueFrom:
     fieldRef:
       fieldPath: status.hostIP
-- name: OTEL_EXPORTER_JAEGER_ENDPOINT
-  value: http://$(SPLUNK_OTEL_AGENT):9080/v1/trace
+- name: OTEL_EXPORTER_OTLP_ENDPOINT
+  value: "http://$(SPLUNK_OTEL_AGENT):4317"
 ```
 
 ---
@@ -193,7 +204,12 @@ Example is here:
 
 `cd ~/otelworkshop/k8s/java/manual-inst`  
 
-Deploy an app with ONLY manual instrumentation:
+Deploy an app with ONLY manual instrumentation:  
+><ins>If you are doing this workshop as part of a group, before the next step, add your initials do the APM environment</ins>  
+>edit the `java-reqs-manual-inst.yaml` below and add your initials to the environment i.e. change all instances:  
+>`deployment.environment=apm-workshop`  
+to    
+>`deployment.environment=sjl-apm-workshop` 
 ```
 kubectl apply -f java-reqs-manual-inst.yaml
 ```
