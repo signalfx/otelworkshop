@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://github.com/otelworkshop/apm/k8s/">
       
       <link rel="icon" href="../../images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-7.3.6">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.3.3">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.a57b2b03.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.5143246d.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.3f5d1f46.min.css">
@@ -507,8 +507,6 @@
       </a>
       
         
-
-
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
@@ -583,8 +581,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-manually-instrument-a-java-app-and-add-custom-tags" class="md-nav__link">
-    4:  Manually instrument a Java App And Add Custom Tags
+  <a href="#4-manually-instrument-a-java-app-and-add-custom-attributres-tags" class="md-nav__link">
+    4:  Manually instrument a Java App And Add Custom Attributres (Tags)
   </a>
   
 </li>
@@ -786,8 +784,6 @@
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
-
-
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
@@ -862,8 +858,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-manually-instrument-a-java-app-and-add-custom-tags" class="md-nav__link">
-    4:  Manually instrument a Java App And Add Custom Tags
+  <a href="#4-manually-instrument-a-java-app-and-add-custom-attributres-tags" class="md-nav__link">
+    4:  Manually instrument a Java App And Add Custom Attributres (Tags)
   </a>
   
 </li>
@@ -1206,7 +1202,7 @@ and select the downloaded <code>dashboard_JVMMetrics.json</code> file.   </p>
 <p><img src="../../images/28-jvm-filter.png" width="360">    </p>
 <p>Complete JVM metrics available <a href="https://github.com/signalfx/splunk-otel-java/blob/main/docs/metrics.md#jvm">at this link</a></p>
 <hr />
-<h3 id="4-manually-instrument-a-java-app-and-add-custom-tags">4:  Manually instrument a Java App And Add Custom Tags<a class="headerlink" href="#4-manually-instrument-a-java-app-and-add-custom-tags" title="Permanent link">&para;</a></h3>
+<h3 id="4-manually-instrument-a-java-app-and-add-custom-attributres-tags">4:  Manually instrument a Java App And Add Custom Attributres (Tags)<a class="headerlink" href="#4-manually-instrument-a-java-app-and-add-custom-attributres-tags" title="Permanent link">&para;</a></h3>
 <p>Let's say you have an app that has your own functions and doesn't only use auto-instrumented frameworks- or doesn't have any of them!  </p>
 <p>You can easily manually instrument your functions and have them appear as part of a service, or as an entire service.</p>
 <p>Example is here:</p>
@@ -1228,7 +1224,10 @@ to  <br />
 <p><img src="../../images/21-k8s-m-trace.png" width="360">  </p>
 <p>You will see the function called ExampleSpan with custom <code>Logging</code> messages and a <code>message:myevent</code> span/tag.  </p>
 <p><img src="../../images/22-k8s-m-span1.png" width="360">  </p>
-<p><img src="../../images/23-k8s-m-span2.png" width="360"> </p>
+<p><img src="../../images/23-k8s-m-span2.png" width="360">  </p>
+<p>See the custom attribute <code>my.key</code> and value <code>myvalue</code>.<br />
+This could be a transaction ID, user ID, or any custom value that you want to correlate and even metricize.  </p>
+<p><img src="../../images/21-k8s-m-span3.png" width="360">  </p>
 <p>Study the <a href="https://github.com/signalfx/otelworkshop/blob/master/k8s/java/manual-inst/src/main/java/sf/main/GetExample.java">manual instrumentation code example here.</a></p>
 <p>There are two methods shown- the decorator @WithSpan method (easiest), and using the GlobalTracer method (more complicated/powerful)...</p>
 <p>Note that this is the most minimal example of manual instrumentation- there is a vast amount of power available in OpenTelemetry- please see <a href="https://github.com/open-telemetry/opentelemetry-java-instrumentation">the documentation</a> and <a href="https://github.com/open-telemetry/opentelemetry-java/blob/master/QUICKSTART.md#tracing">in depth details</a></p>
@@ -1456,10 +1455,10 @@ i.e.
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.instant", "navigation.sections", "navigation.expand", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.fcfe8b6d.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.instant", "navigation.sections", "navigation.expand", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.8397ff9e.min.js", "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.b1047164.min.js"></script>
+      <script src="../../assets/javascripts/bundle.f89c2efe.min.js"></script>
       
     
   </body>
