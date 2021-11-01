@@ -197,7 +197,7 @@ Filter by Application by adding `service:SERVICENAMEHERE`
 Complete JVM metrics available [at this link](https://github.com/signalfx/splunk-otel-java/blob/main/docs/metrics.md#jvm)
 
 ---
-### 4:  Manually instrument a Java App And Add Custom Tags
+### 4:  Manually instrument a Java App And Add Custom Attributres (Tags)
 
 Let's say you have an app that has your own functions and doesn't only use auto-instrumented frameworks- or doesn't have any of them!  
 
@@ -232,7 +232,12 @@ You will see the function called ExampleSpan with custom `Logging` messages and 
 
 <img src="../../images/22-k8s-m-span1.png" width="360">  
 
-<img src="../../images/23-k8s-m-span2.png" width="360"> 
+<img src="../../images/23-k8s-m-span2.png" width="360">  
+
+See the custom attribute `my.key` and value `myvalue`.  
+This could be a transaction ID, user ID, or any custom value that you want to correlate and even metricize.  
+
+<img src="../../images/21-k8s-m-span3.png" width="360">  
 
 Study the [manual instrumentation code example here.](https://github.com/signalfx/otelworkshop/blob/master/k8s/java/manual-inst/src/main/java/sf/main/GetExample.java)
 
