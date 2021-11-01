@@ -237,7 +237,7 @@ You will see the function called ExampleSpan with custom `Logging` messages and 
 See the custom attribute `my.key` and value `myvalue`.  
 This could be a transaction ID, user ID, or any custom value that you want to correlate and even metricize.  
 
-<img src="../../images/21-k8s-m-span3.png" width="360">  
+<img src="../../images/23-k8s-m-span3.png" width="360">  
 
 Study the [manual instrumentation code example here.](https://github.com/signalfx/otelworkshop/blob/master/k8s/java/manual-inst/src/main/java/sf/main/GetExample.java)
 
