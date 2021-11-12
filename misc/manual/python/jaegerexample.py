@@ -1,3 +1,5 @@
+# Substitute YOURREALMHERE and YOURTOKENHERE 
+
 # Requires
 # pip3 install opentelemetry-api
 # pip3 install opentelemetry-sdk
