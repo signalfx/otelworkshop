@@ -3,20 +3,19 @@
 # Requires
 # pip3 install opentelemetry-api
 # pip3 install opentelemetry-sdk
-# pip3 install opentelemetry-exporter-jaeger
-# pip3 install keyboard
+# pip3 install opentelemetry-exporter-otlp-proto-http
 
 # tested with:
-# opentelemetry-api                        1.7.1               
-# opentelemetry-exporter-jaeger            1.7.1               
-# opentelemetry-exporter-jaeger-proto-grpc 1.7.1               
-# opentelemetry-exporter-jaeger-thrift     1.7.1               
+# opentelemetry-api                        1.7.1                           
 # opentelemetry-sdk                        1.7.1               
 # opentelemetry-semantic-conventions       0.26b1 
+# opentelemetry-exporter-otlp              1.7.1
+# opentelemetry-exporter-otlp-proto-grpc   1.7.1
+# opentelemetry-exporter-otlp-proto-http   1.7.1
 
 
 from opentelemetry import trace
-from opentelemetry.exporter.jaeger.thrift import JaegerExporter
+from opentelemetry.exporter.otlp.proto.http.trace_exporter import OTLPSpanExporter
 from opentelemetry.sdk.resources import SERVICE_NAME, Resource
 from opentelemetry.sdk.trace import TracerProvider
 from opentelemetry.sdk.trace.export import BatchSpanProcessor
@@ -26,18 +25,17 @@ import time
 trace.set_tracer_provider(
     TracerProvider(
         resource=Resource.create({
-            SERVICE_NAME: "manualtest/jaeger-helloworld-svc"})
+            SERVICE_NAME: "manualtest/otlp-helloworld-svc"})
     )
 )
 
-jaeger_exporter = JaegerExporter(
-    collector_endpoint="https://ingest.YOURREALMHERE.signalfx.com/v2/trace",
-    username="auth",
-    password="YOURTOKENHERE"
+otlp_exporter = OTLPSpanExporter(
+    endpoint="https://ingest.YOURREALMHERE.signalfx.com/v2/trace/otlp",
+    headers=(("x-sf-token", "SPLUNK_ACCESS_TOKEN_HERE"),)
 )
 
 trace.get_tracer_provider().add_span_processor(
-    BatchSpanProcessor(jaeger_exporter)
+    BatchSpanProcessor(otlp_exporter)
 )
 while(True):
     tracer = trace.get_tracer(__name__)
