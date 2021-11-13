@@ -14,7 +14,6 @@
 # opentelemetry-sdk                        1.7.1               
 # opentelemetry-semantic-conventions       0.26b1 
 
-
 from opentelemetry import trace
 from opentelemetry.exporter.jaeger.thrift import JaegerExporter
 from opentelemetry.sdk.resources import SERVICE_NAME, Resource
@@ -46,4 +45,4 @@ while(True):
             with tracer.start_as_current_span("baz"):
                 print("Hello world from OpenTelemetry Python! CTRL-C to quit")
                 time.sleep(.250)
-trace.get_tracer_provider().shutdown()
+# trace.get_tracer_provider().shutdown()
