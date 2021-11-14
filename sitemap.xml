@@ -2,72 +2,72 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://github.com/otelworkshop/</loc>
-         <lastmod>2021-11-13</lastmod>
+         <lastmod>2021-11-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/otelworkshop/apm/dashboards/servicedashboard/</loc>
-         <lastmod>2021-11-13</lastmod>
+         <lastmod>2021-11-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/otelworkshop/apm/host/</loc>
-         <lastmod>2021-11-13</lastmod>
+         <lastmod>2021-11-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/otelworkshop/apm/host/java/</loc>
-         <lastmod>2021-11-13</lastmod>
+         <lastmod>2021-11-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/otelworkshop/apm/host/node/</loc>
-         <lastmod>2021-11-13</lastmod>
+         <lastmod>2021-11-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/otelworkshop/apm/host/python/</loc>
-         <lastmod>2021-11-13</lastmod>
+         <lastmod>2021-11-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/otelworkshop/apm/k8s/</loc>
-         <lastmod>2021-11-13</lastmod>
+         <lastmod>2021-11-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/otelworkshop/apm/k8s/dotnet/</loc>
-         <lastmod>2021-11-13</lastmod>
+         <lastmod>2021-11-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/otelworkshop/apm/k8s/dotnet21/</loc>
-         <lastmod>2021-11-13</lastmod>
+         <lastmod>2021-11-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/otelworkshop/apm/k8s/istio/</loc>
-         <lastmod>2021-11-13</lastmod>
+         <lastmod>2021-11-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/otelworkshop/apm/k8s/prep/</loc>
-         <lastmod>2021-11-13</lastmod>
+         <lastmod>2021-11-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/otelworkshop/apm/workshop-steps/appendix/</loc>
-         <lastmod>2021-11-13</lastmod>
+         <lastmod>2021-11-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/otelworkshop/apm/workshop-steps/prep/</loc>
-         <lastmod>2021-11-13</lastmod>
+         <lastmod>2021-11-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/otelworkshop/introduction/</loc>
-         <lastmod>2021-11-13</lastmod>
+         <lastmod>2021-11-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
