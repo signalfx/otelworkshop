@@ -56,16 +56,9 @@ source run-dotnet-autogen-direct.sh
 ```
 Wait a about 60 seconds and check APM Explore map to see the microservices.
 
-
 ### Misc
 
 Docker container instructions for OpenTelemetry Collector are [here](https://github.com/signalfx/splunk-otel-collector/blob/main/docs/getting-started/linux-manual.md)
-
-Test connectivity for tracing:  
-```bash
-curl -v -d'[]' -H'Content-Type:application/json' \
-https://ingest.us1.signalfx.com/v2/trace
-```
 
 View Otel Collector trace stats (requires Lynx ascii browser):
 ```bash
