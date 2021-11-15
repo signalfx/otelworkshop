@@ -6,3 +6,5 @@ docker run --rm -dit \
 -p 6379:6379 \
 --network otel-net \
 --name python-autogen docker.io/stevelsplunk/splk-python-autogen
+
+docker exec -it python-autogen /bin/bash run-autogen.sh

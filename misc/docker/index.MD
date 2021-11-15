@@ -32,11 +32,6 @@ Open a new terminal window.
 source run-python-autgen.sh
 ```
 
-Step 4: Initiate the Python Redis client which has been instrumented for OpenTelemetry APM:
-```
-docker exec -it python-autogen /bin/bash run-autogen.sh
-```
-
 Wait a about 60 seconds and check APM Explore map to see the microservices.
 
 Study the run scripts to understand how OpenTelemetry environment variables are configured, and the source code for the microservice example is [here](https://github.com/signalfx/otelworkshop/tree/main/k8s/python/tools/autogen)  
@@ -46,28 +41,18 @@ Study the run scripts to understand how OpenTelemetry environment variables are 
 ---
 ### Example 2: Python Microservice Sending Telmetry Directly to Splunk Observability Cloud  
 
-Step 1: Run the direct-to-ingest docker container:
+Run the direct-to-ingest docker container:
 ```
 source run-python-autogen-direct.sh 
-```
-
-Step 2: Initiate the Python Redis client which has been instrumented for OpenTelemetry APM:
-```
-docker exec -it python-autogen-direct /bin/bash run-autogen.sh
 ```
 Wait a about 60 seconds and check APM Explore map to see the microservices.
 
 ---
 ### Example 3: .NET Microservice Sending Telemetry Directly to Splunk Observability Cloud
 
-Step 1: Run the direct-to-ingest docker container:
+Run the direct-to-ingest docker container:
 ```
 source run-dotnet-autogen-direct.sh 
-```
-
-Step 2: Initiate the Python Redis client which has been instrumented for OpenTelemetry APM:
-```
-docker exec -it dotnet-autogen-direct /bin/sh /App/run-client.sh
 ```
 Wait a about 60 seconds and check APM Explore map to see the microservices.
 
@@ -78,5 +63,6 @@ Docker container instructions for OpenTelemetry Collector are [here](https://git
 
 To test connectivity for tracing:  
 ```
-curl -v -d'[]' -H'Content-Type:application/json' https://ingest.us1.signalfx.com/v2/trace
+curl -v -d'[]' -H'Content-Type:application/json' \
+https://ingest.us1.signalfx.com/v2/trace
 ```
