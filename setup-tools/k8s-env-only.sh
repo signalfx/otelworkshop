@@ -17,7 +17,7 @@ sudo apt install -y lynx
 git clone https://github.com/signalfx/otelworkshop
 
 #install k9s
-curl -sS https://webinstall.dev/k9s | bash
+sudo snap install k9s
 
 #update .bashrc for workshop
 curl https://raw.githubusercontent.com/signalfx/otelworkshop/master/setup-tools/bashrc -o bashrc

@@ -18,7 +18,7 @@ sudo chmod 755 /etc/rancher/k3s/k3s.yaml
 sudo apt install -y lynx
 
 #install k9s
-curl -sS https://webinstall.dev/k9s | bash
+sudo snap install k9s
 
 #clone workshop
 git clone https://github.com/signalfx/otelworkshop

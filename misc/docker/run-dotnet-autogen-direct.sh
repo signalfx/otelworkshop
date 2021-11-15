@@ -8,6 +8,5 @@ docker run --rm -dit \
 -e CORECLR_PROFILER_PATH=/opt/signalfx-dotnet-tracing/SignalFx.Tracing.ClrProfiler.Native.so \
 -e SIGNALFX_INTEGRATIONS=/opt/signalfx-dotnet-tracing/integrations.json \
 -e SIGNALFX_DOTNET_TRACER_HOME=/opt/signalfx-dotnet-tracing \
---name dotnet-autogen-direct docker.io/stevelsplunk/splk-dotnet5
-
-docker exec -it dotnet-autogen-direct /bin/sh /App/run-client.sh
+--name dotnet-autogen-direct \
+--entrypoint="" docker.io/stevelsplunk/splk-dotnet5 /bin/sh /App/run-client.sh
