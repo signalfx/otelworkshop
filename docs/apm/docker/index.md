@@ -27,6 +27,8 @@ Add initals to environment i.e. sjl-apm-workshop:
 export WORKSHOP_ENV=YOURINITIALS-apm-workshop
 ```
 
+Make sure to re-export these environment variables every time you open a terminal.
+
 ---
 ### Example 1: Python Microservice w/ Local Otel Collector
 A local docker network with an OpenTelemetry Collector container and a container with a Python microservice example with a redis client and server in same container.  
@@ -43,7 +45,7 @@ source run-otelcol.sh
 
 Step 3: Run the Python Redis client w/ Redis server microservice example container:
 
-Open a new terminal window.  
+Open a new terminal window. Re-export your env variables from the prep section.
 
 ```bash
 source run-python-autgen.sh
