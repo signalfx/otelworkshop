@@ -77,7 +77,7 @@ nav:
   - OpenTelemetry Workshop:
     - Introduction: introduction/index.md
     - Preparation: apm/workshop-steps/prep.md
-    - Workshop Labs:
+    - Labs:
       - APM for a Single Host (Execute in Order):
         - 1. Install Otel Collector On Host: apm/host/index.md
         - 2. Python- Deploy HTTP Server and Client: apm/host/python.md
@@ -85,3 +85,5 @@ nav:
         - 4. Node.js- Deploy HTTP Client: apm/host/node.md
       - APM for K8s / containerized apps:
         - APM for k8s: apm/k8s/index.md
+      - OPTIONAL/ADVANCED:
+        - Otel Collector and APM for Docker: apm/docker/index.md

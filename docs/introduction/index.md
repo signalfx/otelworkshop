@@ -47,6 +47,7 @@ I.e. to change your REALM to `us1` change `api.YOURREALMHERE.signalfx.com` to `a
     - Prometheus scraping and custom metrics
     - Collectd: receive metrics from any platform
     - Troubleshooting the Collector
+  - Option: Docker workshop w/ Otel Collector and APM Examples
 
 ## Disclaimers
 

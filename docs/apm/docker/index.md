@@ -2,6 +2,18 @@
 
 ---
 ### Prep:
+
+Make sure you've stopped your previous workshop examples and stopped all instances of Otel Collector as to not confuse re-used example names.  
+
+Docker must be installed and current for this lab. 
+
+Repo location: [https://github.com/signalfx/otelworkshop/tree/main/misc/docker](https://github.com/signalfx/otelworkshop/tree/main/misc/docker)
+
+Start in k8s directory:
+```bash
+cd ~/otelworkshop/misc/docker
+```
+
 Create environment variables with your Splunk token and realm- substitute yours for the variables in caps:  
 ```bash
 export SPLUNK_ACCESS_TOKEN=YOURTOKENHERE
@@ -14,8 +26,6 @@ Add initals to environment i.e. sjl-apm-workshop:
 ```bash
 export WORKSHOP_ENV=YOURINITIALS-apm-workshop
 ```
-
-Make sure you've stopped your previous workshop examples as to not confuse re-used example names.
 
 ---
 ### Example 1: Python Microservice w/ Local Otel Collector
