@@ -10,6 +10,13 @@ export SPLUNK_ACCESS_TOKEN=YOURTOKENHERE
 export SPLUNK_REALM=YOURREALMHERE
 ```
 
+Add initals to environment i.e. sjl-apm-workshop:
+```bash
+export WORKSHOP_ENV=YOURINITIALS-apm-workshop
+```
+
+Make sure you've stopped your previous workshop examples as to not confuse re-used example names.
+
 ---
 ### Example 1: Python Microservice w/ Local Otel Collector
 A local docker network with an OpenTelemetry Collector container and a container with a Python microservice example with a redis client and server in same container.  
