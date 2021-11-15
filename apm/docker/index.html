@@ -13,21 +13,21 @@
         <meta name="author" content="Steve Lerner Staff Sales Engineer USA">
       
       
-        <link rel="canonical" href="https://github.com/otelworkshop/apm/k8s/dotnet/">
+        <link rel="canonical" href="https://github.com/otelworkshop/apm/docker/">
       
-      <link rel="icon" href="../../../images/favicon.ico">
+      <link rel="icon" href="../../images/favicon.ico">
       <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-7.3.6">
     
     
       
-        <title>Dotnet - Splunk OpenTelemetry Workshop</title>
+        <title>Otel Collector and APM for Docker - Splunk OpenTelemetry Workshop</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.a57b2b03.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.a57b2b03.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.3f5d1f46.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.3f5d1f46.min.css">
         
       
     
@@ -42,7 +42,7 @@
     
     
     
-      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
     
     
       
@@ -55,9 +55,9 @@
       
     
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Splunk OpenTelemetry Workshop - Dotnet">
+    <meta property="og:title" content="Splunk OpenTelemetry Workshop - Otel Collector and APM for Docker">
     <meta property="og:description" content="Learn to configure the Splunk OpenTelemetry Connector for APM and Infrastructure Monitoring as well as instrument applications with OpenTelemetry APM instrumentation to send telemetry to Splunk APM">
-    <meta property="og:url" content="https://github.com/otelworkshop/apm/k8s/dotnet/">
+    <meta property="og:url" content="https://github.com/otelworkshop/apm/docker/">
     <meta property="og:image" content="">
     <meta property="og:image:type" content="image/png">
     <meta property="og:image:width" content="1080">
@@ -76,7 +76,7 @@
     <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
   
     
-    <script>function __prefix(e){return new URL("../../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
     
       <script>var palette=__get("__palette");if(null!==palette&&"object"==typeof palette.color)for(var key in palette.color)document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
     
@@ -84,6 +84,11 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#docker-based-apm-examples" class="md-skip">
+          Skip to content
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -108,9 +113,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="Splunk OpenTelemetry Workshop" class="md-header__button md-logo" aria-label="Splunk OpenTelemetry Workshop" data-md-component="logo">
+    <a href="../.." title="Splunk OpenTelemetry Workshop" class="md-header__button md-logo" aria-label="Splunk OpenTelemetry Workshop" data-md-component="logo">
       
-  <img src="../../../images/logo.png" alt="logo">
+  <img src="../../images/logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -126,7 +131,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Dotnet
+              Otel Collector and APM for Docker
             
           </span>
         </div>
@@ -191,7 +196,7 @@
 
 
   <li class="md-tabs__item">
-    <a href="../../.." class="md-tabs__link">
+    <a href="../.." class="md-tabs__link">
       Home
     </a>
   </li>
@@ -200,13 +205,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../../../introduction/" class="md-tabs__link">
+      <a href="../../introduction/" class="md-tabs__link md-tabs__link--active">
         OpenTelemetry Workshop
       </a>
     </li>
@@ -234,9 +241,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="Splunk OpenTelemetry Workshop" class="md-nav__button md-logo" aria-label="Splunk OpenTelemetry Workshop" data-md-component="logo">
+    <a href="../.." title="Splunk OpenTelemetry Workshop" class="md-nav__button md-logo" aria-label="Splunk OpenTelemetry Workshop" data-md-component="logo">
       
-  <img src="../../../images/logo.png" alt="logo">
+  <img src="../../images/logo.png" alt="logo">
 
     </a>
     Splunk OpenTelemetry Workshop
@@ -265,7 +272,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         Home
       </a>
     </li>
@@ -278,12 +285,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" data-md-state="indeterminate" type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
       
       
       
@@ -306,7 +315,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../introduction/" class="md-nav__link">
+      <a href="../../introduction/" class="md-nav__link">
         Introduction
       </a>
     </li>
@@ -320,7 +329,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../workshop-steps/prep/" class="md-nav__link">
+      <a href="../workshop-steps/prep/" class="md-nav__link">
         Preparation
       </a>
     </li>
@@ -332,14 +341,16 @@
               
   
   
+    
+  
   
     
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" data-md-state="indeterminate" type="checkbox" id="__nav_2_3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" checked>
       
       
       
@@ -388,7 +399,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../host/" class="md-nav__link">
+      <a href="../host/" class="md-nav__link">
         1. Install Otel Collector On Host
       </a>
     </li>
@@ -402,7 +413,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../host/python/" class="md-nav__link">
+      <a href="../host/python/" class="md-nav__link">
         2. Python- Deploy HTTP Server and Client
       </a>
     </li>
@@ -416,7 +427,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../host/java/" class="md-nav__link">
+      <a href="../host/java/" class="md-nav__link">
         3. Java- Deploy HTTP Client
       </a>
     </li>
@@ -430,7 +441,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../host/node/" class="md-nav__link">
+      <a href="../host/node/" class="md-nav__link">
         4. Node.js- Deploy HTTP Client
       </a>
     </li>
@@ -477,7 +488,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
+      <a href="../k8s/" class="md-nav__link">
         APM for k8s
       </a>
     </li>
@@ -496,12 +507,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3_3" data-md-state="indeterminate" type="checkbox" id="__nav_2_3_3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3_3" type="checkbox" id="__nav_2_3_3" checked>
       
       
       
@@ -522,11 +535,90 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../docker/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Otel Collector and APM for Docker
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Otel Collector and APM for Docker
       </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#docker-based-apm-examples" class="md-nav__link">
+    Docker based APM examples
+  </a>
+  
+    <nav class="md-nav" aria-label="Docker based APM examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prep" class="md-nav__link">
+    Prep:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-1-python-microservice-w-local-otel-collector" class="md-nav__link">
+    Example 1: Python Microservice w/ Local Otel Collector
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-2-python-microservice-sending-telmetry-directly-to-splunk-observability-cloud" class="md-nav__link">
+    Example 2: Python Microservice Sending Telmetry Directly to Splunk Observability Cloud
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-3-net-microservice-sending-telemetry-directly-to-splunk-observability-cloud" class="md-nav__link">
+    Example 3: .NET Microservice Sending Telemetry Directly to Splunk Observability Cloud
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#misc" class="md-nav__link">
+    Misc
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -559,27 +651,137 @@
               </div>
             
             
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#docker-based-apm-examples" class="md-nav__link">
+    Docker based APM examples
+  </a>
+  
+    <nav class="md-nav" aria-label="Docker based APM examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prep" class="md-nav__link">
+    Prep:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-1-python-microservice-w-local-otel-collector" class="md-nav__link">
+    Example 1: Python Microservice w/ Local Otel Collector
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-2-python-microservice-sending-telmetry-directly-to-splunk-observability-cloud" class="md-nav__link">
+    Example 2: Python Microservice Sending Telmetry Directly to Splunk Observability Cloud
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-3-net-microservice-sending-telemetry-directly-to-splunk-observability-cloud" class="md-nav__link">
+    Example 3: .NET Microservice Sending Telemetry Directly to Splunk Observability Cloud
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#misc" class="md-nav__link">
+    Misc
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
               
                 
                 
-                  <h1>Dotnet</h1>
+                  <h1>Otel Collector and APM for Docker</h1>
                 
-                <p>.NET CORE example uses the .NET http client to get non-responding URL so makes valid traces with 403 status code</p>
-<p>Containerized with these <a href="https://docs.microsoft.com/en-us/dotnet/core/docker/build-container?tabs=windows">instructions from Microsoft</a></p>
-<p><strong>.NET Core 5</strong> </p>
-<div class="highlight"><pre><span></span><code>cd ~/otelworkshop/k8s/dotnet
+                <h2 id="docker-based-apm-examples">Docker based APM examples<a class="headerlink" href="#docker-based-apm-examples" title="Permanent link">&para;</a></h2>
+<hr />
+<h3 id="prep">Prep:<a class="headerlink" href="#prep" title="Permanent link">&para;</a></h3>
+<p>Make sure you've stopped your previous workshop examples and stopped all instances of Otel Collector as to not confuse re-used example names.  </p>
+<p>Docker must be installed and current for this lab. </p>
+<p>Repo location: <a href="https://github.com/signalfx/otelworkshop/tree/main/misc/docker">https://github.com/signalfx/otelworkshop/tree/main/misc/docker</a></p>
+<p>Start in k8s directory:
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span> ~/otelworkshop/misc/docker
+</code></pre></div></p>
+<p>Create environment variables with your Splunk token and realm- substitute yours for the variables in caps:<br />
+<div class="highlight"><pre><span></span><code><span class="nb">export</span> <span class="nv">SPLUNK_ACCESS_TOKEN</span><span class="o">=</span>YOURTOKENHERE
 </code></pre></div>
-<p>Deploy:<br />
-<div class="highlight"><pre><span></span><code>source deploy-client.sh
+<div class="highlight"><pre><span></span><code><span class="nb">export</span> <span class="nv">SPLUNK_REALM</span><span class="o">=</span>YOURREALMHERE
 </code></pre></div></p>
-<p>Delete deployment:
-<div class="highlight"><pre><span></span><code>source delete-all.sh
+<p>Add initals to environment i.e. sjl-apm-workshop:
+<div class="highlight"><pre><span></span><code><span class="nb">export</span> <span class="nv">WORKSHOP_ENV</span><span class="o">=</span>YOURINITIALS-apm-workshop
 </code></pre></div></p>
-<p><strong>.NET Core 2.1</strong> 
-.NET Core 2.1 <a href="../dotnet21/">located here</a></p>
+<hr />
+<h3 id="example-1-python-microservice-w-local-otel-collector">Example 1: Python Microservice w/ Local Otel Collector<a class="headerlink" href="#example-1-python-microservice-w-local-otel-collector" title="Permanent link">&para;</a></h3>
+<p>A local docker network with an OpenTelemetry Collector container and a container with a Python microservice example with a redis client and server in same container.  </p>
+<p>Step 1: Create a local docker network called <code>otel-net</code><br />
+<div class="highlight"><pre><span></span><code><span class="nb">source</span> setup-docker.sh
+</code></pre></div></p>
+<p>Step 2: Run Otel Collector docker container in the <code>otel-net</code> docker bridged network:
+<div class="highlight"><pre><span></span><code><span class="nb">source</span> run-otelcol.sh
+</code></pre></div></p>
+<p>Step 3: Run the Python Redis client w/ Redis server microservice example container:</p>
+<p>Open a new terminal window.  </p>
+<div class="highlight"><pre><span></span><code><span class="nb">source</span> run-python-autgen.sh
+</code></pre></div>
+<p>Wait a about 60 seconds and check APM Explore map to see the microservices.</p>
+<p>Study the run scripts to understand how OpenTelemetry environment variables are configured, and the source code for the microservice example is <a href="https://github.com/signalfx/otelworkshop/tree/main/k8s/python/tools/autogen">here</a>  </p>
+<p><code>ctrl-c</code> in each terminal will stop things and containers can be removed via standard Docker commands.</p>
+<hr />
+<h3 id="example-2-python-microservice-sending-telmetry-directly-to-splunk-observability-cloud">Example 2: Python Microservice Sending Telmetry Directly to Splunk Observability Cloud<a class="headerlink" href="#example-2-python-microservice-sending-telmetry-directly-to-splunk-observability-cloud" title="Permanent link">&para;</a></h3>
+<p>Run the direct-to-ingest docker container:
+<div class="highlight"><pre><span></span><code><span class="nb">source</span> run-python-autogen-direct.sh 
+</code></pre></div>
+Wait a about 60 seconds and check APM Explore map to see the microservices.</p>
+<hr />
+<h3 id="example-3-net-microservice-sending-telemetry-directly-to-splunk-observability-cloud">Example 3: .NET Microservice Sending Telemetry Directly to Splunk Observability Cloud<a class="headerlink" href="#example-3-net-microservice-sending-telemetry-directly-to-splunk-observability-cloud" title="Permanent link">&para;</a></h3>
+<p>Run the direct-to-ingest docker container:
+<div class="highlight"><pre><span></span><code><span class="nb">source</span> run-dotnet-autogen-direct.sh 
+</code></pre></div>
+Wait a about 60 seconds and check APM Explore map to see the microservices.</p>
+<h3 id="misc">Misc<a class="headerlink" href="#misc" title="Permanent link">&para;</a></h3>
+<p>Docker container instructions for OpenTelemetry Collector are <a href="https://github.com/signalfx/splunk-otel-collector/blob/main/docs/getting-started/linux-manual.md">here</a></p>
+<p>View Otel Collector trace stats (requires Lynx ascii browser):
+<div class="highlight"><pre><span></span><code>docker <span class="nb">exec</span> -it otelcol curl localhost:55679/debug/tracez <span class="p">|</span> lynx -stdin
+</code></pre></div></p>
                 
               
               
@@ -600,6 +802,26 @@
       
         
 <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../k8s/" class="md-footer__link md-footer__link--prev" aria-label="Previous: APM for k8s" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              APM for k8s
+            </div>
+          </div>
+        </a>
+      
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -657,10 +879,10 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.instant", "navigation.sections", "navigation.expand", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.fcfe8b6d.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.instant", "navigation.sections", "navigation.expand", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.fcfe8b6d.min.js", "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.b1047164.min.js"></script>
+      <script src="../../assets/javascripts/bundle.b1047164.min.js"></script>
       
     
   </body>
