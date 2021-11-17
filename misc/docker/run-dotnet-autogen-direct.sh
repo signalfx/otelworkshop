@@ -2,7 +2,7 @@ docker run --rm -dit \
 -e SIGNALFX_SERVICE_NAME=dotnet-autogen-direct \
 -e SIGNALFX_ENDPOINT_URL=https://ingest.$SPLUNK_REALM.signalfx.com/v2/trace \
 -e SIGNALFX_ACCESS_TOKEN=$SPLUNK_ACCESS_TOKEN \
--e SIGNALFX_ENV=$WORKSHOP_ENV \
+-e SIGNALFX_ENV=$SPLUNK_WORKSHOP_ENV \
 -e CORECLR_ENABLE_PROFILING=1 \
 -e CORECLR_PROFILER="{B4C89B0F-9908-4F73-9F59-0D77C5A06874}" \
 -e CORECLR_PROFILER_PATH=/opt/signalfx-dotnet-tracing/SignalFx.Tracing.ClrProfiler.Native.so \

@@ -1,5 +1,5 @@
 docker run --rm -dit \
--e OTEL_RESOURCE_ATTRIBUTES=deployment.environment=$WORKSHOP_ENV \
+-e OTEL_RESOURCE_ATTRIBUTES=deployment.environment=$SPLUNK_WORKSHOP_ENV \
 -e OTEL_SERVICE_NAME=python-autogen-direct-otel \
 -e OTEL_EXPORTER_JAEGER_ENDPOINT=https://ingest.$SPLUNK_REALM.signalfx.com/v2/trace \
 -e OTEL_TRACES_EXPORTER=jaeger-thrift-splunk \

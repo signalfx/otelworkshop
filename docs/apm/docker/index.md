@@ -24,7 +24,7 @@ export SPLUNK_REALM=YOURREALMHERE
 
 Add initals to environment i.e. sjl-apm-workshop:
 ```bash
-export WORKSHOP_ENV=YOURINITIALS-apm-workshop
+export SPLUNK_WORKSHOP_ENV=YOURINITIALS-apm-workshop
 ```
 
 Make sure to re-export these environment variables every time you open a terminal.
