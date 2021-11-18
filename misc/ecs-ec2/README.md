@@ -74,6 +74,11 @@ Cleanup:
 aws ecs delete-service --cluster test-cluster --service tracegen-java-otel-ecs-ec2 --force
 ```
 ```bash
+ecs-cli down \
+--cluster test-cluster \
+--region us-east-1
+```
+```bash
 aws ecs delete-cluster --cluster test-cluster
 ```
 
