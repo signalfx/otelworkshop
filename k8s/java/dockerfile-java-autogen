@@ -4,4 +4,5 @@ RUN apt-get update && \
     mkdir /home/code
 WORKDIR /home/code
 COPY . /home/code/
+RUN ["chmod", "+x", "./manual-inst/run-java-manual-inst-k8s.sh"]
 ENTRYPOINT /bin/sh ./manual-inst/run-java-manual-inst-k8s.sh

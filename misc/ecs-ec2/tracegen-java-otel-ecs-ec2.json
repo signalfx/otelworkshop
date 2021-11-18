@@ -1,0 +1,48 @@
+{
+    "containerDefinitions": [
+        {
+	    "logConfiguration": {
+                "logDriver": "awslogs",
+                "options": {
+                    "awslogs-group": "ecs",
+                    "awslogs-region": "us-east-1",
+                    "awslogs-stream-prefix": "tracegen-java-ecs-ec2"
+                }
+            },
+            "cpu": 0,
+            "environment": [
+                {
+                    "name": "OTEL_EXPORTER_JAEGER_ENDPOINT",
+                    "value": "https://ingest.YOURREALMHERE.signalfx.com/v2/trace"
+                },
+                {
+                    "name": "SPLUNK_ACCESS_TOKEN",
+                    "value": "YOURTOKENHERE"
+                },
+                {
+                    "name": "OTEL_RESOURCE_ATTRIBUTES",
+                    "value": "deployment.environment=YOURINITIALSHERE-apm-workshop"
+                },
+                {
+                    "name": "OTEL_SERVICE_NAME",
+                    "value": "tracegen-java-ecs-ec2"
+                },
+                {
+                    "name": "OTEL_TRACES_EXPORTER",
+                    "value": "jaeger-thrift-splunk"
+                }
+            ],
+            "image": "docker.io/stevelsplunk/splk-java-autogen",
+            "essential": true,
+            "dockerLabels": {
+                "app": "tracegen-java-otel-ecs-ec2"
+            },
+            "name": "tracegen-java-otel-ecs-ec2"
+        }
+    ],
+    "memory": "256",
+    "family": "tracegen-java-otel-ecs-ec2",
+    "requiresCompatibilities": [
+        "EC2"
+    ]
+}

@@ -1,15 +1,6 @@
-# Splunk APM Trace Generator Demo For AWS ECS EC2
+### Splunk APM Trace Generator Demo For AWS ECS EC2
 
-This repo demonstrates a reference implemenation for a single AWS ECS EC2 task example of Splunk APM.
-
-The single task spins up two ECS containers on EC2:
-
-#1 splk-agent-ec2 - sidecar to observe ECS and relay traces to Splunk SignalFx   
-#2 trace-generator-ec2 - generates traces using redis queries to a self running redis server
-
-### SETUP
-
-#### Example of stock SignalFx Agent Setup in AWS ECS EC2 (Not APM Ready)
+This repo demonstrates a reference implemenation for a single AWS ECS EC2 task example of Splunk APM that will send spans directly to Splunk Observability Cloud.  
 
 [AWS ECS CLI](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ECS_CLI.html) must be installed for these examples.
 
@@ -17,21 +8,11 @@ Pay critical attention to setting up:
 VPC: https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html  
 Log Environment: https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_cloudwatch_logs.html  
 
-To set up a SignalFx SmartAgent container in ECS:
-
-(Adjust values to match your environment)  
-
-Configure ECS Cluster:  
-```
-ecs-cli configure \
---cluster test-cluster-ec2 \
---default-launch-type EC2 \
---config-name test-cluster-ec2 \
---region YOURREGIONHEREi.e.us-east-1
-```
+---
+### Setup
 
 Configure ECS CLI Profile:  
-```
+```bash
 ecs-cli \
 configure profile \
 --access-key YOURAWSKEYHERE \
@@ -39,72 +20,63 @@ configure profile \
 --profile-name ecs-ec2-profile
 ```
 
-Deploy ECS EC2 VM:  
-
-note the AWS ECS Keypair name is found in the AWS console under EC2->Key Pairs  
-
+Configure ECS EC2 Cluster:  
+```bash
+configure ECS Cluster Config:
+ecs-cli configure \
+--cluster test-cluster \
+--config-name test-cluster \
+--region YOURREGIONHEREi.e.:us-east-1
 ```
+
+Deploy ECS EC2 Cluster:
+```bash
 ecs-cli up \
---keypair YOURAWSEC2KEYPAIRNAMEHERE \
---capability-iam --size 2 \
---instance-type t2.medium \
---cluster-config test-cluster-ec2 \
---ecs-profile ecs-ec2-profile \
---port 9080
+--cluster test-cluster \
+--region YOURREGIONHEREi.e.:us-east-1\
+--size 1 \
+--capability-iam \
+--instance-type t2.xlarge \
+--launch-type EC2 \
+--ecs-profile test-profile \
+--force
 ```
-
-Register your ECS EC2 tasks:
+---
+### Deploy Task and Service
 
 Deploy with the following commands- *you must change the variables in caps in these task .json files to suit your environment:*
 
-RELEASEVERSIONHERE: Use the current SignalFx SmartAgent version in the Helm script below from here: https://github.com/signalfx/signalfx-agent/releases i.e. 5.9.0
-
-`aws ecs register-task-definition --cli-input-json file://splk-agent-task-ec2.json`
-
-Make sure to change the AWS REGION and then:
-
-`aws ecs register-task-definition --cli-input-json file://trace-generator-ecs-ec2.json`
+```bash
+aws ecs register-task-definition \
+--cli-input-json file://tracegen-java-otel-ecs-ec2.json
+```
 
 Note that the task definition will increment each time you try it- from 1 to 2 etc. To check which version is current use:  
-`aws ecs list-task-definitions`
-
-Deploy agent task to cluster:
-
-```
-aws ecs create-service \
---cluster test-cluster-ec2 \
---task-definition splk-agent-ec2:1 \
---service-name splk-agent-ec2 \
---scheduling-strategy DAEMON
+```bash
+aws ecs list-task-definitions
 ```
 
 Deploy trace generator task to cluster:
 
-```
+```bash
 aws ecs create-service \
---cluster test-cluster-ec2 \
---task-definition trace-generator-ec2:1 \
---service-name trace-generator-ec2 \
---scheduling-strategy DAEMON
+--cluster test-cluster \
+--launch-type EC2 \
+--scheduling-strategy DAEMON \
+--service-name tracegen-java-otel-ecs-ec2 \
+--task-definition tracegen-java-otel-ecs-ec2:VERSIONHEREi.e.1
 ```
 
-Check processes:
-
-`ecs-cli ps --cluster-config test-cluster-ec2 --ecs-profile ecs-ec2-profile`
-
-At this point you should see your Splunk SignalFx ECS Container:
-
-<img src="../../../../assets/ecs-metrics.png" width="360" /> 
-
-And your trace-generator generating traces:
-
-<img src="../../../../assets/ecs-trace-generator2.png" width="360" /> 
+After a few seconds check Splunk APM to see the trace generator service.
 
 Cleanup:  
-`aws ecs delete-service --cluster test-cluster-ec2 --service splk-agent-ec2 --force`   
-`aws ecs delete-service --cluster test-cluster-ec2 --service trace-generator-ec2 --force`    
-`ecs-cli down --cluster test-cluster-ec2 --region YOURREGIONHEREi.e.us-east-1` 
+```bash
+aws ecs delete-service --cluster test-cluster --service tracegen-java-otel-ecs-ec2 --force
+```
+```bash
+aws ecs delete-cluster --cluster test-cluster
+```
 
 ### Extras
 
-The [commands.md](./commands.md) file offers helpful commands for ECS Fargate management for the AWS CLI.
+The [ecs-cli-commands.md](./ecs-cli-commands.md) file offers helpful commands for ECS Fargate management for the AWS CLI.
