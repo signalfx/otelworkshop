@@ -87,3 +87,5 @@ nav:
         - APM for k8s: apm/k8s/index.md
       - OPTIONAL/ADVANCED:
         - Otel Collector and APM for Docker: apm/docker/index.md
+    - Guides:
+      - ECS-EC2: apm/ecs/index-ec2.md
