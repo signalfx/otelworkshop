@@ -13,14 +13,14 @@
         <meta name="author" content="Steve Lerner Staff Sales Engineer USA">
       
       
-        <link rel="canonical" href="https://github.com/otelworkshop/apm/host/node/">
+        <link rel="canonical" href="https://github.com/otelworkshop/apm/ecs/index-ec2/">
       
       <link rel="icon" href="../../../images/favicon.ico">
       <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-7.3.6">
     
     
       
-        <title>4. Node.js- Deploy HTTP Client - Splunk OpenTelemetry Workshop</title>
+        <title>ECS-EC2 - Splunk OpenTelemetry Workshop</title>
       
     
     
@@ -55,9 +55,9 @@
       
     
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Splunk OpenTelemetry Workshop - 4. Node.js- Deploy HTTP Client">
+    <meta property="og:title" content="Splunk OpenTelemetry Workshop - ECS-EC2">
     <meta property="og:description" content="Learn to configure the Splunk OpenTelemetry Connector for APM and Infrastructure Monitoring as well as instrument applications with OpenTelemetry APM instrumentation to send telemetry to Splunk APM">
-    <meta property="og:url" content="https://github.com/otelworkshop/apm/host/node/">
+    <meta property="og:url" content="https://github.com/otelworkshop/apm/ecs/index-ec2/">
     <meta property="og:image" content="">
     <meta property="og:image:type" content="image/png">
     <meta property="og:image:width" content="1080">
@@ -86,7 +86,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#start-in-the-node-example-directory" class="md-skip">
+        <a href="#splunk-apm-trace-generator-demo-for-aws-ecs-ec2" class="md-skip">
           Skip to content
         </a>
       
@@ -131,7 +131,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              4. Node.js- Deploy HTTP Client
+              ECS-EC2
             
           </span>
         </div>
@@ -341,16 +341,14 @@
               
   
   
-    
-  
   
     
       
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" data-md-state="indeterminate" type="checkbox" id="__nav_2_3" checked>
       
       
       
@@ -371,14 +369,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3_1" type="checkbox" id="__nav_2_3_1" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3_1" data-md-state="indeterminate" type="checkbox" id="__nav_2_3_1" checked>
       
       
       
@@ -401,7 +397,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
+      <a href="../../host/" class="md-nav__link">
         1. Install Otel Collector On Host
       </a>
     </li>
@@ -415,7 +411,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../python/" class="md-nav__link">
+      <a href="../../host/python/" class="md-nav__link">
         2. Python- Deploy HTTP Server and Client
       </a>
     </li>
@@ -429,7 +425,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../java/" class="md-nav__link">
+      <a href="../../host/java/" class="md-nav__link">
         3. Java- Deploy HTTP Client
       </a>
     </li>
@@ -441,77 +437,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          4. Node.js- Deploy HTTP Client
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../host/node/" class="md-nav__link">
         4. Node.js- Deploy HTTP Client
       </a>
-      
-        
-
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#start-in-the-node-example-directory" class="md-nav__link">
-    Start in the Node example directory
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#configure-nodejs-environment" class="md-nav__link">
-    Configure Node.js environment
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#run-js-httpget-requests-client" class="md-nav__link">
-    Run .js HTTP.get requests client
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#apm-dashboard" class="md-nav__link">
-    APM Dashboard
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#where-is-the-opentelemetry-instrumentation" class="md-nav__link">
-    Where is the OpenTelemetry Instrumentation?
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -629,14 +559,16 @@
               
   
   
+    
+  
   
     
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4" data-md-state="indeterminate" type="checkbox" id="__nav_2_4" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4" type="checkbox" id="__nav_2_4" checked>
       
       
       
@@ -657,11 +589,70 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../ecs/index-ec2/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          ECS-EC2
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         ECS-EC2
       </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#splunk-apm-trace-generator-demo-for-aws-ecs-ec2" class="md-nav__link">
+    Splunk APM Trace Generator Demo For AWS ECS EC2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setup" class="md-nav__link">
+    Setup
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deploy-task-and-service" class="md-nav__link">
+    Deploy Task and Service
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extras" class="md-nav__link">
+    Extras
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -706,36 +697,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#start-in-the-node-example-directory" class="md-nav__link">
-    Start in the Node example directory
+  <a href="#splunk-apm-trace-generator-demo-for-aws-ecs-ec2" class="md-nav__link">
+    Splunk APM Trace Generator Demo For AWS ECS EC2
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#configure-nodejs-environment" class="md-nav__link">
-    Configure Node.js environment
+  <a href="#setup" class="md-nav__link">
+    Setup
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#run-js-httpget-requests-client" class="md-nav__link">
-    Run .js HTTP.get requests client
+  <a href="#deploy-task-and-service" class="md-nav__link">
+    Deploy Task and Service
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#apm-dashboard" class="md-nav__link">
-    APM Dashboard
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#where-is-the-opentelemetry-instrumentation" class="md-nav__link">
-    Where is the OpenTelemetry Instrumentation?
+  <a href="#extras" class="md-nav__link">
+    Extras
   </a>
   
 </li>
@@ -753,41 +737,71 @@
               
                 
                 
-                  <h1>4. Node.js- Deploy HTTP Client</h1>
+                  <h1>ECS-EC2</h1>
                 
-                <p>Make sure that you still have the Python Flask server from the Python Lab running. If you accidentally shut it down follow steps from the Python lab to restart the Python Flask server.</p>
-<h2 id="start-in-the-node-example-directory">Start in the Node example directory<a class="headerlink" href="#start-in-the-node-example-directory" title="Permanent link">&para;</a></h2>
-<p><strong>Open a new terminal window</strong> </p>
-<div class="highlight"><pre><span></span><code><span class="nb">cd</span> ~/otelworkshop/host/node
+                <h3 id="splunk-apm-trace-generator-demo-for-aws-ecs-ec2">Splunk APM Trace Generator Demo For AWS ECS EC2<a class="headerlink" href="#splunk-apm-trace-generator-demo-for-aws-ecs-ec2" title="Permanent link">&para;</a></h3>
+<p>This repo demonstrates a reference implemenation for a single AWS ECS EC2 task example of Splunk APM that will send spans directly to Splunk Observability Cloud.  </p>
+<p>ECS EC@ works very simply: just add the environment variables required by the Otel APM Instrumentation and the Instrumentation will do the rest.</p>
+<p><a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ECS_CLI.html">AWS ECS CLI</a> must be installed for these examples.</p>
+<p>Pay critical attention to setting up:<br />
+VPC: https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html<br />
+Log Environment: https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_cloudwatch_logs.html  </p>
+<hr />
+<h3 id="setup">Setup<a class="headerlink" href="#setup" title="Permanent link">&para;</a></h3>
+<p>Configure ECS CLI Profile:<br />
+<div class="highlight"><pre><span></span><code>ecs-cli <span class="se">\</span>
+configure profile <span class="se">\</span>
+--access-key YOURAWSKEYHERE <span class="se">\</span>
+--secret-key YOURAWSSECRETKEYHERE <span class="se">\</span>
+--profile-name ecs-ec2-profile
+</code></pre></div></p>
+<p>Configure ECS EC2 Cluster:<br />
+<div class="highlight"><pre><span></span><code>configure ECS Cluster Config:
+ecs-cli configure <span class="se">\</span>
+--cluster test-cluster <span class="se">\</span>
+--config-name test-cluster <span class="se">\</span>
+--region YOURREGIONHEREi.e.:us-east-1
+</code></pre></div></p>
+<p>Deploy ECS EC2 Cluster:
+<div class="highlight"><pre><span></span><code>ecs-cli up <span class="se">\</span>
+--cluster test-cluster <span class="se">\</span>
+--region YOURREGIONHEREi.e.:us-east-1<span class="se">\</span>
+--size <span class="m">1</span> <span class="se">\</span>
+--capability-iam <span class="se">\</span>
+--instance-type t2.xlarge <span class="se">\</span>
+--launch-type EC2 <span class="se">\</span>
+--ecs-profile test-profile <span class="se">\</span>
+--force
+</code></pre></div></p>
+<hr />
+<h3 id="deploy-task-and-service">Deploy Task and Service<a class="headerlink" href="#deploy-task-and-service" title="Permanent link">&para;</a></h3>
+<p>Deploy with the following commands- <em>you must change the variables in caps in these task .json files to suit your environment:</em></p>
+<div class="highlight"><pre><span></span><code>aws ecs register-task-definition <span class="se">\</span>
+--cli-input-json file://tracegen-java-otel-ecs-ec2.json
 </code></pre></div>
-<h2 id="configure-nodejs-environment">Configure Node.js environment<a class="headerlink" href="#configure-nodejs-environment" title="Permanent link">&para;</a></h2>
-<p>During <code>npm init</code> below you can use all defaults when prompted:  </p>
-<div class="highlight"><pre><span></span><code>npm init <span class="o">&amp;&amp;</span> <span class="se">\</span>
-npm install @splunk/otel --save <span class="o">&amp;&amp;</span> <span class="se">\</span>
-npm install @opentelemetry/instrumentation-http --save
+<p>Note that the task definition will increment each time you try it- from 1 to 2 etc. To check which version is current use:<br />
+<div class="highlight"><pre><span></span><code>aws ecs list-task-definitions
+</code></pre></div></p>
+<p>Deploy trace generator task to cluster:</p>
+<div class="highlight"><pre><span></span><code>aws ecs create-service <span class="se">\</span>
+--cluster test-cluster <span class="se">\</span>
+--launch-type EC2 <span class="se">\</span>
+--scheduling-strategy DAEMON <span class="se">\</span>
+--service-name tracegen-java-otel-ecs-ec2 <span class="se">\</span>
+--task-definition tracegen-java-otel-ecs-ec2:VERSIONHEREi.e.1
 </code></pre></div>
-<h2 id="run-js-httpget-requests-client">Run .js HTTP.get requests client<a class="headerlink" href="#run-js-httpget-requests-client" title="Permanent link">&para;</a></h2>
-<p>Set up environment and run the node app with HTTP.get requests</p>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p>If you are doing this workshop as part of a group, before the next step, add your initials do the APM environment:
-edit the <code>run-client.sh</code> script below and add your initials to the environment i.e. change:<br />
-<code>export OTEL_RESOURCE_ATTRIBUTES=deployment.environment=apm-workshop</code><br />
-to  <br />
-<code>export OTEL_RESOURCE_ATTRIBUTES=deployment.environment=sjl-apm-workshop</code>  </p>
-</div>
-<div class="highlight"><pre><span></span><code><span class="nb">source</span> run-client.sh
+<p>After a few seconds check Splunk APM to see the trace generator service.</p>
+<p>Cleanup:<br />
+<div class="highlight"><pre><span></span><code>aws ecs delete-service --cluster test-cluster --service tracegen-java-otel-ecs-ec2 --force
 </code></pre></div>
-<p>You will see requests printed to the window</p>
-<h2 id="apm-dashboard">APM Dashboard<a class="headerlink" href="#apm-dashboard" title="Permanent link">&para;</a></h2>
-<p>Traces / services will now be viewable in the APM dashboard. A new service takes about 90 seconds to register for the firs time, and then all data will be available in real time.</p>
-<p>Additionally span IDs will print in the terminal where flask-server.py is running. You can use <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-c">C</kbd></span> to stop the requests and server any time. You should now see a Node requests service alongside the Python and Java ones.  </p>
-<p><img alt="Node" src="../../../images/14-node.png" /></p>
-<p><img alt="Node Traces" src="../../../images/15-nodetraces.png" /></p>
-<p><img alt="Node Spans" src="../../../images/16-nodespans.png" /></p>
-<h2 id="where-is-the-opentelemetry-instrumentation">Where is the OpenTelemetry Instrumentation?<a class="headerlink" href="#where-is-the-opentelemetry-instrumentation" title="Permanent link">&para;</a></h2>
-<p>You can see in the <code>run-client.sh</code> how the environment has been set up for OpenTelemtry and where the autoinstrumentation takes place as the node app runs.</p>
-<p>Splunk's Otel autoinstrumentation for node.js is <a href="https://github.com/signalfx/splunk-otel-js">here</a></p>
+<div class="highlight"><pre><span></span><code>ecs-cli down <span class="se">\</span>
+--cluster test-cluster <span class="se">\</span>
+--region us-east-1
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>aws ecs delete-cluster --cluster test-cluster
+</code></pre></div></p>
+<h3 id="extras">Extras<a class="headerlink" href="#extras" title="Permanent link">&para;</a></h3>
+<p>The <a href="./ecs-cli-commands.md">ecs-cli-commands.md</a> file offers helpful commands for ECS Fargate management for the AWS CLI.</p>
                 
               
               
@@ -812,7 +826,7 @@ to  <br />
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../java/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 3. Java- Deploy HTTP Client" rel="prev">
+        <a href="../../docker/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Otel Collector and APM for Docker" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -821,26 +835,11 @@ to  <br />
               <span class="md-footer__direction">
                 Previous
               </span>
-              3. Java- Deploy HTTP Client
+              Otel Collector and APM for Docker
             </div>
           </div>
         </a>
       
-      
-        
-        <a href="../../k8s/" class="md-footer__link md-footer__link--next" aria-label="Next: APM for k8s" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              APM for k8s
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
-          </div>
-        </a>
       
     </nav>
   
