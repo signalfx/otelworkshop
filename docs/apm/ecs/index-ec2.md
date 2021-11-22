@@ -2,7 +2,7 @@
 
 This repo demonstrates a reference implemenation for a single AWS ECS EC2 task example of Splunk APM that will send spans directly to Splunk Observability Cloud.  
 
-ECS EC@ works very simply: just add the environment variables required by the Otel APM Instrumentation and the Instrumentation will do the rest.
+ECS EC2 works very simply: just add the environment variables required by the Otel APM Instrumentation and the Instrumentation will do the rest.
 
 [AWS ECS CLI](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ECS_CLI.html) must be installed for these examples.
 

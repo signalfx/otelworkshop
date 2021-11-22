@@ -1,0 +1,79 @@
+{
+    "containerDefinitions": [
+        {
+	    "logConfiguration": {
+                "logDriver": "awslogs",
+                "options": {
+                    "awslogs-group": "ecs",
+                    "awslogs-region": "YOURREGIONHEREi.e.:us-east-1",
+                    "awslogs-stream-prefix": "tracegen-java-fargate"
+                }
+            },
+            "cpu": 0,
+            "environment": [
+                {
+                "name": "SPLUNK_ACCESS_TOKEN",
+                "value": "YOURTOKENHERE"
+                },
+                {
+                "name": "OTEL_RESOURCE_ATTRIBUTES",
+                "value": "deployment.environment=YOURINITIALHERE-apm-workshop"
+                },
+                {
+                "name": "OTEL_SERVICE_NAME",
+                "value": "tracegen-java-fargate"
+                },
+                {
+                    "name": "SPLUNK_PROFILER_ENABLED",
+                    "value": "true"
+                }
+            ],
+            "image": "docker.io/stevelsplunk/splk-java-autogen",
+            "essential": true,
+            "dockerLabels": {
+                "app": "tracegen-java-otel-fargate"
+            },
+            "name": "tracegen-java-otel-fargate"
+        },
+        {
+            "logConfiguration": {
+              "logDriver": "awslogs",
+              "options": {
+                  "awslogs-group": "otelcol",
+                  "awslogs-region": "YOURREGIONHEREi.e.:us-east-1",
+                  "awslogs-stream-prefix": "otelcol"
+              }
+          },
+            "cpu": 0,
+            "environment": [
+              {
+                "name": "ECS_METADATA_EXCLUDED_IMAGES",
+                "value": "[\"quay.io/signalfx/splunk-otel-collector\"]"
+              },
+              {
+                "name": "SPLUNK_ACCESS_TOKEN",
+                "value": "YOURTOKENHERE"
+              },
+              {
+                "name": "SPLUNK_CONFIG",
+                "value": "/etc/otel/collector/ecs_ec2_config.yaml"
+              },
+              {
+                "name": "SPLUNK_REALM",
+                "value": "YOURREALMHERE"
+              }
+            ],
+            "image": "quay.io/signalfx/splunk-otel-collector:latest",
+            "essential": true,
+            "name": "splunk-otel-collector"
+          }
+    ],
+    "executionRoleArn": "YOURROLEHEREi.e.:arn:aws:iam::668132022375:role/ECS-task-full-access",
+    "cpu": "256",
+    "memory": "512",
+    "family": "tracegen-java-otel-fargate",
+    "networkMode": "awsvpc",
+    "requiresCompatibilities": [
+        "FARGATE"
+    ]
+}

@@ -90,3 +90,4 @@ nav:
     - Guides:
       - APM Examples:
         - ECS-EC2: apm/ecs/index-ec2.md
+        - ECS-Fargate: apm/ecs/index-fargate.md
