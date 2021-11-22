@@ -88,4 +88,5 @@ nav:
       - OPTIONAL/ADVANCED:
         - Otel Collector and APM for Docker: apm/docker/index.md
     - Guides:
-      - ECS-EC2: apm/ecs/index-ec2.md
+      - APM Examples:
+        - ECS-EC2: apm/ecs/index-ec2.md
