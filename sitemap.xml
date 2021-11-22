@@ -16,6 +16,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://github.com/otelworkshop/apm/ecs/ecs-cli-commands/</loc>
+         <lastmod>2021-11-22</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://github.com/otelworkshop/apm/ecs/index-ec2/</loc>
          <lastmod>2021-11-22</lastmod>
          <changefreq>daily</changefreq>

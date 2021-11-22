@@ -13,14 +13,14 @@
         <meta name="author" content="Steve Lerner Staff Sales Engineer USA">
       
       
-        <link rel="canonical" href="https://github.com/otelworkshop/apm/ecs/index-ec2/">
+        <link rel="canonical" href="https://github.com/otelworkshop/apm/ecs/ecs-cli-commands/">
       
       <link rel="icon" href="../../../images/favicon.ico">
       <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-7.3.6">
     
     
       
-        <title>ECS-EC2 - Splunk OpenTelemetry Workshop</title>
+        <title>Ecs cli commands - Splunk OpenTelemetry Workshop</title>
       
     
     
@@ -55,9 +55,9 @@
       
     
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Splunk OpenTelemetry Workshop - ECS-EC2">
+    <meta property="og:title" content="Splunk OpenTelemetry Workshop - Ecs cli commands">
     <meta property="og:description" content="Learn to configure the Splunk OpenTelemetry Connector for APM and Infrastructure Monitoring as well as instrument applications with OpenTelemetry APM instrumentation to send telemetry to Splunk APM">
-    <meta property="og:url" content="https://github.com/otelworkshop/apm/ecs/index-ec2/">
+    <meta property="og:url" content="https://github.com/otelworkshop/apm/ecs/ecs-cli-commands/">
     <meta property="og:image" content="">
     <meta property="og:image:type" content="image/png">
     <meta property="og:image:width" content="1080">
@@ -86,7 +86,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#splunk-apm-trace-generator-demo-for-aws-ecs-ec2" class="md-skip">
+        <a href="#create" class="md-skip">
           Skip to content
         </a>
       
@@ -131,7 +131,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              ECS-EC2
+              Ecs cli commands
             
           </span>
         </div>
@@ -205,15 +205,13 @@
         
   
   
-    
-  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../../../introduction/" class="md-tabs__link md-tabs__link--active">
+      <a href="../../../introduction/" class="md-tabs__link">
         OpenTelemetry Workshop
       </a>
     </li>
@@ -285,14 +283,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" data-md-state="indeterminate" type="checkbox" id="__nav_2" checked>
       
       
       
@@ -559,16 +555,14 @@
               
   
   
-    
-  
   
     
       
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4" type="checkbox" id="__nav_2_4" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4" data-md-state="indeterminate" type="checkbox" id="__nav_2_4" checked>
       
       
       
@@ -589,70 +583,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          ECS-EC2
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../index-ec2/" class="md-nav__link">
         ECS-EC2
       </a>
-      
-        
-
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#splunk-apm-trace-generator-demo-for-aws-ecs-ec2" class="md-nav__link">
-    Splunk APM Trace Generator Demo For AWS ECS EC2
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#setup" class="md-nav__link">
-    Setup
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#deploy-task-and-service" class="md-nav__link">
-    Deploy Task and Service
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#extras" class="md-nav__link">
-    Extras
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -697,29 +632,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#splunk-apm-trace-generator-demo-for-aws-ecs-ec2" class="md-nav__link">
-    Splunk APM Trace Generator Demo For AWS ECS EC2
+  <a href="#create" class="md-nav__link">
+    Create
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#setup" class="md-nav__link">
-    Setup
+  <a href="#monitor" class="md-nav__link">
+    Monitor
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#deploy-task-and-service" class="md-nav__link">
-    Deploy Task and Service
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#extras" class="md-nav__link">
-    Extras
+  <a href="#cleanup" class="md-nav__link">
+    Cleanup
   </a>
   
 </li>
@@ -737,71 +665,24 @@
               
                 
                 
-                  <h1>ECS-EC2</h1>
+                  <h1>Ecs cli commands</h1>
                 
-                <h3 id="splunk-apm-trace-generator-demo-for-aws-ecs-ec2">Splunk APM Trace Generator Demo For AWS ECS EC2<a class="headerlink" href="#splunk-apm-trace-generator-demo-for-aws-ecs-ec2" title="Permanent link">&para;</a></h3>
-<p>This repo demonstrates a reference implemenation for a single AWS ECS EC2 task example of Splunk APM that will send spans directly to Splunk Observability Cloud.  </p>
-<p>ECS EC@ works very simply: just add the environment variables required by the Otel APM Instrumentation and the Instrumentation will do the rest.</p>
-<p><a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ECS_CLI.html">AWS ECS CLI</a> must be installed for these examples.</p>
-<p>Pay critical attention to setting up:<br />
-VPC: https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html<br />
-Log Environment: https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_cloudwatch_logs.html  </p>
-<hr />
-<h3 id="setup">Setup<a class="headerlink" href="#setup" title="Permanent link">&para;</a></h3>
-<p>Configure ECS CLI Profile:<br />
-<div class="highlight"><pre><span></span><code>ecs-cli <span class="se">\</span>
-configure profile <span class="se">\</span>
---access-key YOURAWSKEYHERE <span class="se">\</span>
---secret-key YOURAWSSECRETKEYHERE <span class="se">\</span>
---profile-name ecs-ec2-profile
-</code></pre></div></p>
-<p>Configure ECS EC2 Cluster:<br />
-<div class="highlight"><pre><span></span><code>configure ECS Cluster Config:
-ecs-cli configure <span class="se">\</span>
---cluster test-cluster <span class="se">\</span>
---config-name test-cluster <span class="se">\</span>
---region YOURREGIONHEREi.e.:us-east-1
-</code></pre></div></p>
-<p>Deploy ECS EC2 Cluster:
-<div class="highlight"><pre><span></span><code>ecs-cli up <span class="se">\</span>
---cluster test-cluster <span class="se">\</span>
---region YOURREGIONHEREi.e.:us-east-1<span class="se">\</span>
---size <span class="m">1</span> <span class="se">\</span>
---capability-iam <span class="se">\</span>
---instance-type t2.xlarge <span class="se">\</span>
---launch-type EC2 <span class="se">\</span>
---ecs-profile test-profile <span class="se">\</span>
---force
-</code></pre></div></p>
-<hr />
-<h3 id="deploy-task-and-service">Deploy Task and Service<a class="headerlink" href="#deploy-task-and-service" title="Permanent link">&para;</a></h3>
-<p>Deploy with the following commands- <em>you must change the variables in caps in these task .json files to suit your environment:</em></p>
-<div class="highlight"><pre><span></span><code>aws ecs register-task-definition <span class="se">\</span>
---cli-input-json file://tracegen-java-otel-ecs-ec2.json
-</code></pre></div>
-<p>Note that the task definition will increment each time you try it- from 1 to 2 etc. To check which version is current use:<br />
-<div class="highlight"><pre><span></span><code>aws ecs list-task-definitions
-</code></pre></div></p>
-<p>Deploy trace generator task to cluster:</p>
-<div class="highlight"><pre><span></span><code>aws ecs create-service <span class="se">\</span>
---cluster test-cluster <span class="se">\</span>
---launch-type EC2 <span class="se">\</span>
---scheduling-strategy DAEMON <span class="se">\</span>
---service-name tracegen-java-otel-ecs-ec2 <span class="se">\</span>
---task-definition tracegen-java-otel-ecs-ec2:VERSIONHEREi.e.1
-</code></pre></div>
-<p>After a few seconds check Splunk APM to see the trace generator service.</p>
-<p>Cleanup:<br />
-<div class="highlight"><pre><span></span><code>aws ecs delete-service --cluster test-cluster --service tracegen-java-otel-ecs-ec2 --force
-</code></pre></div>
-<div class="highlight"><pre><span></span><code>ecs-cli down <span class="se">\</span>
---cluster test-cluster <span class="se">\</span>
---region us-east-1
-</code></pre></div>
-<div class="highlight"><pre><span></span><code>aws ecs delete-cluster --cluster test-cluster
-</code></pre></div></p>
-<h3 id="extras">Extras<a class="headerlink" href="#extras" title="Permanent link">&para;</a></h3>
-<p>The <a href="../ecs-cli-commands/">ecs-cli-commands.md</a> file offers helpful commands for ECS Fargate management for the AWS CLI.</p>
+                <h4 id="create">Create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h4>
+<p><code>aws ecs create-cluster --cluster-name YOURCLUSTERNAMEHERE</code> <br />
+<code>aws ecs register-task-definition --cli-input-json file://YOURTASKDEFINITIONHERE.json</code>   </p>
+<p><code>aws ecs create-service --cluster test-cluster --service-name signalfx-demo --task-definition signalfx-demo:1 \</code> <br />
+<code>--desired-count 1 --launch-type "FARGATE" \</code> <br />
+<code>--network-configuration "awsvpcConfiguration={subnets=[subnet-YOURSUBNETIDHERE],securityGroups=[sg-YOURSECURITYGROUPIDHERE],assignPublicIp=ENABLED}"</code></p>
+<h4 id="monitor">Monitor<a class="headerlink" href="#monitor" title="Permanent link">&para;</a></h4>
+<p><code>aws ecs list-task-definitions</code> <br />
+<code>aws ecs list-clusters</code><br />
+<code>aws ecs list-services --cluster YOURCLUSTERNAMEHERE</code> <br />
+<code>aws ecs describe-services --cluster YOURCLUSTERNAMEHERE --services YOURSERVICENAMEHERE</code>   </p>
+<h4 id="cleanup">Cleanup<a class="headerlink" href="#cleanup" title="Permanent link">&para;</a></h4>
+<p><code>aws ecs deregister-task-definition --task-definition FAMILYNAMEHERE:VERSIONHERE</code> <br />
+<code>aws ecs delete-service --cluster YOURCLUSTERNAMEHERE --service YOURSERVICENAMEHERE --force</code> <br />
+<code>aws ecs delete-cluster --cluster YOURCLUSTERNAMEHERE</code><br />
+<code>ecs-cli down --cluster YOURCLUSTERNAMEHERE --region YOURREGIONHERE</code></p>
                 
               
               
@@ -822,26 +703,6 @@ ecs-cli configure <span class="se">\</span>
       
         
 <footer class="md-footer">
-  
-    <nav class="md-footer__inner md-grid" aria-label="Footer">
-      
-        
-        <a href="../../docker/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Otel Collector and APM for Docker" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              Otel Collector and APM for Docker
-            </div>
-          </div>
-        </a>
-      
-      
-    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
