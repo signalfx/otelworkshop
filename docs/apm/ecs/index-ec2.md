@@ -2,18 +2,20 @@
 
 This repo demonstrates a reference implemenation for a single AWS ECS EC2 task example of Splunk APM that will send spans directly to Splunk Observability Cloud.  
 
-ECS EC2 works very simply: just add the environment variables required by the Otel APM Instrumentation and the Instrumentation will do the rest.
+ECS works very simply: just add the environment variables required by the Otel APM Instrumentation and the Instrumentation will do the rest.
 
-[AWS ECS CLI](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ECS_CLI.html) must be installed for these examples.
+To deploy this example, you must have an ECS environment ready to go with VPC, task roles for logs, etc. Instructions are below:  
 
-Pay critical attention to setting up:  
-VPC: https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html  
-Log Environment: https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_cloudwatch_logs.html  
+- Install ECS CLI: [ECS CLI Setup](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ECS_AWSCLI_Fargate.html)
+
+- Pay critical attention to setting up VPC in advance: [Task Definition Guide](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html)
+
+- Set up log environment here: [Cloudwatch](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_cloudwatch_logs.html)
 
 ---
 ### Setup
 
-Configure ECS CLI Profile:  
+Configure ECS CLI Profile:    
 ```bash
 ecs-cli \
 configure profile \
@@ -44,7 +46,7 @@ ecs-cli up \
 --force
 ```
 ---
-### Deploy Task and Service
+### Deploy Task
 
 Deploy with the following commands- *you must change the variables in caps in these task .json files to suit your environment:*
 
@@ -71,7 +73,8 @@ aws ecs create-service \
 
 After a few seconds check Splunk APM to see the trace generator service.
 
-Cleanup:  
+---
+### Cleanup  
 ```bash
 aws ecs delete-service --cluster test-cluster --service tracegen-java-otel-ecs-ec2 --force
 ```
@@ -84,6 +87,7 @@ ecs-cli down \
 aws ecs delete-cluster --cluster test-cluster
 ```
 
+---
 ### Extras
 
 The [ecs-cli-commands.md](./ecs-cli-commands.md) file offers helpful commands for ECS Fargate management for the AWS CLI.

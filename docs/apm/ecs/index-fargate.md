@@ -4,11 +4,13 @@ This repo demonstrates reference implemenations for a single AWS ECS Fargate tas
 
 ECS works very simply: just add the environment variables required by the Otel APM Instrumentation and the Instrumentation will do the rest.
 
-[AWS ECS CLI](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ECS_CLI.html) must be installed for these examples.
+To deploy this example, you must have an ECS environment ready to go with VPC, task roles for logs, etc. Instructions are below:  
 
-Pay critical attention to setting up:  
-VPC: https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html  
-Log Environment: https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_cloudwatch_logs.html  
+- Install ECS CLI: [ECS CLI Setup](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ECS_AWSCLI_Fargate.html)
+
+- Pay critical attention to setting up VPC in advance: [Task Definition Guide](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html)
+
+- Set up log environment here: [Cloudwatch](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_cloudwatch_logs.html)
 
 ---
 ### Setup
@@ -41,21 +43,8 @@ aws ecs create-cluster --cluster-name test-cluster
 
 The task spins up two ECS Fargate containers:
 
-#1 Splunk-Otel-Collector - sidecar to observe ECS host metrics and relay application traces to Splunk APM  
-#2 tracegen-fargate - generates traces using a manually instrumented Java app and sends them to the Otel Collector  
-
-To deploy this example, you must have a Fargate ECS environment ready to go with VPC, task roles for logs, etc..
-
-Everything to test this example follows the ECS tutorial documentation here:
-https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ECS_AWSCLI_Fargate.html
-
-Pay critical attention to setting up VPC in advance:
-https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html
-
-And log environment tutorial here:
-https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_cloudwatch_logs.html
-
-Once all of the above is done:  
+- `splunk-otel-collector` - sidecar to observe ECS host metrics and relay application traces to Splunk APM  
+- `tracegen-fargate` - generates traces using a manually instrumented Java app and sends them to the Otel Collector  
 
 Deploy with the following commands- *you must change the variables in caps in* `tracegen-java-otel-fargate-otelcolfargate.json` *to suit your environment:*
 
@@ -83,11 +72,13 @@ aws ecs create-service \
 
 After a few seconds check Splunk APM and Dashboards->ECS-Fargate to see the trace generator service and Otel collector
 
-Cleanup:  
+---
+### Cleanup  
 ```bash
 aws ecs delete-service --cluster test-cluster --service tracegen-java-otel-fargate-otelcol --force
 ```
 
+---
 ### Extras
 
 The [ecs-cli-commands.md](./ecs-cli-commands.md) file offers helpful commands for ECS Fargate management for the AWS CLI.
