@@ -685,29 +685,16 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#1-splunk-otel-collector-sidecar-to-observe-ecs-host-metrics-and-relay-application-traces-to-splunk-apm" class="md-nav__link">
-    1 Splunk-Otel-Collector - sidecar to observe ECS host metrics and relay application traces to Splunk APM
+  <a href="#cleanup" class="md-nav__link">
+    Cleanup
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-tracegen-fargate-generates-traces-using-a-manually-instrumented-java-app-and-sends-them-to-the-otel-collector" class="md-nav__link">
-    2 tracegen-fargate - generates traces using a manually instrumented Java app and sends them to the Otel Collector
-  </a>
-  
-    <nav class="md-nav" aria-label="2 tracegen-fargate - generates traces using a manually instrumented Java app and sends them to the Otel Collector">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#extras" class="md-nav__link">
     Extras
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -787,29 +774,16 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#1-splunk-otel-collector-sidecar-to-observe-ecs-host-metrics-and-relay-application-traces-to-splunk-apm" class="md-nav__link">
-    1 Splunk-Otel-Collector - sidecar to observe ECS host metrics and relay application traces to Splunk APM
+  <a href="#cleanup" class="md-nav__link">
+    Cleanup
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-tracegen-fargate-generates-traces-using-a-manually-instrumented-java-app-and-sends-them-to-the-otel-collector" class="md-nav__link">
-    2 tracegen-fargate - generates traces using a manually instrumented Java app and sends them to the Otel Collector
-  </a>
-  
-    <nav class="md-nav" aria-label="2 tracegen-fargate - generates traces using a manually instrumented Java app and sends them to the Otel Collector">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#extras" class="md-nav__link">
     Extras
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -826,13 +800,23 @@
               
                 
                 
+                  <h1>ECS-Fargate</h1>
+                
                 <h3 id="splunk-apm-trace-generator-demo-for-aws-ecs-fargate">Splunk APM Trace Generator Demo For AWS ECS Fargate<a class="headerlink" href="#splunk-apm-trace-generator-demo-for-aws-ecs-fargate" title="Permanent link">&para;</a></h3>
 <p>This repo demonstrates reference implemenations for a single AWS ECS Fargate task example of Splunk APM that will send spans to a sidecar OpenTelemetry container.</p>
 <p>ECS works very simply: just add the environment variables required by the Otel APM Instrumentation and the Instrumentation will do the rest.</p>
-<p><a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ECS_CLI.html">AWS ECS CLI</a> must be installed for these examples.</p>
-<p>Pay critical attention to setting up:<br />
-VPC: https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html<br />
-Log Environment: https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_cloudwatch_logs.html  </p>
+<p>To deploy this example, you must have an ECS environment ready to go with VPC, task roles for logs, etc. Instructions are below:  </p>
+<ul>
+<li>
+<p>Install ECS CLI: <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ECS_AWSCLI_Fargate.html">ECS CLI Setup</a></p>
+</li>
+<li>
+<p>Pay critical attention to setting up VPC in advance: <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html">Task Definition Guide</a></p>
+</li>
+<li>
+<p>Set up log environment here: <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_cloudwatch_logs.html">Cloudwatch</a></p>
+</li>
+</ul>
 <hr />
 <h3 id="setup">Setup<a class="headerlink" href="#setup" title="Permanent link">&para;</a></h3>
 <p>Configure ECS CLI Profile:<br />
@@ -855,16 +839,10 @@ ecs-cli configure <span class="se">\</span>
 <hr />
 <h3 id="deploy-task">Deploy Task<a class="headerlink" href="#deploy-task" title="Permanent link">&para;</a></h3>
 <p>The task spins up two ECS Fargate containers:</p>
-<h1 id="1-splunk-otel-collector-sidecar-to-observe-ecs-host-metrics-and-relay-application-traces-to-splunk-apm">1 Splunk-Otel-Collector - sidecar to observe ECS host metrics and relay application traces to Splunk APM<a class="headerlink" href="#1-splunk-otel-collector-sidecar-to-observe-ecs-host-metrics-and-relay-application-traces-to-splunk-apm" title="Permanent link">&para;</a></h1>
-<h1 id="2-tracegen-fargate-generates-traces-using-a-manually-instrumented-java-app-and-sends-them-to-the-otel-collector">2 tracegen-fargate - generates traces using a manually instrumented Java app and sends them to the Otel Collector<a class="headerlink" href="#2-tracegen-fargate-generates-traces-using-a-manually-instrumented-java-app-and-sends-them-to-the-otel-collector" title="Permanent link">&para;</a></h1>
-<p>To deploy this example, you must have a Fargate ECS environment ready to go with VPC, task roles for logs, etc..</p>
-<p>Everything to test this example follows the ECS tutorial documentation here:
-https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ECS_AWSCLI_Fargate.html</p>
-<p>Pay critical attention to setting up VPC in advance:
-https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html</p>
-<p>And log environment tutorial here:
-https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_cloudwatch_logs.html</p>
-<p>Once all of the above is done:  </p>
+<ul>
+<li><code>splunk-otel-collector</code> - sidecar to observe ECS host metrics and relay application traces to Splunk APM  </li>
+<li><code>tracegen-fargate</code> - generates traces using a manually instrumented Java app and sends them to the Otel Collector  </li>
+</ul>
 <p>Deploy with the following commands- <em>you must change the variables in caps in</em> <code>tracegen-java-otel-fargate-otelcolfargate.json</code> <em>to suit your environment:</em></p>
 <p>Create cluster
 <div class="highlight"><pre><span></span><code>aws ecs create-cluster --cluster-name test-cluster
@@ -882,9 +860,11 @@ https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_cloudwatch_log
 --task-definition tracegen-java-otel-fargate-otelcol:1
 </code></pre></div>
 <p>After a few seconds check Splunk APM and Dashboards-&gt;ECS-Fargate to see the trace generator service and Otel collector</p>
-<p>Cleanup:<br />
+<hr />
+<h3 id="cleanup">Cleanup<a class="headerlink" href="#cleanup" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>aws ecs delete-service --cluster test-cluster --service tracegen-java-otel-fargate-otelcol --force
-</code></pre></div></p>
+</code></pre></div>
+<hr />
 <h3 id="extras">Extras<a class="headerlink" href="#extras" title="Permanent link">&para;</a></h3>
 <p>The <a href="../ecs-cli-commands/">ecs-cli-commands.md</a> file offers helpful commands for ECS Fargate management for the AWS CLI.</p>
                 

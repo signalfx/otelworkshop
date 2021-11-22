@@ -664,8 +664,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#deploy-task-and-service" class="md-nav__link">
-    Deploy Task and Service
+  <a href="#deploy-task" class="md-nav__link">
+    Deploy Task
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cleanup" class="md-nav__link">
+    Cleanup
   </a>
   
 </li>
@@ -760,8 +767,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#deploy-task-and-service" class="md-nav__link">
-    Deploy Task and Service
+  <a href="#deploy-task" class="md-nav__link">
+    Deploy Task
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cleanup" class="md-nav__link">
+    Cleanup
   </a>
   
 </li>
@@ -790,14 +804,22 @@
                 
                 <h3 id="splunk-apm-trace-generator-demo-for-aws-ecs-ec2">Splunk APM Trace Generator Demo For AWS ECS EC2<a class="headerlink" href="#splunk-apm-trace-generator-demo-for-aws-ecs-ec2" title="Permanent link">&para;</a></h3>
 <p>This repo demonstrates a reference implemenation for a single AWS ECS EC2 task example of Splunk APM that will send spans directly to Splunk Observability Cloud.  </p>
-<p>ECS EC2 works very simply: just add the environment variables required by the Otel APM Instrumentation and the Instrumentation will do the rest.</p>
-<p><a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ECS_CLI.html">AWS ECS CLI</a> must be installed for these examples.</p>
-<p>Pay critical attention to setting up:<br />
-VPC: https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html<br />
-Log Environment: https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_cloudwatch_logs.html  </p>
+<p>ECS works very simply: just add the environment variables required by the Otel APM Instrumentation and the Instrumentation will do the rest.</p>
+<p>To deploy this example, you must have an ECS environment ready to go with VPC, task roles for logs, etc. Instructions are below:  </p>
+<ul>
+<li>
+<p>Install ECS CLI: <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ECS_AWSCLI_Fargate.html">ECS CLI Setup</a></p>
+</li>
+<li>
+<p>Pay critical attention to setting up VPC in advance: <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html">Task Definition Guide</a></p>
+</li>
+<li>
+<p>Set up log environment here: <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_cloudwatch_logs.html">Cloudwatch</a></p>
+</li>
+</ul>
 <hr />
 <h3 id="setup">Setup<a class="headerlink" href="#setup" title="Permanent link">&para;</a></h3>
-<p>Configure ECS CLI Profile:<br />
+<p>Configure ECS CLI Profile:  <br />
 <div class="highlight"><pre><span></span><code>ecs-cli <span class="se">\</span>
 configure profile <span class="se">\</span>
 --access-key YOURAWSKEYHERE <span class="se">\</span>
@@ -823,7 +845,7 @@ ecs-cli configure <span class="se">\</span>
 --force
 </code></pre></div></p>
 <hr />
-<h3 id="deploy-task-and-service">Deploy Task and Service<a class="headerlink" href="#deploy-task-and-service" title="Permanent link">&para;</a></h3>
+<h3 id="deploy-task">Deploy Task<a class="headerlink" href="#deploy-task" title="Permanent link">&para;</a></h3>
 <p>Deploy with the following commands- <em>you must change the variables in caps in these task .json files to suit your environment:</em></p>
 <div class="highlight"><pre><span></span><code>aws ecs register-task-definition <span class="se">\</span>
 --cli-input-json file://tracegen-java-otel-ecs-ec2.json
@@ -840,8 +862,9 @@ ecs-cli configure <span class="se">\</span>
 --task-definition tracegen-java-otel-ecs-ec2:VERSIONHEREi.e.1
 </code></pre></div>
 <p>After a few seconds check Splunk APM to see the trace generator service.</p>
-<p>Cleanup:<br />
-<div class="highlight"><pre><span></span><code>aws ecs delete-service --cluster test-cluster --service tracegen-java-otel-ecs-ec2 --force
+<hr />
+<h3 id="cleanup">Cleanup<a class="headerlink" href="#cleanup" title="Permanent link">&para;</a></h3>
+<p><div class="highlight"><pre><span></span><code>aws ecs delete-service --cluster test-cluster --service tracegen-java-otel-ecs-ec2 --force
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>ecs-cli down <span class="se">\</span>
 --cluster test-cluster <span class="se">\</span>
@@ -849,6 +872,7 @@ ecs-cli configure <span class="se">\</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>aws ecs delete-cluster --cluster test-cluster
 </code></pre></div></p>
+<hr />
 <h3 id="extras">Extras<a class="headerlink" href="#extras" title="Permanent link">&para;</a></h3>
 <p>The <a href="../ecs-cli-commands/">ecs-cli-commands.md</a> file offers helpful commands for ECS Fargate management for the AWS CLI.</p>
                 
