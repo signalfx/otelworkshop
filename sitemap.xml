@@ -26,6 +26,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://github.com/otelworkshop/apm/ecs/index-fargate/</loc>
+         <lastmod>2021-11-22</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://github.com/otelworkshop/apm/host/</loc>
          <lastmod>2021-11-22</lastmod>
          <changefreq>daily</changefreq>
