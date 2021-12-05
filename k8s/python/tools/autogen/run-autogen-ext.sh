@@ -1,1 +1,1 @@
-splk-py-trace python3 ./python-redis.py
+splunk-py-trace python3 ./python-redis.py

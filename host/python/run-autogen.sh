@@ -5,4 +5,4 @@ export OTEL_RESOURCE_ATTRIBUTES=deployment.environment=apm-workshop
 export OTEL_SERVICE_NAME=py-otel-autogen
 # ensure path is correct
 export PATH="$HOME/.local/bin:$PATH"
-splk-py-trace python3 ./python-requests-autogen.py
+splunk-py-trace python3 ./python-requests-autogen.py
