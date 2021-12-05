@@ -7,4 +7,4 @@ export SPLUNK_TEST_URL=https://api.github.com
 
 # ensure path is correct
 export PATH="$HOME/.local/bin:$PATH"
-splunk-py-trace python3 ./python-reqs-autogen-func.pyls
+splunk-py-trace python3 ./python-reqs-autogen-func.py
