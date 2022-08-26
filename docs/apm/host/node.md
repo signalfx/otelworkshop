@@ -23,13 +23,7 @@ npm install @opentelemetry/instrumentation-http --save
 
 ## Run .js HTTP.get requests client
 
-Set up environment and run the node app with HTTP.get requests
-!!! important
-    If you are doing this workshop as part of a group, before the next step, add your initials do the APM environment:
-    edit the `run-client.sh` script below and add your initials to the environment i.e. change:  
-    `export OTEL_RESOURCE_ATTRIBUTES=deployment.environment=apm-workshop`  
-    to    
-    `export OTEL_RESOURCE_ATTRIBUTES=deployment.environment=sjl-apm-workshop`  
+Set up environment and run the node app with HTTP.get requests:
       
 ```bash
 source run-client.sh

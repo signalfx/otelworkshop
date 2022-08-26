@@ -52,3 +52,52 @@ Oct 31 13:07:37 ip-172-31-70-180 otelcol[37949]: 2021-10-31T13:07:37.826Z       
 ```
 
 Your machine will be visible in Splunk Observability in `Infrastructure` either in the public cloud platform you are using or `My Data Center` if you are using Multipass or any other non public cloud machine.
+
+## Add in deployment.environment
+
+Next we will add some metadata to the collector, so that any traces that go through the collector will have this attribute. (We could also apply this to the metrics and logs, but for this workshop we are only looking at tracing.)
+
+Edit the file:
+```
+sudo nano /etc/otel/collector/agent_config.yaml
+```
+
+Use ```Control-W``` and type ```deployment.environment<enter>``` to find this section commented out
+
+Make it look like the following, with the comments removed, and replacing ```INITIALS``` with your own:
+```
+  resource/add_environment:
+    attributes:
+      - action: insert
+        value: INITIALS-apm-workshop
+        key: deployment.environment
+```
+
+**Important Note**: Watch the spacing! The ```resource.environment``` line is 2 spaces in, and all of the other sections are similarly indented. YAML is very sensitive to spacing.
+
+Now let's search for the word ```pipelines``` (using ```Control-W```). Here we can see all of the out of the box pipelines for metrics, traces and logs. Note that in the tracing pipeline the ```resources/add_environment``` is commented out. Let's uncomment it so it looks like this:
+```
+service:
+  extensions: [health_check, http_forwarder, zpages, memory_ballast]
+  pipelines:
+    traces:
+      receivers: [jaeger, otlp, smartagent/signalfx-forwarder, zipkin]
+      processors:
+      - memory_limiter
+      - batch
+      - resourcedetection
+      - resource/add_environment
+```
+
+You are now finished editing so hit ```Control-O```, then ```y``` to save, and then ```<enter>``` to save as the same name.
+
+We can restart the collector so it takes our changes:
+
+```
+sudo systemctl restart splunk-otel-collector
+```
+
+And to make sure it started fine:
+```
+sudo systemctl status splunk-otel-collector
+```
