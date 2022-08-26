@@ -38,7 +38,8 @@ Choose the following:
 | Provider | Other |
 | Distribution | Other |
 | Add Gateway | No |
-| Log Collection | True |  
+| Log Collection | True |
+| Profiling | False |  
 
 And then select `Next`  
 
@@ -81,15 +82,17 @@ sudo chmod 755 /etc/rancher/k3s/k3s.yaml
 
 Prep values for collector update:  
 
-`helm list`  
-`helm get values NAME`  
+```
+helm list
+helm get values NAME
+```
 
-i.e. `helm get values splunk-otel-collector-1620609739`
+For example:
+```
+helm get values splunk-otel-collector-1620609739
+```
 
-make note of:  
-`clusterNAME`  
-`splunkAccessToken`  
-`splunkRealm`  
+You can see that all of the values we set at install time.
 
 #### Prepare values.yaml file for updating the Helm chart  
 
@@ -98,17 +101,18 @@ Start in k8s directory:
 cd ~/otelworkshop/k8s
 ```
 
-Edit `k3slogs.yaml` with thes values above.
+Run ```cat k3slogs.yaml```. You can see that we want to make some additional changes to logging with fluentd.
 
 #### Update the Collector 
 
-Install the Collector configuration chart:  
+Install the Collector configuration chart; be sure to change ```YOURCOLLECTORHERE``` with the ```NAME``` from above:  
 
 ```
 helm upgrade \
 YOURCOLLECTORHERE \
 --values k3slogs.yaml \
-splunk-otel-collector-chart/splunk-otel-collector
+splunk-otel-collector-chart/splunk-otel-collector \
+--reuse-values
 ```
 
 i.e.
@@ -117,9 +121,15 @@ i.e.
 helm upgrade \
 splunk-otel-collector-1620609739 \
 --values k3slogs.yaml \
-splunk-otel-collector-chart/splunk-otel-collector
+splunk-otel-collector-chart/splunk-otel-collector \
+--reuse-values
 ```
 
+You can now check your values again:
+```
+helm get values YOURCOLLECTORHERE
+```
+and you should see both your default install information (like tokens and realm) and the new logging configuration are available.
 ---
 ### 2: Deploy APM For Containerized Apps: Python and Java
 

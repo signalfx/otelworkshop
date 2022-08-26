@@ -1,4 +1,4 @@
-otelAgent:
+agent:
   config:
     processors:
       attributes/update:
