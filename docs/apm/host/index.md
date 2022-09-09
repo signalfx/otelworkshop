@@ -44,6 +44,11 @@ resource/add_environment:
       key: deployment.environment 
 ```
 
+Then restart the Collector for the changes to take effect:
+```bash
+sudo systemct restart splunk-otel-collector
+```
+
 Check status of collector:
 
 ```bash
