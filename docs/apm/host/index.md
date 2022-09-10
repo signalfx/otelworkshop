@@ -19,6 +19,36 @@ Follow Data Setup Wizard for instructions on Linux installation:
 
 ![Linux Install](../../images/05-datasetup-linuxinstall.png)
 
+!!! important
+If you are doing this workshop as part of a group, before the next step, add your initials do the Collector environment:
+Edit the `/etc/otel/collector/agent_config.yaml` config file and add your initials to the `processors.resource/add_environment` YAML node.
+
+To do so, execute the following:
+```bash
+sudo <vim | nano> /etc/otel/collector/agent_config.yaml
+```
+And locate the following commented-out lines:
+```yaml
+#resource/add_environment:
+  #attributes:
+    #- action: insert
+      #value: staging/prod/etc...
+      #key: deployment.environment
+```
+Uncomment and change them to:
+```yaml
+resource/add_environment:
+  attributes:
+    - action: insert
+      value: <YOUR INITIALS>-apm-workshop
+      key: deployment.environment 
+```
+
+Then restart the Collector for the changes to take effect:
+```bash
+sudo systemct restart splunk-otel-collector
+```
+
 Check status of collector:
 
 ```bash
@@ -51,4 +81,4 @@ Oct 31 13:07:37 ip-172-31-70-180 otelcol[37949]: 2021-10-31T13:07:37.826Z       
 Oct 31 13:07:37 ip-172-31-70-180 otelcol[37949]: 2021-10-31T13:07:37.826Z        info        hostmetadata/metadata.go:83      >
 ```
 
-Your machine will be visible in Splunk Observability in `Infrastructure` either in the public cloud platform you are using or `My Data Center` if you are using Multipass or any other non public cloud machine.
+Your machine will be visible in Splunk Observability in `Infrastructure Monitoring` either in the public cloud platform you are using or `My Data Center` if you are using Multipass or any other non public cloud machine.
