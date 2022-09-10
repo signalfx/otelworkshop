@@ -20,8 +20,6 @@ spec:
           - name: http
             containerPort: 5000
         env:
-        - name: OTEL_RESOURCE_ATTRIBUTES
-          value: deployment.environment=apm-workshop
         - name: OTEL_SERVICE_NAME
           value: server-flask-otel-k8s
         - name: SPLUNK_OTEL_AGENT
@@ -56,8 +54,6 @@ spec:
   - name: client-py-otel-k8s
     image: docker.io/stevelsplunk/splk-python
     env:
-    - name: OTEL_RESOURCE_ATTRIBUTES
-      value: deployment.environment=apm-workshop
     - name: OTEL_SERVICE_NAME
       value: client-py-otel-k8s
     - name: SPLUNK_OTEL_AGENT

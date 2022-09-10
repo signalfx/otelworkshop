@@ -1,11 +1,4 @@
-clusterName: YOURCLUSTERHERE
-splunkObservability:
-  realm: YOURREALMHERE
-  accessToken: YOURTOKENHERE
-
-# commented areas show how to add multiple prometheus endpoints
-
-otelAgent:
+agent:
   config:
     receivers:
       prometheus_simple:

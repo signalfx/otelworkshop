@@ -1,9 +1,4 @@
-clusterName: YOURCLUSTERHERE
-splunkObservability:
-  realm: YOURREALMHERE
-  accessToken: YOURTOKENHERE
-
-otelAgent:
+agent:
   config:
     processors:
       attributes/update:
