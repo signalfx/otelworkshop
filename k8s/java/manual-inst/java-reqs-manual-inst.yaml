@@ -15,7 +15,7 @@ spec:
         fieldRef:
           fieldPath: status.hostIP
     - name: OTEL_RESOURCE_ATTRIBUTES
-      value: service.name=manualinst-java-otel-k8s,deployment.environment=apm-workshop
+      value: service.name=manualinst-java-otel-k8s
     - name: SPLUNK_METRICS_ENDPOINT
       value: http://$(SPLUNK_OTEL_AGENT):9943
     - name: OTEL_EXPORTER_OTLP_ENDPOINT

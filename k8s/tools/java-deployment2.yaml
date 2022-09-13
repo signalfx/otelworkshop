@@ -13,7 +13,7 @@ spec:
         fieldRef:
           fieldPath: status.hostIP
     - name: OTEL_RESOURCE_ATTRIBUTES
-      value: service.name=client2-java-otel-k8s,deployment.environment=apm-workshop
+      value: service.name=client2-java-otel-k8s,deployment.environment=<ENV PREFIX>-apm-workshop
     - name: SPLUNK_METRICS_ENABLED
       value: "true"
     - name: SPLUNK_METRICS_ENDPOINT

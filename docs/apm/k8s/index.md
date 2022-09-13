@@ -1,5 +1,5 @@
-Identify your token and realm from the Splunk Observability Cloud Portal:   
-`Organization Settings->Access Tokens` and `Your Name->Account Settings`  
+We will now look at APM from the perspective of the same applications running in a Kubernetes-orchestrated environment.
+ 
 
 > <ins>If using your own k8s cluster on an Ubuntu host</ins>  
 > Remove the Otel Collector if its running on the same host as your k8s cluster:
@@ -16,12 +16,26 @@ bash <(curl -s https://raw.githubusercontent.com/signalfx/otelworkshop/master/se
 > If you are using k8s anywhere else you can still do this workshop but will need to ensure `helm`, `lynx` are available.
 
 ---
-### 1: Use Data Setup Wizard for Splunk Otel Collector Pod on k3s
+### Step 0: Stop the previous Host-based applications and remove the Host-based Otel Collector
+If you have worked through the previous steps in this workshop by deploying Host-based instances of the Python, Java and Node applications, they will need to be terminated before working though this section of the workshop.
 
->**IMPORTANT: If you have the Otel Collector and prior lab examples running on a host, them at this time:**  
->Stop all the prior labs apps by using `ctrl-c` in each terminal window and then closing the window.  
->Remove the host based otel collector: 
->`sudo sh /tmp/splunk-otel-collector.sh --uninstall`
+#### Stop the previous instances of the applications
+Stop all the prior labs apps by using `ctrl-c` in each terminal window and then closing each window.
+
+#### Remove the host based otel collector:
+`sudo sh /tmp/splunk-otel-collector.sh --uninstall`
+
+### Step 1: Use Data Setup Wizard for Splunk Otel Collector Pod on k3s
+
+Identify your token and realm from the Splunk Observability Cloud Portal:   
+`Organization Settings->Access Tokens` and `Your Name->Account Settings`
+
+Export both of these values as environment variables in your current shell.
+
+```bash
+export ACCESS_TOKEN=<your access token value>
+export REALM=<your Splunk Observability Cloud realm>
+```
 
 #### 1a: Splunk Observability Cloud Portal
  
@@ -59,20 +73,19 @@ TEST SUITE: None
 
 Note the name of the deployment when the install completes i.e.:   `splunk-otel-collector-1620505665`  
 
-#### 1b: Update k3s For Splunk Log Observer (Ignore if you are using k8s)
+#### 1b: Update k3s For Splunk Log Observer (*Ignore if you are using your own non-K3s Kubernetes cluster*)
 
-k3s has a different format that standard k8s for logging and we need to update our deployment for this.  
+K3s has a different log format than standard k8s. We need to update our deployment to correctly parse K3s log format.
 
-You'll need the Collector deployment from the Data Setup Wizard install.  
-
-You can also dervice this from using `helm list` i.e.:  
+##### Get Helm package name
+You'll need the Collector deployment name from the Data Setup Wizard installation steps. You can also derive this from using `helm list` i.e.:  
 ```
 NAME                                    NAMESPACE       REVISION        UPDATED                                 STATUS       CHART                           APP VERSION
 splunk-otel-collector-1620504591        default         1               2021-05-08 20:09:51.625419479 +0000 UTC deployed     splunk-otel-collector-0.25.0  
 ```
 The deployment name would be: `splunk-otel-collector-1620504591`  
 
-#### Prepare values for Collector update  
+##### Prepare values for Collector update  
 
 If you run into any errors from helm, fix with:  
 ```
@@ -92,9 +105,10 @@ For example:
 helm get values splunk-otel-collector-1620609739
 ```
 
-You can see that all of the values we set at install time.
+You can see the values we set at install time.
 
-#### Prepare values.yaml file for updating the Helm chart  
+##### Prepare values.yaml file for updating the Helm chart
+There are some minor changes to the OpenTelemetry Collector deployment configuration that will all
 
 Start in k8s directory:
 ```bash
@@ -103,7 +117,7 @@ cd ~/otelworkshop/k8s
 
 Run ```cat k3slogs.yaml```. You can see that we want to make some additional changes to logging with fluentd.
 
-#### Update the Collector 
+##### Update the Collector 
 
 Install the Collector configuration chart; be sure to change ```YOURCOLLECTORHERE``` with the ```NAME``` from above:  
 
@@ -130,15 +144,54 @@ You can now check your values again:
 helm get values YOURCOLLECTORHERE
 ```
 and you should see both your default install information (like tokens and realm) and the new logging configuration are available.
+
+#### 1c Update your Collector configuration for your own APM Environment Tag
+Similar to the Host-based deployment process, we will add our own custom environment tag to the Collector configuration.  This will tag all spans coming into the Collector with a specific environment name, allowing you to see APM data specific to your workshop setup.  
+
+If you are running applications in clusters that span environments (for example “dev” and “prod”) you might want to set the environment value from the application itself.  The flexibility of OpenTelemetry lets you tailor your telemetry data to meet a wide variety of deployment models.
+
+##### Supply Your Environment Name
+We can execute a short Linux command to replace all instances of the string <ENV PREFIX> with your own environment prefix value.  This helps isolate your workshop resources from others.
+
+Pick a short alphanumeric string to prefix your Environment.  If you choose `foo`, for example, execute the following commands:
+```bash
+cd ~/otelworkshop/k8s
+grep -RiIl '<ENV PREFIX>' | xargs sed -i '' 's/<ENV PREFIX>/foo/g'
+```
+As an alternative, you can manually edit the files using Nano (or Vim).  This example uses Nano.
+
+Open the `resource-environment.yaml` file
+```bash
+cd ~/otelworkshop/k8s/
+nano resource-environment.yaml
+```
+Edit the contents by replacing the placeholder text:
+```yaml
+agent:
+  config:
+    processors:
+      resource/add_environment:
+        attributes:
+          - action: insert
+            value: <ENV PREFIX>-apm-workshop <------ Replace with your initials
+            key: deployment.environment
+    service:
+      pipelines:
+        traces:
+          processors:
+            - memory_limiter
+            - batch
+            - resourcedetection
+            - resource/add_environment
+```
+##### Apply the Resource Environment Collector Config to The Collector Pods
+Execute the following command to update your Collector config.  Make sure to substitute your specific Helm installation name found from `helm list`.
+```bash
+helm upgrade <splunk-otel-collector-deployment-name> --values resource-attributes.yaml splunk-otel-collector-chart/splunk-otel-collector --reuse-values
+```
+
 ---
 ### 2: Deploy APM For Containerized Apps: Python and Java
-
-!!! important
-    If you are doing this workshop as part of a group, before the next step, add your initials do the APM environment: 
-    edit the `py-deployment.yaml` below and add your initials to the environment i.e. change all instances:  
-    `deployment.environment=apm-workshop`  
-    to    
-    `deployment.environment=sjl-apm-workshop` 
 
 Deploy the Flask server deployment/service and the python-requests (makes requests of Flask server) pod:  
 ```
@@ -146,13 +199,6 @@ cd ~/otelworkshop/k8s
 kubectl apply -f py-deployment.yaml
 ```
 
-!!! important
-    If you are doing this workshop as part of a group, before the next step, add your initials do the APM environment: 
-    edit the `java-deployment.yaml` below and add your initials to the environment i.e. change all instances:  
-    `deployment.environment=apm-workshop`  
-    to    
-    `deployment.environment=sjl-apm-workshop`  
-     
 Deploy the Java OKHTTP requests pod (makes requests of Flask server):  
 ```
 kubectl apply -f java-deployment.yaml
@@ -160,7 +206,7 @@ kubectl apply -f java-deployment.yaml
 Study the results:
 
 The APM Dashboard will show the instrumented Python-Requests and Java OKHTTP clients posting to the Flask Server.  
-Make sure you select the `apm-workshop` ENVIRONMENT to monitor.
+Make sure you select the `xxx-apm-workshop` ENVIRONMENT to monitor.
 
 <img src="../../images/19-k8s-apm.png" width="360">  
 
@@ -171,7 +217,7 @@ Example in Github or:
 ~/otelworkshop/k8s/py-deployment.yaml   
 ~/otelworkshop/k8s/java-deployment.yaml   
 ```
-The .yaml files show the environment variables telling the instrumentation to send spans to the OpenTelemetry Collector.
+The `*.yaml` files show the environment variables telling the instrumentation to send spans to the OpenTelemetry Collector.
 
 Normally we use an environment variable pointing to `localhost` on a single host application where the Collector is running. In k8s we have separate pods in a cluster for apps and the Collector.   
 
@@ -219,13 +265,6 @@ Example is here:
 
 Deploy an app with ONLY manual instrumentation:  
 
-!!! important
-    If you are doing this workshop as part of a group, before the next step, add your initials do the APM environment: 
-    edit the `java-reqs-manual-inst.yaml` below and add your initials to the environment i.e. change all instances:  
-    `deployment.environment=apm-workshop`  
-    to    
-    `deployment.environment=sjl-apm-workshop`  
-    
 ```
 kubectl apply -f java-reqs-manual-inst.yaml
 ```
@@ -291,7 +330,7 @@ cd ~/otelworkshop/k8s/collectorconfig
 
 #### Prepare values.yaml file for updating the Helm chart  
 
-Edit `spanprocessor.yaml` with thes values from Step 1.  
+Edit `spanprocessor.yaml` with the values from Step 1.  
 
 #### Update the Collector 
 

@@ -9,4 +9,11 @@ agent:
     service:
       pipelines:
         traces:
-          processors: [memory_limiter, k8s_tagger, batch, resource, resourcedetection, attributes/update]
+          processors:
+            - memory_limiter,
+            - k8s_tagger,
+            - batch,
+            - resource,
+            - resourcedetection,
+            - attributes/update
+            - resource/add_environment

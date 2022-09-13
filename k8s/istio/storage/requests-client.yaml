@@ -10,7 +10,7 @@ spec:
     image: docker.io/stevelsplunk/splk-python
     env:
     - name: OTEL_RESOURCE_ATTRIBUTES
-      value: deployment.environment=apm-workshop
+      value: deployment.environment=<ENV PREFIX>-apm-workshop
     - name: OTEL_SERVICE_NAME
       value: client-py
     - name: SPLUNK_OTEL_AGENT
