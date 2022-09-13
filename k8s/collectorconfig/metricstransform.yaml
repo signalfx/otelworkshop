@@ -1,11 +1,19 @@
-clusterName: YOURCLUSTERHERE
-splunkObservability:
-  realm: YOURREALMHERE
-  accessToken: YOURTOKENHERE
-
-otelAgent:
+agent:
   config:
+    receivers:
+      prometheus_simple:
+        endpoint: prometheus:9090
     processors:
+      attributes/update:
+        actions:
+          - action: update
+            key: my.key
+            value: redacted
+      resource/add_environment:
+        attributes:
+          - action: insert
+            key: deployment.environment
+            value: <ENV PREFIX>-apm-workshop
       metricstransform/prometheus_simple:
         transforms:
           - include: CustomGauge
@@ -13,10 +21,26 @@ otelAgent:
             new_name: TransformedGauge
     service:
       pipelines:
+        traces:
+          processors:
+            - memory_limiter
+            - k8s_tagger
+            - batch
+            - resource
+            - resourcedetection
+            - attributes/update
+            - resource/add_environment
         metrics:
+          receivers:
+            - hostmetrics
+            - kubeletstats
+            - receiver_creator
+            - signalfx
+            - prometheus_simple
           processors:
             - memory_limiter
             - batch
             - resource
             - resourcedetection
+            - resource/add_environment
             - metricstransform/prometheus_simple

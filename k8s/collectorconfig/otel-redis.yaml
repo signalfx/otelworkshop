@@ -3,7 +3,7 @@ splunkObservability:
   realm: YOURREALMHERE
   accessToken: YOURTOKENHERE
 
-otelAgent:
+agent:
   config:
     receivers:
       smartagent/redis:    

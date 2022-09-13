@@ -18,7 +18,7 @@ spec:
     - name: SIGNALFX_SERVICE_NAME
       value: dotnet5-httpget
     - name: SIGNALFX_ENV
-      value: apm-workshop
+      value: <ENV PREFIX>-apm-workshop
     - name: CORECLR_ENABLE_PROFILING
       value: "1"
     - name: CORECLR_PROFILER

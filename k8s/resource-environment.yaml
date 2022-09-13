@@ -1,0 +1,16 @@
+agent:
+  config:
+    processors:
+      resource/add_environment:
+        attributes:
+          - action: insert
+            value: <ENV PREFIX>-apm-workshop
+            key: deployment.environment
+    service:
+      pipelines:
+        traces:
+          processors:
+            - memory_limiter
+            - batch
+            - resourcedetection
+            - resource/add_environment

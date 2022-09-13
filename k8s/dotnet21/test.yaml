@@ -18,7 +18,7 @@ spec:
     - name: SIGNALFX_ENDPOINT_URL
       value: "http://$(SPLUNK_OTEL_AGENT):9411/api/v2/spans"
     - name: SIGNALFX_TRACE_GLOBAL_TAGS
-      value: deployment.environment:apm-workshop
+      value: deployment.environment:<ENV PREFIX>-apm-workshop
     - name: SIGNALFX_TRACE_DEBUG
       value: "true"
     - name: SIGNALFX_TRACE_LOG_PATH

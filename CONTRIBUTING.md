@@ -11,7 +11,7 @@ Use ```deploy.sh``` to deploy when you have completed your changes.
 cd otelworkshop
 python3 -m venv venv
 source venv/bin/activate
-pip3 install -r docs/doc-tols/requirements.txt
+pip3 install -r docs/doc-tools/requirements.txt
 ```
 
 ## Each new session setup

@@ -23,7 +23,7 @@ spec:
             containerPort: 5000
         env:
         - name: OTEL_RESOURCE_ATTRIBUTES
-          value: deployment.environment=apm-workshop
+          value: deployment.environment=<ENV PREFIX>-apm-workshop
         - name: OTEL_SERVICE_NAME
           value: server-flask-otel-k8s
         - name: OTEL_PROPAGATORS
