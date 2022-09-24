@@ -55,6 +55,6 @@ java \
 -jar ./target/java-app-1.0-SNAPSHOT.jar
 ```
 
-The `splunk-otel-javaagent.jar` file is the automatic OpenTelemetry instrumentation that will emit spans from the app. No code changes are necessary! The `otel.` resources set up the service name and environment. Config details can be found [here](https://docs.splunk.com/Observability/gdi/get-data-in/application/java/configuration/advanced-java-otel-configuration.html)
+The `splunk-otel-javaagent.jar` file is the automatic OpenTelemetry instrumentation that will emit spans from the app. No code changes are necessary! The `otel.resources` parameter set up the service name and environment. Config details can be found [here](https://docs.splunk.com/Observability/gdi/get-data-in/application/java/configuration/advanced-java-otel-configuration.html)
 
 Splunk's OpenTelmetry autoinstrumentation for Java is [here](https://github.com/signalfx/splunk-otel-java)
