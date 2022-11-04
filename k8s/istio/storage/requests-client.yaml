@@ -7,7 +7,7 @@ metadata:
 spec:
   containers:
   - name: client-py
-    image: docker.io/stevelsplunk/splk-python
+    image: quay.io/vvydier123/splk-python
     env:
     - name: OTEL_RESOURCE_ATTRIBUTES
       value: deployment.environment=<ENV PREFIX>-apm-workshop

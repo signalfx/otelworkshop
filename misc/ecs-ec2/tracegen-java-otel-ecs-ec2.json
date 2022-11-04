@@ -32,7 +32,7 @@
                     "value": "jaeger-thrift-splunk"
                 }
             ],
-            "image": "docker.io/stevelsplunk/splk-java-autogen",
+            "image": "quay.io/vvydier123/splk-java-autogen",
             "essential": true,
             "dockerLabels": {
                 "app": "tracegen-java-otel-ecs-ec2"

@@ -9,4 +9,4 @@ docker run --rm -dit \
 -e SIGNALFX_INTEGRATIONS=/opt/signalfx-dotnet-tracing/integrations.json \
 -e SIGNALFX_DOTNET_TRACER_HOME=/opt/signalfx-dotnet-tracing \
 --name dotnet-autogen-direct \
---entrypoint="" docker.io/stevelsplunk/splk-dotnet5 /bin/sh /App/run-client.sh
+--entrypoint="" quay.io/vvydier123/splk-dotnet6 /bin/sh /App/run-client.sh

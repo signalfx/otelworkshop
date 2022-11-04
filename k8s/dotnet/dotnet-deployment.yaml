@@ -3,11 +3,11 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: client-dotnet5-k8s
+  name: client-dotnet6-k8s
 spec:
   containers:
-  - name: client-dotnet5-k8s
-    image: docker.io/stevelsplunk/splk-dotnet5
+  - name: client-dotnet6-k8s
+    image: quay.io/vvydier123/splk-dotnet6
     env:
     - name: SPLUNK_OTEL_AGENT
       valueFrom:

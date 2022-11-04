@@ -28,7 +28,7 @@
                     "value": "true"
                 }
             ],
-            "image": "docker.io/stevelsplunk/splk-java-autogen",
+            "image": "quay.io/vvydier123/splk-java-autogen",
             "essential": true,
             "dockerLabels": {
                 "app": "tracegen-java-otel-fargate"

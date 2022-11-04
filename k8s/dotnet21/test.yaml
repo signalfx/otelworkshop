@@ -7,7 +7,7 @@ metadata:
 spec:
   containers:
   - name: client-dotnet-k8s
-    image: docker.io/stevelsplunk/splk-dotnet
+    image: quay.io/vvydier123/splk-dotnet-3.1
     env:
     - name: SPLUNK_OTEL_AGENT
       valueFrom:

@@ -1,1 +1,1 @@
-kubectl apply -f dotnet-2.1-deployment.yaml
+kubectl apply -f dotnet-3.1-deployment.yaml
