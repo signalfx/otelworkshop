@@ -187,7 +187,7 @@ agent:
 ##### Apply the Resource Environment Collector Config to The Collector Pods
 Execute the following command to update your Collector config.  Make sure to substitute your specific Helm installation name found from `helm list`.
 ```bash
-helm upgrade <splunk-otel-collector-deployment-name> --values resource-attributes.yaml splunk-otel-collector-chart/splunk-otel-collector --reuse-values
+helm upgrade <splunk-otel-collector-deployment-name> --values resource-environment.yaml splunk-otel-collector-chart/splunk-otel-collector --reuse-values
 ```
 
 ---
