@@ -56,7 +56,7 @@ brew --version
 We will use [Multipass](https://multipass.run) as a hypervisor for Mac:
 
 ```bash
-brew cask install multipass
+brew install multipass --cask
 ```
 
 If needed, further instructions are [here](https://multipass.run/docs/installing-on-macos). Do one final brew upgrade before spinning up VM:

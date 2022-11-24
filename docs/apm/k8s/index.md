@@ -153,10 +153,18 @@ If you are running applications in clusters that span environments (for example 
 ##### Supply Your Environment Name
 We can execute a short Linux command to replace all instances of the string <ENV PREFIX> with your own environment prefix value.  This helps isolate your workshop resources from others.
 
-Pick a short alphanumeric string to prefix your Environment.  If you choose `foo`, for example, execute the following commands:
+
+Included is a helpful command to cover all the necessary files at once.  Pick a short alphanumeric string to prefix your Environment. The pattern of the command looks like:
+```bash
+grep -RiIl '<ENV PREFIX>' | xargs sed -i 's/<ENV PREFIX>/<choose-your-own-prefix>/g'
+```
+Replace the `<choose-your-own-prefix>` with an arbitrary value of your choosing, omitting the `<` and `>` characters.
+
+
+If you choose `foo`, for example, execute the following commands:
 ```bash
 cd ~/otelworkshop/k8s
-grep -RiIl '<ENV PREFIX>' | xargs sed -i '' 's/<ENV PREFIX>/foo/g'
+grep -RiIl '<ENV PREFIX>' | xargs sed -i 's/<ENV PREFIX>/foo/g'
 ```
 As an alternative, you can manually edit the files using Nano (or Vim).  This example uses Nano.
 
@@ -187,7 +195,7 @@ agent:
 ##### Apply the Resource Environment Collector Config to The Collector Pods
 Execute the following command to update your Collector config.  Make sure to substitute your specific Helm installation name found from `helm list`.
 ```bash
-helm upgrade <splunk-otel-collector-deployment-name> --values resource-attributes.yaml splunk-otel-collector-chart/splunk-otel-collector --reuse-values
+helm upgrade <splunk-otel-collector-deployment-name> --values resource-environment.yaml splunk-otel-collector-chart/splunk-otel-collector --reuse-values
 ```
 
 ---
@@ -346,7 +354,7 @@ splunk-otel-collector-chart/splunk-otel-collector
 i.e.
 
 ```
-helm upgrade  --install \
+helm upgrade --install \
 splunk-otel-collector-1620609739 \
 --values spanprocessor.yaml \
 splunk-otel-collector-chart/splunk-otel-collector
@@ -449,11 +457,11 @@ Note the pod name of the `OpenTelemetry Collector` pod i.e.:
 
 Send the Zpages stats to the lynx browser:  
 ```
-kubectl exec -it YOURAGENTPODHERE -- curl localhost:55679/debug/tracez | lynx -stdin
+kubectl exec -it YOURAGENTPODHERE -- curl 127.0.0.1:55679/debug/tracez | lynx -stdin
 ```  
 i.e.
 ```
-kubectl exec -it splunk-otel-collector-1620505665-agent-sw45w -- curl localhost:55679/debug/tracez | lynx -stdin
+kubectl exec -it splunk-otel-collector-1620505665-agent-sw45w -- curl 127.0.0.1:55679/debug/tracez | lynx -stdin
 ```
 
 <img src="../../images/06-zpages.png" width="360"> 
@@ -471,12 +479,12 @@ i.e.
 
 Show current Collector config:  
 ```
-kubectl exec -it YOURAGENTPODHERE -- curl localhost:55554/debug/configz/effective
+kubectl exec -it YOURAGENTPODHERE -- curl 127.0.0.1:55554/debug/configz/effective
 ```
 
 Show initial Collector config:  
 ```
-kubectl exec -it YOURAGENTPODHERE -- curl localhost:55554/debug/configz/initial
+kubectl exec -it YOURAGENTPODHERE -- curl 127.0.0.1:55554/debug/configz/initial
 ```
 
 ---
