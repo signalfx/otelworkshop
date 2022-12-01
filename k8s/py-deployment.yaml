@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: server-flask-otel-k8s
-        image: docker.io/stevelsplunk/splk-python
+        image: quay.io/vvydier123/splk-python
         ports:
           - name: http
             containerPort: 5000
@@ -52,7 +52,7 @@ metadata:
 spec:
   containers:
   - name: client-py-otel-k8s
-    image: docker.io/stevelsplunk/splk-python
+    image: quay.io/vvydier123/splk-python
     env:
     - name: OTEL_SERVICE_NAME
       value: client-py-otel-k8s

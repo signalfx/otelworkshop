@@ -5,4 +5,4 @@ docker run --rm -dit \
 -e OTEL_EXPORTER_JAEGER_ENDPOINT=https://ingest.$SPLUNK_REALM.signalfx.com/v2/trace \
 -e SPLUNK_ACCESS_TOKEN=$SPLUNK_ACCESS_TOKEN \
 --name java-autogen-direct \
-docker.io/stevelsplunk/splk-java-autogen
+quay.io/vvydier123/splk-java-autogen

@@ -6,4 +6,4 @@ docker run --rm -dit \
 -p 6379:6379 \
 --network otel-net \
 --name python-autogen \
---entrypoint="" docker.io/stevelsplunk/splk-python-autogen /bin/bash run-autogen.sh
+--entrypoint="" quay.io/vvydier123/splk-python-autogen /bin/bash run-autogen.sh

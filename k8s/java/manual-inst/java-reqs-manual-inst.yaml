@@ -5,7 +5,7 @@ metadata:
 spec:
   containers:
   - name: java-manual-inst-k8s
-    image: 'docker.io/stevelsplunk/splk-java:latest'
+    image: 'vvydier123.io/vvydier123/splk-java:latest'
     ports:
       - name: http
         containerPort: 3000

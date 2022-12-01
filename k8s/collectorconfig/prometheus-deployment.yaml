@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: prometheus
-        image: docker.io/stevelsplunk/splk-python
+        image: quay.io/vvydier123/splk-python
         ports:
           - name: http
             containerPort: 9090

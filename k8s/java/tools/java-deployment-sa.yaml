@@ -5,7 +5,7 @@ metadata:
 spec:
   containers:
   - name: client-java-otel-k8s
-    image: docker.io/stevelsplunk/splk-java
+    image: quay.io/vvydier123/splk-java
     env:
     - name: SPLUNK_OTEL_AGENT
       valueFrom:
